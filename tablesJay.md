@@ -5,19 +5,19 @@ The use of VARCHAR over VARCHAR2, gives empty string and NULL being different.
 
 ### ✓ Students
 
-Table Field Name - - | Data Type & Length - - | Description
+Table Field Name | Data Type & Length | Description
 :--- | :--- | :---
 studentID | CHAR(10) | Unique primary key
 studentFname | VARCHAR(50) | verifies student at sign-in
 studentLname | VARCHAR(50) | verifies student at sign-in
 studentEmail | VARCHAR(100) | username part can be unique studentID
 studentMajor | VARCHAR(100) | student degree program
-studentCources | VARCHAR(255) | list of courses, separated by commas
+studentCourses | VARCHAR(255) | list of courses, separated by commas
 studentUpdated | DATETIME | Timestamp of when the user account was last updated.
 
 ### ✓ Admins
 
-Table Field Name - - | Data Type & Length - - | Description
+Table Field Name | Data Type & Length | Description
 :--- | :--- | :---
 adminID | CHAR(10) | unique primary key |
 adminFname | VARCHAR(50) | verifies admin sign-in
@@ -30,7 +30,7 @@ adminUpdated | DATETIME | timestamp date and time of when the record was last up
 
 ### ✓ Tutors
 
-Table Field Name - - | Data Type & Length - - | Description
+Table Field Name | Data Type & Length | Description
 :--- | :--- | :---
 tutorID | CHAR(10) | unique primary key |
 tutorFname | VARCHAR(50) | verifies tutor sign-in
@@ -42,7 +42,7 @@ tutorSchedule | VARCHAR(255) | list of schedules
 tutorUpdated | DATETIME | timestamp date and time of when the record was last updated.
 
 ### ✓ Courses
-Table Field Name - - | Data Type & Length - - | Description
+Table Field Name | Data Type & Length | Description
 :--- | :--- | :---
 courseID | CHAR(10) | unique key indicating courseNumber with section IDentifying its professor
 courseProfessor | CHAR(50) | unique name IDentifying the professor
@@ -51,7 +51,7 @@ courseNumber | CHAR(10) |  unique three-letter prefix and a three-digit number, 
 courseUpdated | DATETIME | timestamp date and time of when the record was last updated.
 
 ### ✓ Log
-Table Field Name - - | Data Type & Length - - | Description
+Table Field Name | Data Type & Length | Description
 :--- | :--- | :---
 logSignIn | DATETIME | unique primary key, timestamp date and time when the student signs in
 logSignOut | DATETIME | timestamp date and time at sign out
@@ -59,5 +59,6 @@ logStudentID | CHAR(10) |  foreign key
 logCourseID | CHAR(10) |  foreign key
 logTutorID | CHAR(10) |  foreign key
 logUpdated | DATETIME | timestamp date and time of when the record was last updated.
+
 
 Can be used by both Tutor or Student
