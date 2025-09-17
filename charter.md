@@ -1,3 +1,0 @@
-###Project Charter
-##Hello
-######Hello
