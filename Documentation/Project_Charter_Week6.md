@@ -10,8 +10,11 @@ We have an ongoing issue with the current sign in solution to for the tutoring l
 Primary Goal(s):
 Secondary Goal(s):
 # 4. Scope
-In Scope:
-Out of Scope:
+## In Scope: 
+A working sign in form that stores data in a database.
+ 
+## Out of Scope: 
+Sign out / Admin loging / data visualization 
 # 5. Stakeholders & Roles
 Project Sponsor:
 Project Manager:
