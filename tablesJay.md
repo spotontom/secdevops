@@ -7,7 +7,7 @@ The use of VARCHAR over VARCHAR2, gives empty string and NULL being different.
 
 Table Field Name | Data Type & Length | Description
 :--- | :--- | :---
-studentID | CHAR(10) | Unique primary key
+studentID | INT(10) | auto increment
 studentFname | VARCHAR(50) | verifies student at sign-in
 studentLname | VARCHAR(50) | verifies student at sign-in
 studentEmail | VARCHAR(100) | username part can be unique studentID
@@ -61,4 +61,5 @@ logUpdated | DATETIME | timestamp date and time of when the record was last upda
 
 
 Can be used by both Tutor or Student
+
 
