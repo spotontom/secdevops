@@ -14,7 +14,7 @@ Secondary Goal(s):
 A working sign in form that stores data in a database.
  
 ## Out of Scope: 
-Sign out / Admin loging / data visualization 
+Sign out / Admin logging / data visualization 
 # 5. Stakeholders & Roles
 Project Sponsor:
 Project Manager:
