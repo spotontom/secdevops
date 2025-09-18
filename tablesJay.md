@@ -12,7 +12,6 @@ studentFname | VARCHAR(50) | verifies student at sign-in
 studentLname | VARCHAR(50) | verifies student at sign-in
 studentEmail | VARCHAR(100) | username part can be unique studentID
 studentMajor | VARCHAR(100) | student degree program
-studentCourses | VARCHAR(255) | list of courses, separated by commas
 studentUpdated | DATETIME | Timestamp of when the user account was last updated.
 
 ### ✓ Admins
@@ -44,7 +43,7 @@ tutorUpdated | DATETIME | timestamp date and time of when the record was last up
 ### ✓ Courses
 Table Field Name | Data Type & Length | Description
 :--- | :--- | :---
-courseID | CHAR(10) | unique key indicating courseNumber with section IDentifying its professor
+courseID | INT(10) | auto increment
 courseProfessor | CHAR(50) | unique name IDentifying the professor
 courseName | VARCHAR(100) | name of the course
 courseNumber | CHAR(10) |  unique three-letter prefix and a three-digit number, cis4433
@@ -62,3 +61,4 @@ logUpdated | DATETIME | timestamp date and time of when the record was last upda
 
 
 Can be used by both Tutor or Student
+
