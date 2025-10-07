@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<!--
-	Class:		cop4433
-	Project:	ACE Tutoring Lab
-	Author:		Jay King
-	Due:		10-3-2025
-	Filename:	confirm.php
--->
 <?php
-	session_start();
 	$firstNameInput = cleanInput($_POST['firstNameInput']);
 	$lastNameInput = cleanInput($_POST['lastNameInput']);		
 	$selectCourseInput = cleanInput($_POST['selectCourseInput']);	
@@ -19,22 +10,27 @@
 		return $data;
 	}
 ?>
+<!DOCTYPE html>
+<!--
+	Class:		cop4433
+	Project:	ACE Tutoring Lab
+	Author:		Jay King
+	Due:		10-3-2025
+	Filename:	confirm.php
+-->
 <html lang="en">
-
-<?php include '../view/head.php';?>
+<?php include '../views/head.php';?>
+<?php include '../views/delay.php';?>
 <body>
-<?php include '../view/header.php';?>
+<?php include '../views/header.php';?>
 <main>
-<?php include '../view/commodore.php';?>
+<?php include '../views/commodore.php';?>
 <h2>Confirmed</h2>
 <p>
-<?php echo $firstNameInput ?>, information has been logged with email,<?php echo $emailInput ?>.
+<?php echo $firstNameInput ?>, information has been logged with email: <?php echo $emailInput ?>.
 </p>
 </main>
-<?php include '../view/footer.php';?>
-<?php
-header("Refresh: 15; url=index.php");
-exit();
-?>
+<?php include '../views/footer.php';?>
 </body>
 </html>
+

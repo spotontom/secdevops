@@ -5,13 +5,14 @@
 	Author:		Jay King
 	Due:		10-3-2025
 	Filename:	index.php
+	https://gvsda.net/ace/local/
 -->
 <html lang="en">
-<?php include '../view/head.php';?>
+<?php include '../views/head.php';?>
 <body>
-<?php include '../view/header.php';?>
+<?php include '../views/header.php';?>
 <main>
-<?php include '../view/commodore.php';?>
+<?php include '../views/commodore.php';?>
 <h2>Login/Logout</h2>
 <form id="indexForm" autocomplete="on" method="post" action="process.php">
 	<h3>Email: Enter the first part before the @.</h3>
@@ -29,7 +30,7 @@
 	<button type="submit" class ="btn1">Continue</button>
 </form>
 </main>
-<?php include '../view/footer.php';?>
+<?php include '../views/footer.php';?>
 <script>
 function format(inputElement) {
   inputElement.value = removeJunk(inputElement.value);

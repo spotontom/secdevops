@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!--
 	Class:		cop4433
@@ -6,15 +9,12 @@
 	Due:		10-3-2025
 	Filename:	login.php
 -->
-<?php
-session_start();
-?>
 <html lang="en">
-<?php include '../view/head.php';?>
+<?php include '../views/head.php';?>
 <body>
-<?php include '../view/header.php';?>
+<?php include '../views/header.php';?>
 <main>
-<?php include '../view/commodore.php';?>
+<?php include '../views/commodore.php';?>
 <h2>Welcome</h2>
 <form id="loginForm" autocomplete="on" method="post" action="confirm.php">
 <fieldset>
@@ -57,19 +57,12 @@ session_start();
 </select>
 <span id="selectCourseError" class="errorMsg"></span>
 <br>
-
-
-
 </fieldset>
-
 	<button type="submit" class ="btn1">Confirm</button>
-
 </form>
 </main>
-<?php include '../view/footer.php';?>
-
+<?php include '../views/footer.php';?>
 <script>
-
 "use strict";
 
 function validateFirstname(inputElement) {

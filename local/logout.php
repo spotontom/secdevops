@@ -7,21 +7,17 @@
 	Filename:	index.php
 -->
 <html lang="en">
-
-<?php include '../view/head.php';?>
+<?php include '../views/head.php';?>
+<?php include '../views/delay.php';?>
 <body>
-<?php include '../view/header.php';?>
+<?php include '../views/header.php';?>
 <main>
-<?php include '../view/commodore.php';?>
+<?php include '../views/commodore.php';?>
 <h2>Logging Out</h2>
 <p>
 Thank you for using the tutoring lab. Have a nice day.
 </p>
 </main>
-<?php include '../view/footer.php';?>
-<?php
-header("Refresh: 15; url=index.php");
-exit();
-?>
+<?php include '../views/footer.php';?>
 </body>
 </html>
