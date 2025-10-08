@@ -5,7 +5,6 @@
 	Author:		Jay King
 	Due:		10-3-2025
 	Filename:	index.php
-	https://gvsda.net/ace/local/
 -->
 <html lang="en">
 <?php include '../views/head.php';?>
@@ -50,4 +49,5 @@ function removeJunk(str) {
 }
 </script>
 </body>
+
 </html>
