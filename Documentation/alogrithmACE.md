@@ -20,7 +20,7 @@ test site: https://domaintrusts.com/ace
 1.3.2 SQL injection<br>
 1.3.2 Client-Side Validation by limiting size, and restricting entries<br>
 1.3.2 Server-Side Validation by sanitizing and removing unwanted characters<br>
-### 2.0 all display screenz (index, login, confirm, login, logout)
+### 2.0 all display screens (index, login, confirm, login, logout)
 2.1 reference favicon<br>
 2.2 display heading<br>
 2.2.1 (h1) ACE Tutoring Lab<br>
@@ -96,4 +96,5 @@ test site: https://domaintrusts.com/ace
 ### 8.0 final
 8.1 comment source code functions.<br>
 8.2 test application<br>
+
 8.3 create user manual.<br>
