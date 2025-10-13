@@ -1,14 +1,5 @@
 <?php
-	$firstNameInput = cleanInput($_POST['firstNameInput']);
-	$lastNameInput = cleanInput($_POST['lastNameInput']);		
-	$selectCourseInput = cleanInput($_POST['selectCourseInput']);	
-	$emailInput = cleanInput($_POST['emailInput']);		
-	function cleanInput($data) {
-		$data = trim($data);
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
+session_start();
 ?>
 <!DOCTYPE html>
 <!--
@@ -27,7 +18,9 @@
 <?php include '../views/commodore.php';?>
 <h2>Confirmed</h2>
 <p>
-<?php echo $firstNameInput ?>, information has been logged with email: <?php echo $emailInput ?>.
+<?php echo isset($_SESSION['firstNameInput']) ? $_SESSION['firstNameInput'] : ''; ?>
+Information has been logged with email:
+<?php echo isset($_SESSION['emailInput']) ? $_SESSION['emailInput'] : ''; ?>
 </p>
 </main>
 <?php include '../views/footer.php';?>

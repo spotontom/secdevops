@@ -5,6 +5,7 @@
 	Author:		Jay King
 	Due:		10-3-2025
 	Filename:	index.php
+
 -->
 <html lang="en">
 <?php include '../views/head.php';?>
@@ -23,31 +24,52 @@
 		size="10"
 		placeholder = "johnsmith"
 		maxlength="20" 
-		onkeyup="format(this);"
+		onkeyup="validateUsername(this);"
 		required>@my.gulfcoast.edu
+		<span id="usernameError" class="errorMsg"></span>
 		</fieldset>
 	<button type="submit" class ="btn1">Continue</button>
 </form>
 </main>
 <?php include '../views/footer.php';?>
 <script>
-function format(inputElement) {
-  inputElement.value = removeJunk(inputElement.value);
+var errorNumber = 0;
+function validateUsername(inputElement) {
+	const usernameErrorDisplay  = document.getElementById("usernameError");
+	const usernameElement = document.getElementById("usernameInput");
+	errorNumber = 0;
+	let errorDisplay = "";
+	inputElement.value = removeJunk(inputElement.value);
+	errorDisplay = errorMsg();
+	usernameErrorDisplay.textContent=errorDisplay; // display message
 }
 function removeJunk(str) {
 	const charList = "abcdefghijklmnopqrstuvwxyz1234567890-_.";
-	let strReturn;
+	let charn = "";
+	let len = 0;
 	str=str.toLowerCase();
-	for (let i = 0; i < str.length;) {
-		if (charList.indexOf(str.charAt(i)) < 0) {
-			str = str.substring(0,i) + str.substring(i+1, str.length);
-		} else {
-			i++;
-		}
+	len = str.length;
+	charn = str.substring(str.length-1, str.length);
+	if (charn == " ") {
+		errorNumber = 1;
+		str= str.trim();
+	} else if (charList.indexOf(charn) < 0) {
+		str = str.substring(0,len-1);
+		errorNumber = 2;
+	} else {
+		errorNumber = 0;
 	}
 	return str;
 }
+function errorMsg() {
+	let errorDisplay ="";
+	if (errorNumber == 1) {
+		errorDisplay = "No spaces allowed";
+	} else if (errorNumber == 2) {
+		errorDisplay = "character not allowed";
+	}
+	return errorDisplay;
+}
 </script>
 </body>
-
 </html>
