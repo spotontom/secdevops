@@ -1,6 +1,6 @@
 # ⚙ ACE Tutoring Lab Sign-In Web Application
 
-## ➔ Description
+## ➔ Descriptionn
 
 ACE Tutoring Lab is a free tutoring service available to all our students in accounting, computer sciences, microcomputer applications, and economics courses. Nakia McCray supervises the lab. The lab has several tutors available at scheduled times to help students with homework assignments and projects. This simple sign-in application uses PHP, SQL, HTML, CSS, and JavaScript. It is used to track student attendance and participation in tutoring sessions. This sign-in log is intended for use by students and tutors at the start of each tutoring session.
 
