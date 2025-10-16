@@ -35,18 +35,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `courses` (
-  `courseID` int(10) UNSIGNED NOT NULL,
-  `courseProf` varchar(50) NOT NULL,
-  `courseName` varchar(100) NOT NULL,
-  `courseNo` varchar(10) NOT NULL,
-  `lastUpdate` timestamp NOT NULL DEFAULT current_timestamp()
+  `course_ID` int(10) UNSIGNED NOT NULL,
+  `course_professor` varchar(50) NOT NULL,
+  `course_name` varchar(100) NOT NULL,
+  `course_number` varchar(10) NOT NULL,
+  `course_updated` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`courseID`, `courseProf`, `courseName`, `courseNo`, `lastUpdate`) VALUES
+INSERT INTO `courses` (`course_ID`, `course_professor`, `course_name`, `course_number`, `course_updated`) VALUES
 (1, 'Trendon Ellis', 'SecDevOps', 'CIS4433', '2025-10-03 21:18:02'),
 (2, 'Wendy Payne', 'Agile Project Management', 'ISM4318', '2025-10-03 21:18:02'),
 (3, 'Rique Orozco', 'Emerging Technologies', 'ISM4302', '2025-10-03 21:18:02');
@@ -58,19 +58,19 @@ INSERT INTO `courses` (`courseID`, `courseProf`, `courseName`, `courseNo`, `last
 --
 
 CREATE TABLE `students` (
-  `stuID` int(10) UNSIGNED NOT NULL,
-  `fName` varchar(50) NOT NULL,
-  `lName` varchar(50) NOT NULL,
-  `stuEmail` varchar(120) NOT NULL,
-  `major` varchar(100) NOT NULL,
-  `lastUpdate` timestamp NOT NULL DEFAULT current_timestamp()
+  `student_ID` int(10) UNSIGNED NOT NULL,
+  `student_fname` varchar(50) NOT NULL,
+  `student_lname` varchar(50) NOT NULL,
+  `student_email` varchar(120) NOT NULL,
+  `student_major` varchar(100) NOT NULL,
+  `student_updated` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `students`
 --
 
-INSERT INTO `students` (`stuID`, `fName`, `lName`, `stuEmail`, `major`, `lastUpdate`) VALUES
+INSERT INTO `students` (`student_ID`, `student_fname`, `student_lname`, `student_email`, `student_major`, `student_updated`) VALUES
 (1, 'Peter', 'Cullen', 'pcullen@my.gulfcoast.edu', '', '2025-10-03 21:18:02'),
 (2, 'Tom', 'Kenny', 'tkenny2@my.gulfcoast.edu', '', '2025-10-03 21:18:02'),
 (3, 'Frank', 'Welker', 'fwelker@my.gulfcoast.edu', '', '2025-10-03 21:18:02'),
@@ -85,15 +85,15 @@ INSERT INTO `students` (`stuID`, `fName`, `lName`, `stuEmail`, `major`, `lastUpd
 -- Indexes for table `courses`
 --
 ALTER TABLE `courses`
-  ADD PRIMARY KEY (`courseID`),
-  ADD UNIQUE KEY `courseNo` (`courseNo`);
+  ADD PRIMARY KEY (`course_ID`),
+  ADD UNIQUE KEY `course_number` (`course_number`);
 
 --
 -- Indexes for table `students`
 --
 ALTER TABLE `students`
-  ADD PRIMARY KEY (`stuID`),
-  ADD UNIQUE KEY `stuEmail` (`stuEmail`);
+  ADD PRIMARY KEY (`student_ID`),
+  ADD UNIQUE KEY `student_email` (`student_email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -103,13 +103,13 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `courseID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `course_ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `stuID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `student_ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
