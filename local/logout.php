@@ -1,10 +1,15 @@
+<?php
+session_start();
+$_SESSION = array();	// Unset all session variables
+session_destroy();		// Destroy the session	
+?>
 <!DOCTYPE html>
 <!--
 	Class:		cop4433
 	Project:	ACE Tutoring Lab
 	Author:		Jay King
-	Due:		10-3-2025
-	Filename:	index.php
+	Updated:	10-15-2025
+	Filename:	logout.php
 -->
 <html lang="en">
 <?php include '../views/head.php';?>

@@ -6,7 +6,7 @@ session_start();
 	Class:		cop4433
 	Project:	ACE Tutoring Lab
 	Author:		Jay King
-	Due:		10-15-2025
+	Updated:	10-15-2025
 	Filename:	login.php
 -->
 <html lang="en">

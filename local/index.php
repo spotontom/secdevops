@@ -3,9 +3,8 @@
 	Class:		cop4433
 	Project:	ACE Tutoring Lab
 	Author:		Jay King
-	Due:		10-3-2025
+	Updated:	10-3-2025
 	Filename:	index.php
-
 -->
 <html lang="en">
 <?php include '../views/head.php';?>
