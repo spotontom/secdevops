@@ -30,16 +30,25 @@ MVC
 │ ├── projectCharter.md
 │ └── dataOrganization.md
 ├── views/
+│ ├── commodore.php
+│ ├── delay.php
+│ ├── head.php
 │ ├── header.php
 │ └── footer.php
 ├── local/
 │ ├── index.php (sign-in)
-│ └── confirm.php
+│ ├── process.php
+│ ├── login.php
+│ ├── proceed.php
+│ ├── confirm.php
+│ └── logout.php
 ├── model/
 │ └── database
 └── assets/
-  ├── images/
-  └── style.css
+  ├── favicon.ico
+  ├── commodore.png  
+  ├── gcsc_logo.svg
+  └── styles.css
 ```
 
 ### Tables with fields
@@ -47,55 +56,57 @@ MVC
 #### ✓ Students
 Table Field Name | Data Type & Length | Description
 :--- | :--- | :---
-studentID | INT(10) | auto increment
-studentFname | VARCHAR(50) | verifies student at sign-in
-studentLname | VARCHAR(50) | verifies student at sign-in
-studentEmail | VARCHAR(100) | username part can be unique studentID
-studentMajor | VARCHAR(100) | student degree program
-studentUpdated | DATETIME | timestamp date and time of the record's last update
+student_ID | INT(10) | auto increment
+student_fname | VARCHAR(50) | verifies student at sign-in
+student_lname | VARCHAR(50) | verifies student at sign-in
+student_email | VARCHAR(100) | username part can be unique studentID
+student_major | VARCHAR(100) | student degree program
+student_updated | DATETIME | timestamp date and time of the record's last update
 
 #### ✓ Courses
 Table Field Name | Data Type & Length | Description
 :--- | :--- | :---
-courseID | INT(10) | auto increment
-courseProfessor | CHAR(50) | unique name Identifying the professor
-courseName | VARCHAR(100) | name of the course
-courseNumber | CHAR(10) |  unique three-letter prefix and a three-digit number, cis4433
-courseUpdated | DATETIME | timestamp date and time of the record's last update
+course_ID | INT(10) | auto increment
+course_professor | CHAR(50) | unique name IDentifying the professor
+course_name | VARCHAR(100) | name of the course
+course_number | CHAR(10) |  unique three-letter prefix and a three-digit number, cis4433
+course_updated | DATETIME | timestamp date and time of the record's last update
 
 #### ✓ Log
 Table Field Name | Data Type & Length | Description
 :--- | :--- | :---
-logSignIn | DATETIME | unique primary key, timestamp date and time when the student signs in
-logSignOut | DATETIME | timestamp date and time at sign out
-logStudentID | CHAR(10) |  foreign key
-logCourseID | CHAR(10) |  foreign key
-logTutorID | CHAR(10) |  foreign key
-logUpdated | DATETIME | timestamp date and time of the record's last update
+log_ID | INT(10) | auto increment
+log_signin | DATETIME | unique primary key, timestamp date and time when the student signs in
+log_signout | DATETIME | timestamp date and time at sign out
+log_student_ID | CHAR(10) |  foreign key
+log_course_ID | CHAR(10) |  foreign key
+log_tutor_ID | CHAR(10) |  foreign key
+log_updated | DATETIME | timestamp date and time of the record's last update
 
 #### ✓ Admins, in scope of phase 2
+### Admins
 Table Field Name | Data Type & Length | Description
 :--- | :--- | :---
-adminID | CHAR(10) | unique primary key |
-adminFname | VARCHAR(50) | verifies admin sign-in
-adminLname | VARCHAR(50) | verifies admin sign-in
-adminEmail | VARCHAR(100) | username part can be unique ID
-adminPhone | CHAR(15) | (890)123-4567
-adminFERPA | BINERY(4) | True or False to allow admins to see records
-adminPassword | VARCHAR(100) | securely hashed
-adminUpdated | DATETIME | timestamp date and time of the record's last update
+admin_ID | INT(10) | auto increment
+admin_fname | VARCHAR(50) | verifies admin sign-in
+admin_lname | VARCHAR(50) | verifies admin sign-in
+admin_email | VARCHAR(100) | username part can be unique ID
+admin_phone | CHAR(15) | (890)123-4567
+admin_FERPA | BINERY(4) | True or False to allow admins to see records
+admin_password | VARCHAR(100) | securely hashed
+admin_updated | DATETIME | timestamp date and time of the record's last update
 
 #### ✓ Tutors, in scope of phase 2
 Table Field Name | Data Type & Length | Description
 :--- | :--- | :---
-tutorID | CHAR(10) | unique primary key |
-tutorFname | VARCHAR(50) | verifies tutor sign-in
-tutorLname | VARCHAR(50) | verifies tutor sign-in
-tutorEmail | VARCHAR(100) | username part can be unique ID
-tutorPhone | CHAR(15) | (890)123-4567
-tutorCourses | VARCHAR(255) | list of cources
-tutorSchedule | VARCHAR(255) | list of schedules
-tutorUpdated | DATETIME | timestamp date and time of the record's last update
+tutor_ID | INT(10) | auto increment
+tutor_fname | VARCHAR(50) | verifies tutor sign-in
+tutor_lname | VARCHAR(50) | verifies tutor sign-in
+tutor_email | VARCHAR(100) | username part can be unique ID
+tutor_phone | CHAR(15) | (890)123-4567
+tutor_courses | VARCHAR(255) | list of courses
+tutor_schedule | VARCHAR(255) | list of schedules
+tutor_updated | DATETIME | timestamp date and time of the record's last update
 
 ## ➔ Technologies Used
 - Github
