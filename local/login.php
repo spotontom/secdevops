@@ -6,7 +6,7 @@ session_start();
 	Class:		cop4433
 	Project:	ACE Tutoring Lab
 	Author:		Jay King
-	Due:		10-12-2025
+	Due:		10-15-2025
 	Filename:	login.php
 -->
 <html lang="en">
@@ -16,7 +16,7 @@ session_start();
 <main>
 <?php include '../views/commodore.php';?>
 <h2>Welcome</h2>
-<form id="loginForm" autocomplete="on" method="post" action="confirm.php">
+<form id="loginForm" autocomplete="on" method="post" action="proceed.php">
 	<fieldset>
 		<label title="Display only">Email:</label>
 			<input type="email"

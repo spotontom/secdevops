@@ -6,7 +6,7 @@ session_start();
 	Class:		cop4433
 	Project:	ACE Tutoring Lab
 	Author:		Jay King
-	Due:		10-3-2025
+	Updated:	10-15-2025
 	Filename:	confirm.php
 -->
 <html lang="en">
@@ -19,7 +19,7 @@ session_start();
 <h2>Confirmed</h2>
 <p>
 <?php echo isset($_SESSION['firstNameInput']) ? $_SESSION['firstNameInput'] : ''; ?>
-Information has been logged with email:
+, your information has been logged with email:
 <?php echo isset($_SESSION['emailInput']) ? $_SESSION['emailInput'] : ''; ?>
 </p>
 </main>
