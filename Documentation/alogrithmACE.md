@@ -13,7 +13,7 @@ test site: https://domaintrusts.com/ace
 1.2.4 inputs checked for errors<br>
 1.2.5 exit (skip) links provided <br>
 1.2.6 readable text size<br>
-1.2.7 stylea.css uaing media<br>
+1.2.7 styles.css uaing media<br>
 1.2.8 buttons clearly labeled<br>
 1.3 reduce cybersecurity threats<br>
 1.3.1 cross-site scripting (XSS) attacks<br>
@@ -74,19 +74,20 @@ test site: https://domaintrusts.com/ace
 6.1.2 strip slashes<br>
 6.1.3 htmlspecialchars<br>
 6.2 ‍❄️ create student record if new student<br>
-6.2.1 studentID with auto increment integer<br>
-6.2.2 studentFname<br>
-6.2.3 studentLname<br>
-6.2.4 studentEmail<br>
-6.2.5 studentMajor<br>
-6.2.6 studentUpdated with current timestamp<br>
-6.3 ‍❄️ create login record<br>
-6.3.1 logSignIn with current timestamp<br>
-6.3.2 logSignOut with blank<br>
-6.3.3 logStudentID<br>
-6.3.4 logCourseID<br>
-6.3.5 logTutorID with current tutor on staff<br>
-6.3.6 logUpdated<br>
+6.2.1 student_ID with auto increment integer<br>
+6.2.2 student_fname<br>
+6.2.3 student_lname<br>
+6.2.4 student_email<br>
+6.2.5 student_major<br>
+6.2.6 student_updated with current timestamp<br>
+6.3 ‍❄️ create log record<br>
+6.3.1 log_ID with auto increment integer<br>
+6.3.1 log_signin with current timestamp<br>
+6.3.2 log_signout with blank<br>
+6.3.3 log_student_ID<br>
+6.3.4 log_course_ID<br>
+6.3.5 log_tutor_ID with current tutor on staff<br>
+6.3.6 log_updated<br>
 6.4 display images and headings<br>
 6.5 display confirmation message with first name and emailinput<br>
 6.6 goto 4.0 index.php after 7 second time delay<br>
@@ -96,5 +97,4 @@ test site: https://domaintrusts.com/ace
 ### 8.0 final
 8.1 comment source code functions.<br>
 8.2 test application<br>
-
 8.3 create user manual.<br>
