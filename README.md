@@ -35,7 +35,7 @@ MVC
 │ ├── head.php
 │ ├── header.php
 │ └── footer.php
-├── local/
+├── login/
 │ ├── index.php (sign-in)
 │ ├── process.php
 │ ├── login.php
