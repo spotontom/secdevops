@@ -7,7 +7,7 @@ session_start();
 	Project:	ACE Tutoring Lab
 	Author:		Jay King
 	Updated:	10-15-2025
-	Filename:	login.phppppp
+	Filename:	login.php
 -->
 <html lang="en">
 <?php include '../views/head.php';?>
