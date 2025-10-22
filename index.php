@@ -4,6 +4,9 @@
 $action = filter_input(INPUT_POST, 'action');
 if ($action === null) {
     $action = filter_input(INPUT_GET, 'action');
+    if ($action === null) {
+        $action = 'login'; // ✅ Default to login page
+    }
 }
 //This currently is doing nothing so I am forcing it to load login
 header("Location: login/");
@@ -12,7 +15,7 @@ exit();
 switch ($action) {
     case 'login':
         echo "Login action here";
-        include('sign_in_form.php');
+        include('login/index.php');
         break;
 
     case 'confirm':
@@ -22,7 +25,7 @@ switch ($action) {
 
     default:
         echo "Default action";
-        include('sign_in_form.php');
+        include('login/index.php');
         break;
 }
 ?>
