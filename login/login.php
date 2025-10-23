@@ -11,6 +11,8 @@ session_start();
 -->
 <html lang="en">
 <?php include '../views/head.php';?>
+<?php include '../model/database.php';?>
+<?php include '../model/courses_db.php';?>
 <body>
 <?php include '../views/header.php';?>
 <main>
@@ -39,22 +41,19 @@ session_start();
 		<span id="lastNameError" class="errorMsg"></span>
 		<br>
 		<label title="Requires a selection">Course:</label>
-		<select id="selectCourseInput" name="selectCourseInput" onchange="selectCourse()" required>
+		<?php
+		$courses = get_courses();?>
+		<select id="selectCourseInput" name="selectCourseInput" required>
 			<option value="">Select course with professor</option>
-			<option value="1">ACC2001 - Rosemary Walker</option>
-			<option value="2">ACC2001 - Tracy Sewell</option>
-			<option value="3">ACC2011 - Tracy Sewell</option>
-			<option value="4">CGS1570 - Kim Allan</option>
-			<option value="5">CGS1570 - Wendy Payne</option>
-			<option value="6">COP1000 - Trendon Ellis</option>
-			<option value="7">COP2251 - Caleb Jordan</option>
-			<option value="8">COP2700 - Wendy Payne</option>
-			<option value="9">CTS1650 - David Lee</option>
-			<option value="10">DIG2100 - Rique Orozco</option>
-			<option value="11">ECO2013 - Brandon Cole</option>
-			<option value="12">ECO2013 - Matthew Herndon</option>
-			<option value="13">ECO2023 - Matthew Herndon</option>
-			<option value="14">FIN3400 - Cara Pattinato</option>
+			<?php foreach ($courses as $course): ?>
+				<option value="<?php echo htmlspecialchars($course['course_ID']); ?>">
+					<?php 
+						echo htmlspecialchars($course['course_number'] . ' ' . 
+											$course['course_name'] . ' - ' . 
+											$course['course_professor']);
+					?>
+				</option>
+			<?php endforeach; ?>
 		</select>
 	</fieldset>
 	<button type="submit" class ="btn1">Confirm</button>

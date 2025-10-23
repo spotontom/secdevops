@@ -5,7 +5,7 @@ function get_courses()  {
               ORDER BY course_number';
         $statement = $db->prepare($query);
         $statement->execute();
-        $customers = $statement->fetchAll();
+        $courses = $statement->fetchAll();
         $statement->closeCursor();
-        return $customers;
+        return $courses;
 }
