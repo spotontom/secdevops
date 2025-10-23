@@ -5,7 +5,9 @@ $action = filter_input(INPUT_POST, 'action');
 if ($action === null) {
     $action = filter_input(INPUT_GET, 'action');
 }
-
+//This currently is doing nothing so I am forcing it to load login
+header("Location: login/");
+exit();
 // Switch to handle different actions
 switch ($action) {
     case 'login':
