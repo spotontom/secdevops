@@ -1,245 +1,268 @@
 /*
- 	Class:		cis4433
-	Author:		Jay King
-	Updated:	10-13-2025
-	Filename:	style.css
+    Class:        cis4433
+    Author:        Jay King
+    Updated:    10-13-2025
+    Filename:    style.css
 */
 * {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 body {
-	line-height:1.2;
-	font-family:Arial, Helvetica, FreeSans, sans-serif;
-	font-size:17px;
-	text-align:center;
-	margin:0em 0em 0em 0em;
-	padding:0em 0em 0em 0em;
-	background-color:#000011;
-	color:white;
+    line-height:1.2;
+    font-family:Arial, Helvetica, FreeSans, sans-serif;
+    font-size:17px;
+    text-align:center;
+    margin:0em 0em 0em 0em;
+    padding:0em 0em 0em 0em;
+    background-color:#000011;
+    color:white;
 }
 form {
-	text-align: center;
-	background-color:#dddddd;
-	width: 86%;
-	/* top, right, bottom, left
- 	padding: 3em 2em 3em 2em;*/
-	padding: 0em;
-	margin:0em auto 0em auto;
+    text-align: center;
+    background-color:#dddddd;
+    width: 98%;
+    /* top, right, bottom, left */
+     padding: 0em 0em 0em 0em;
+    margin:0em auto 0em auto;
+}
+div {
+	display: grid;
+	place-items: center;
+	height: 100px;
 }
 .imgLogo {
-	width:20%;
-	float: left;
+    width:20%;
+    float: left;
 }
 /* styles.css */
 input, select {
   font-size: 18px;
 }
 input:valid {
-	background: white;
+    background: white;
 }
 input:invalid, select:invalid {
-	border: none;
-	background: MistyRose;
-	border-color: red;
-	box-shadow: .2em .2em .5em red;
+    border: none;
+    background: MistyRose;
+    border-color: red;
+    box-shadow: .2em .2em .5em red;
 }
 input:focus, textarea:focus {
-	border: .1em solid blue;
-	background: white;
+    border: .1em solid blue;
+    background: white;
 }
 fieldset {
-	text-align: left;
-	width: 100%;
-	font-size:17px;
-	margin:0.0em 0em 0em 0em;
-	padding:0em 0em 0em 0em;
-	border: none;
+    text-align: left;
+    width: 100%;
+    font-size:17px;
+    margin:0.0em 0em 0em 0em;
+    padding:0em 0em 0em 0em;
+    border: none;
 }
 h1 {
-	text-align:center;
-	margin:0.0em 0em 0em 0em;
-	padding:0em 0em 0em 0em;
-	font-family:Verdana, Geneva, serif;
-	font-size:6vw;
+    text-align:center;
+    margin:0.0em 0em 0em 0em;
+    padding:0em 0em 0em 0em;
+    font-family:Verdana, Geneva, serif;
+    font-size:6vw;
 }
 h2 {
-	text-align:center;
-	margin:0.3em 0em 0.5em 0em;
-	padding:0em 0em 0em 0em;
-	font-size:24px;
+    text-align:center;
+    margin:0.3em 0em 0.5em 0em;
+    padding:0em 0em 0em 0em;
+    font-size:2.5vw;
 }
 h3 {
-	text-align:center;
-	margin:0.3em 0em 0.5em 0em;
-	padding:0em 0em 0em 0em;
-	font-size:20px;
+    text-align:center;
+    margin:0.3em 0em 0.5em 0em;
+    padding:0em 0em 0em 0em;
+    font-size:20px;
 }
 h6 {
-	text-align:center;
-	font-size:14px;
-	padding:0em;
-	margin:0em;
-	color: white;
+    text-align:center;
+    font-size:14px;
+    padding:0em;
+    margin:0em;
+    color: white;
 }
 .errorMsg {
-	width: 10em;
-	display:inline-block;
-	padding: 0em 0em em 2em;
-	/* top, right, bottom, left */
-	margin: 0;
-	/* #C11B17 #7E3517 */
-	color: maroon;
-	font-weight: bold;
-	text-align: left;
+    width: 10em;
+    display:inline-block;
+    padding: 0em 0em 0em 0em;
+    /* top, right, bottom, left */
+    margin: 0em 0em 0em 2em;
+    /* #C11B17 #7E3517 */
+    color: maroon;
+    font-weight: bold;
+    text-align: left;
 }
 .submitMsg {
-	/* top, right, bottom, left */
-	padding: 0.3em 0em .3em .4em;
-	margin: 0;
-	/* #C11B17 #7E3517 */
-	color: black;
-	font-weight: bold;
-	text-align: center;
+    /* top, right, bottom, left */
+    padding: 0em;
+    margin: 0.3em 0em .3em 0em;
+    /* #C11B17 #7E3517 */
+    color: black;
+    font-weight: bold;
+    text-align: center;
 }
 header {
-	text-align:center;
-	width:100%;
-	float:none;
-	background-color:navy;
-	margin:0em 0em 0em 0em;
-	/* top, right, bottom, left */
-	padding:0em 0em 0em 0em;
+    text-align:center;
+    width:100%;
+    float:none;
+    background-color:navy;
+    margin:0em 0em 0em 0em;
+    /* top, right, bottom, left */
+    padding:0em 0em 0em 0em;
 }
 main {
-	width: 100%;
+    width: 100%;
     color: #000000;
-	background: #2fafeb;
+    background: #2fafeb;
 }
 label {
-	width: 100px;
-	display:inline-block;
-	padding: 0em 0em 0em 0em;
-	/* top, right, bottom, left */
-	margin:.5em 0em 0em .5em;
+    width: 100px;
+    display:inline-block;
+    padding: 0em 0em 0em 0em;
+    /* top, right, bottom, left */
+    margin:.5em 0em 0em .5em;
 }
 footer {
-	margin:0em 0em 0em 0em;
-	/* top, right, bottom, left */
-	padding:0em 0em 0em 0em;
-	text-align:center;
-	color:#ffffff;
-	background-color:navy;
+    margin:0em 0em 0em 0em;
+    /* top, right, bottom, left */
+    padding:0em 0em 0em 0em;
+    text-align:center;
+    color:#ffffff;
+    background-color:navy;
 }
 .btn1 {
-	height:auto;
-	border-radius:0.3em;
-	box-shadow: .4em .25em .2em #111111;
-	display:inline-block;
-	font-family: georgia, "times new roman", times, serif;
-	font-size:17px;
-	font-style:italic;
-	padding:0.08em .8em;
-	font-weight:bold;
-	/* transition-duration: 0.6s; */
-	cursor: pointer;
-	/* width:90px; */
-	text-decoration:none;
-	/* text-indent:4px; */
-	text-align:center;
-	border:medium outset rgb(50,60,140);
-	background:rgb(40,60,140);
-	color:white;
-	/* top, right, bottom, left */
-	margin: 0.8em auto 0.8em auto;
-	float: center;
+    height:auto;
+    border-radius:0.3em;
+    box-shadow: .4em .25em .2em #111111;
+    display:inline-block;
+    font-family: georgia, "times new roman", times, serif;
+    font-size:17px;
+    font-style:italic;
+    padding:0.08em .8em;
+    font-weight:bold;
+    /* transition-duration: 0.6s; */
+    cursor: pointer;
+    /* width:90px; */
+    text-decoration:none;
+    /* text-indent:4px; */
+    text-align:center;
+    border:medium outset rgb(50,60,140);
+    background:rgb(40,60,140);
+    color:white;
+    /* top, right, bottom, left */
+    margin: 0.8em auto 0.8em auto;
+    float: center;
 }
 .btn1:hover {
-	border:medium outset grey;
-	background:#ddeeff;
-	color:black;
+    border:medium outset grey;
+    background:#ddeeff;
+    color:black;
 }
 a{
-	text-decoration:none;
-	color: white;
+    text-decoration:none;
+    color: white;
 }
 .imgC {
-	float:none;
-	/* top, right, bottom, left */
-	margin:.5em 0em 0em 0em;
-	width:20%;
+    display:block;
+    /* top, right, bottom, left */
+    margin:.5em auto .5em auto;
+    width:20%;
 }
 p {
-	text-align:left;
-	margin:.5em 0em .5em 0em;
-	padding:.5em 1em .5em .1em;
-	font-size:17px;
+    text-align:left;
+    margin:.5em 0em .5em 0em;
+    padding:.5em 1em .5em .1em;
+    font-size:17px;
 }
-@media (min-width:600px) {
+@media (min-width:400px) {
 fieldset {
-	font-size:17px;
+    font-size:17px;
+}
+form {
+    width: 86%;
 }
 label {
-	width: 120px;
-	margin:.5em 0em 0em .5em;
+    width: 120px;
+    margin:.5em 0em 0em .5em;
 }
 .btn1 {
-	font-size:20px;
-}
-.imgC {
-	width:18%;
+    font-size:20px;
 }
 p {
-	padding:.5em 4em .5em 4em;
-	font-size:17px;
+    padding:.5em 4em .5em 4em;
+    font-size:17px;
+}}
+@media (min-width:600px) {
+fieldset {
+    font-size:17px;
+}
+label {
+    width: 120px;
+    margin:.5em 0em 0em .5em;
+}
+.btn1 {
+    font-size:20px;
+}
+p {
+    padding:.5em 4em .5em 4em;
+    font-size:17px;
 }}
 @media (min-width:800px) {
 fieldset {
-	font-size:20px;
-}
-.imgC {
-	width:17%;
+    font-size:20px;
 }
 .btn1 {
-	font-size:30px;
+    font-size:30px;
 }
 p {
-	padding:.5em 3em .5em 3em;
-	font-size:20px;
+    padding:.5em 3em .5em 3em;
+    font-size:20px;
 }}
 @media (min-width:1024px) {
 fieldset {
-	font-size:24px;
+    font-size:24px;
 }
 label {
-	width: 240px;
-	/* top, right, bottom, left */
-	margin:.5em 0em 0em 1em;
-}
-.imgC {
-	width:16%;
+    width: 240px;
+    /* top, right, bottom, left */
+    margin:.5em 0em 0em 1em;
 }
 .btn1 {
-	font-size:40px;
+    font-size:40px;
 }
 p {
-	padding:.5em 4em .5em 4em;
-	font-size:24px;
+    padding:.5em 4em .5em 4em;
+    font-size:24px;
 }}
 @media (min-width: 1280px) {
 fieldset {
-	font-size:24px;
+    font-size:24px;
 }
 label {
-	width: 240px;
-	/* top, right, bottom, left */
-	margin:.5em 0em 0em 1em;
-}
-.imgC {
-	width:15%;
+    width: 240px;
+    /* top, right, bottom, left */
+    margin:.5em 0em 0em 1em;
 }
 p {
-	padding:.5em 4em .5em 4em;
-	font-size:24px;
+    padding:.5em 4em .5em 4em;
+    font-size:24px;
+}}
+@media (min-width: 1600px) {
+fieldset {
+    font-size:24px;
+}
+label {
+    width: 240px;
+    /* top, right, bottom, left */
+    margin:.5em 0em 0em 1em;
+}
+p {
+    padding:.5em 4em .5em 4em;
+    font-size:24px;
 }}
