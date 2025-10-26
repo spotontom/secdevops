@@ -6,8 +6,7 @@ $password = 'mypassword';
 
 try {
     $db = new PDO($dsn, $username, $password);
-    echo "Connection successful!";
 } catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+    echo "Connection to database failed: " . $e->getMessage();
 }
 ?>
