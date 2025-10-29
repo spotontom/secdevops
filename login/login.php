@@ -16,8 +16,7 @@ session_start();
 <body>
 <?php include '../views/header.php';?>
 <main>
-<?php include '../views/commodore.php';?>
-<h2>Welcome</h2>
+<h2>Welcome<?php include '../views/commodore.php';?></h2>
 <form id="loginForm" autocomplete="on" method="post" action="proceed.php">
 	<fieldset>
 		<label title="Display only">Email:</label>
@@ -106,7 +105,7 @@ function errorMsg() {
 	if (errorNumber == 1) {
 		errorDisplay = "No spaces allowed";
 	} else if (errorNumber == 2) {
-		errorDisplay = "Only allow lettters";
+		errorDisplay = "Only allow letters";
 	}
 	return errorDisplay;
 }
