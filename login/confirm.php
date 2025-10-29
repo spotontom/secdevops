@@ -15,8 +15,7 @@ session_start();
 <body>
 <?php include '../views/header.php';?>
 <main>
-<?php include '../views/commodore.php';?>
-<h2>Confirmed</h2>
+<h2>Confirmed<?php include '../views/commodore.php';?></h2>
 <p>
 <?php echo isset($_SESSION['firstNameInput']) ? $_SESSION['firstNameInput'] : ''; ?>
 , your information has been logged with email:
