@@ -1,3 +1,2 @@
-<div>
-	<img class="imgC" alt="GCSC commodore" src="../assets/commodore.png">
-</div>
+
+<img class="imgC" alt="GCSC commodore" src="../assets/commodore.png">
