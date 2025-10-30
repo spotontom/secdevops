@@ -17,7 +17,7 @@ session_destroy();		// Destroy the session
 <body>
 <?php include '../views/header.php';?>
 <main>
-<h2>Logging Out<?php include '../views/commodore.php';?></h2>
+<h2>Logging Out</h2>
 <p>
 Thank you for using the tutoring lab. Have a nice day.
 </p>

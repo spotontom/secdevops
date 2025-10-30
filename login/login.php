@@ -16,7 +16,7 @@ session_start();
 <body>
 <?php include '../views/header.php';?>
 <main>
-<h2>Welcome<?php include '../views/commodore.php';?></h2>
+<h2>Welcome</h2>
 <form id="loginForm" autocomplete="on" method="post" action="proceed.php">
 	<fieldset>
 		<label title="Display only">Email:</label>
