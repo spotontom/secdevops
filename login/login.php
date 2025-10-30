@@ -27,6 +27,7 @@ session_start();
 			value="<?php echo isset($_SESSION['emailInput']) ? $_SESSION['emailInput'] : ''; ?>"
 			readonly>
 		<br>
+		<br>
 		<label title="First name is a required entry">First name:</label>
 			<input type="text" size="25" onkeyup="validateFirstname(this)"
 			title="First name is a required entry"
@@ -55,6 +56,7 @@ session_start();
 			<?php endforeach; ?>
 		</select>
 	</fieldset>
+	<br>
 	<button type="submit" class ="btn1">Confirm</button>
 </form>
 </main>

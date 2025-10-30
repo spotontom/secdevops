@@ -5,7 +5,8 @@
 	Author:		Jay King
 	Updated:	10-3-2025
 	Filename:	index.php
--->
+--> 
+<!--  Thomas cleared username label, added div for css -->
 <html lang="en">
 <?php include '../views/head.php';?>
 <body>
@@ -13,9 +14,10 @@
 <main>
 <h2>Login/Logout<?php include '../views/commodore.php';?></h2>
 <form id="indexForm" autocomplete="on" method="post" action="process.php">
-	<h3>Email: Enter the first part before the @.</h3>
+	<h3>Student Email: Enter the first part before the @.</h3>
 	<fieldset>
-		<label title="Required entry">Username:</label>
+	<div class="username-row">
+		<p></p>
 		<input type="text"
 		id="usernameInput"
 		name="usernameInput"
@@ -23,9 +25,12 @@
 		placeholder = "johnsmith"
 		maxlength="20" 
 		onkeyup="validateUsername(this);"
-		required>@my.gulfcoast.edu
+		required>
+		<span>@my.gulfcoast.edu</span>
 		<span id="usernameError" class="errorMsg"></span>
+	</div>
 		</fieldset>
+	<br>
 	<button type="submit" class ="btn1">Continue</button>
 </form>
 </main>
