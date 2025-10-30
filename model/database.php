@@ -1,7 +1,7 @@
 <?php
 $dsn = 'mysql:host=localhost;dbname=base_db';
-$username = 'phpuser';
-$password = 'mypassword';
+$username = 'log_user';
+$password = 'pa55word';
 
 
 try {
