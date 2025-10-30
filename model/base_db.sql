@@ -47,9 +47,23 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`course_ID`, `course_professor`, `course_name`, `course_number`, `course_updated`) VALUES
-(1, 'Trendon Ellis', 'SecDevOps', 'CIS4433', '2025-10-03 21:18:02'),
-(2, 'Wendy Payne', 'Agile Project Management', 'ISM4318', '2025-10-03 21:18:02'),
-(3, 'Rique Orozco', 'Emerging Technologies', 'ISM4302', '2025-10-03 21:18:02');
+  (1,'Rose Wilson','Principles of Financial Accounting I','ACC2001','2025-10-03 21:18:02'),
+  (2,'Mary Simpson','Principles of Financial Accounting I','ACC2001','2025-10-03 21:18:02'),
+  (3,'Mary Simpson','Principles of Financial Accounting II','ACC2011','2025-10-03 21:18:02'),
+  (4,'Ken Smith','Microcomputer Applications','CGS1570','2025-10-03 21:18:02'),
+  (5,'Wayne Paulson','Microcomputer Applications','CGS1570','2025-10-03 21:18:02'),
+  (6,'Ted Eve','Introduction to Programming Logic','COP1000','2025-10-03 21:18:02'),
+  (7,'Cate Jackson','Introduction to Java Programming','COP2250','2025-10-03 21:18:02'),
+  (8,'Wayne Paulson','Data Structure (SQL)','COP2700','2025-10-03 21:18:02'),
+  (9,'David Lawson','Network Fundamentals','CTS1650','2025-10-03 21:18:02'),
+  (10,'Rose Ryan','Web Design I','DIG2100','2025-10-03 21:18:02'),
+  (11,'Ben Conner','Principles of Economics, Macro','ECO2013','2025-10-03 21:18:02'),
+  (12,'Mat Musk','Principles of Economics, Macro','ECO2013','2025-10-03 21:18:02'),
+  (13,'Mat Musk','Principles of Economics, Micro','ECO2023','2025-10-03 21:18:02'),
+  (14,'Cathy Patterson','Financial Management','FIN3400','2025-10-03 21:18:02'),
+  (15,'Ted Eve','SecDevOps','CIS4433','2025-10-03 21:18:02'),
+  (16,'Wayne Paulson','Agile Project Management','ISM4318','2025-10-03 21:18:02'),
+  (17,'Rose Ryan','Emerging Technologies','ISM4302','2025-10-03 21:18:02');
 
 -- --------------------------------------------------------
 
