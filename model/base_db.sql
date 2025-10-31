@@ -5,17 +5,17 @@ USE `base_db`;
 -- Create table structure for "courses"
 
 CREATE TABLE `courses` (
-  `course_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `course_ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `course_professor` varchar(50) NOT NULL,
   `course_name` varchar(100) NOT NULL,
   `course_number` char(10) NOT NULL,
   `course_updated` DATETIME NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`course_id`)
+  PRIMARY KEY (`course_ID`)
 );
 
 -- Insert generic data into "courses"
 
-INSERT INTO `courses` (`course_id`, `course_professor`, `course_name`, `course_number`, `course_updated`) VALUES
+INSERT INTO `courses` (`course_ID`, `course_professor`, `course_name`, `course_number`, `course_updated`) VALUES
 (1, 'Rose Wilson', 'Principles of Financial Accounting I', 'ACC2001', '2025-10-24 04:42:12'),
 (2, 'Mary Simpson', 'Principles of Financial Accounting I', 'ACC2001', '2025-10-24 04:42:12'),
 (3, 'Mary Simpson', 'Principles of Financial Accounting II', 'ACC2011', '2025-10-24 04:42:12'),
@@ -37,18 +37,18 @@ INSERT INTO `courses` (`course_id`, `course_professor`, `course_name`, `course_n
 -- Create table structure for "students"
 
 CREATE TABLE `students` (
-  `student_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `student_ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `student_fname` varchar(50) NOT NULL,
   `student_lname` varchar(50) NOT NULL,
   `student_email` varchar(100) NOT NULL UNIQUE,
   `student_major` varchar(100) NOT NULL,
   `student_updated` DATETIME NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`student_id`)
+  PRIMARY KEY (`student_ID`)
 );
 
 -- Insert generic data into "students"
 
-INSERT INTO `students` (`student_id`, `student_fname`, `student_lname`, `student_email`, `student_major`, `student_updated`) VALUES
+INSERT INTO `students` (`student_ID`, `student_fname`, `student_lname`, `student_email`, `student_major`, `student_updated`) VALUES
 (1, 'Spike', 'Witwicky', 'switwicky@my.gulfcoast.edu', '', '2025-10-24 04:42:12'),
 (2, 'Johnathan', 'Smith', 'jsmith8@my.gulfcoast.edu', '', '2025-10-24 04:42:12'),
 (3, 'Kevin', 'Flynn', 'kflynn2@my.gulfcoast.edu', '', '2025-10-24 04:42:12'),
@@ -63,15 +63,15 @@ INSERT INTO `students` (`student_id`, `student_fname`, `student_lname`, `student
 -- Create table structure for "logs"
 
 CREATE TABLE `log` (
-  `log_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `log_ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `log_signin` datetime NOT NULL,
   `log_signout` datetime NOT NULL,
-  `log_student_id` int(10) UNSIGNED NOT NULL,
-  `log_course_id` int(10) UNSIGNED NOT NULL,
+  `log_student_ID` int(10) UNSIGNED NOT NULL,
+  `log_course_ID` int(10) UNSIGNED NOT NULL,
   `log_updated` DATETIME NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`log_id`),
-  FOREIGN KEY (`log_student_id`) REFERENCES students(`student_id`),
-  FOREIGN KEY (`log_course_id`) REFERENCES courses(`course_id`)
+  PRIMARY KEY (`log_ID`),
+  FOREIGN KEY (`log_student_ID`) REFERENCES students(`student_ID`),
+  FOREIGN KEY (`log_course_ID`) REFERENCES courses(`course_ID`)
 );
 
 -- Create "log_user"
