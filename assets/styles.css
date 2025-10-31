@@ -3,8 +3,7 @@
     Author:		Jay King
     Updated:	10-15-2025
     Filename	styles.css
-*/
-/*
+
     Author:		Thomas Scott
     Updated:	10-29-2025
 */
@@ -32,7 +31,7 @@ main {
     background-color: #2fafeb;
     padding: 1rem;
     margin: 0;
-  }
+}
 footer {
     padding: 1rem;
     margin:0em 0em 0em 0em;
@@ -62,7 +61,7 @@ h1 {
     font-size:6vw;
     color: white;
 }
-a{
+a {
     text-decoration:none;
     color: white;
 }
@@ -86,7 +85,7 @@ body {
     padding: 0;
     background-color: #000011;
     color: black;
-  }
+}
 form {
     /*Changes made by Thomas */
     background-color: #f3f3f3;
@@ -148,7 +147,7 @@ h2 {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
     letter-spacing: 0.5px;
     text-transform: uppercase;
-  }
+}
 h3 {
     /* Changed by Thomas */
     text-align: center;
@@ -165,7 +164,7 @@ h3 {
     display: inline-block;
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+}
 h6 {
     text-align:center;
     font-size:14px;
@@ -206,8 +205,7 @@ label {
     letter-spacing: 0.3px;
     padding: 6px 0;
     vertical-align: middle;
-  }
-  
+}
 /* Thomas Changed button styling */
 .btn1 {
     display: inline-block;
@@ -223,13 +221,12 @@ label {
     cursor: pointer;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.25s ease;
-  }
-  
-  .btn1:hover {
+}
+.btn1:hover {
     background-color: #1f2e8a;
     transform: translateY(-2px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
-  }
+}
 a{
     text-decoration:none;
     color: white;
@@ -249,17 +246,15 @@ p {
     margin-top: 1rem;          /* optional: space above */
     width: 100%;
     text-align: center; 
-  }
-  
-  .username-row input,
-  .username-row span {
+}
+.username-row input,
+.username-row span {
     font-size: 18px;
-  }
+}
 p {
     padding:.5em 4em .5em 4em;
     font-size:20px;
 }
-
 main {
     padding:0em 2rem 2rem 2rem;
 }
@@ -274,7 +269,7 @@ fieldset {
 p {
     padding:.5em 3em .5em 3em;
     font-size:30px;
-    }}
+}}
 @media (min-width:1024px) {
 fieldset {
     font-size:30px;
