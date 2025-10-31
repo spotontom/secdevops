@@ -1,7 +1,11 @@
 <header>
-	<img class="imgLogo" alt="GCSC logo" src="../assets/gcsc_logo.svg">
-	<br>
-	<h1>ACE Tutoring Lab</h1>
-	<br>
-	<img class="imgC" alt="GCSC commodore" src="../assets/commodore.png">
+  <div class="columnLeft">
+	<img alt="GCSC logo" src="../assets/gcsc_logo.svg" class="imgLogo">
+  </div>
+  <div class="columnCenter">
+    <h1>ACE Tutoring Lab</h1>
+  </div>
+  <div class="columnRight">
+  	<img alt="GCSC commodore" src="../assets/commodore.png" class="imgC">
+  </div>
 </header>
