@@ -1,2 +1,2 @@
 
-<img class="imgC" alt="GCSC commodore" src="../assets/commodore.png">
+<img class="img-c" alt="GCSC commodore" src="../assets/commodore.png">

@@ -29,23 +29,23 @@ h1 {
     font-size:6vw;
     color: white;
 }
-.columnLeft {
+.column-left {
   flex: 15%;
   padding: 0px;
 }
-.columnCenter {
+.column-center {
   flex: 70%;
   padding: 0px;
 }
-.columnRight {
+.column-right {
   flex: 15%;
   padding: 0px;
 }
-.imgLogo {
+.img-logo {
     width:90%;
 	vertical-align: middle;
 }
-.imgC {
+.img-c {
     width:50%;
     vertical-align: middle;
 	padding:0em 0em 0em 0em;
@@ -181,7 +181,7 @@ h6 {
     margin:0em;
     color: white;
 }
-.errorMsg {
+.error-msg {
     display:block;
     padding: 0em 0em 0em 0em;
     /* top, right, bottom, left */
@@ -190,7 +190,7 @@ h6 {
     font-weight: bold;
     text-align: left;
 }
-.submitMsg {
+.submit-msg {
     /* top, right, bottom, left */
     padding: 0em;
     margin: 0.3em 0em .3em 0em;

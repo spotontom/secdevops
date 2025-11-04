@@ -27,7 +27,7 @@
 		onkeyup="validateUsername(this);"
 		required>
 		<span>@my.gulfcoast.edu</span>
-		<br><span id="usernameError" class="errorMsg"></span>
+		<br><span id="usernameError" class="error-msg"></span>
 	</div>
 		</fieldset>
 	<br>
