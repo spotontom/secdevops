@@ -21,18 +21,18 @@ INSERT INTO `courses` (`course_ID`, `course_professor`, `course_name`, `course_n
 (3, 'Mary Simpson', 'Principles of Financial Accounting II', 'ACC2011', '2025-10-24 04:42:12'),
 (4, 'Ken Smith', 'Microcomputer Applications', 'CGS1570', '2025-10-24 04:42:12'),
 (5, 'Wayne Paulson', 'Microcomputer Applications', 'CGS1570', '2025-10-24 04:42:12'),
-(6, 'Ted Eve', 'Introduction to Programming Logic', 'COP1000', '2025-10-24 04:42:12'),
+(6, 'Ben Carmen', 'Introduction to Programming Logic', 'COP1000', '2025-10-24 04:42:12'),
 (7, 'Cate Jackson', 'Introduction to Java Programming', 'COP2250', '2025-10-24 04:42:12'),
 (8, 'Wayne Paulson', 'Data Structure (SQL)', 'COP2700', '2025-10-24 04:42:12'),
 (9, 'David Lawson', 'Network Fundamentals', 'CTS1650', '2025-10-24 04:42:12'),
-(10, 'Rose Ryan', 'Web Design I', 'DIG2100', '2025-10-24 04:42:12'),
-(11, 'Ben Cole', 'Principles of Economics, Macro', 'ECO2013', '2025-10-24 04:42:12'),
-(12, 'Mat Musk', 'Principles of Economics, Macro', 'ECO2013', '2025-10-24 04:42:12'),
-(13, 'Mat Musk', 'Principles of Economics, Micro', 'ECO2023', '2025-10-24 04:42:12'),
+(10, 'Ralph Ryan', 'Web Design I', 'DIG2100', '2025-10-24 04:42:12'),
+(11, 'Ben Carmen', 'Principles of Economics, Macro', 'ECO2013', '2025-10-24 04:42:12'),
+(12, 'Steve Musk', 'Principles of Economics, Macro', 'ECO2013', '2025-10-24 04:42:12'),
+(13, 'Steve Musk', 'Principles of Economics, Micro', 'ECO2023', '2025-10-24 04:42:12'),
 (14, 'Cathy Patterson', 'Financial Management', 'FIN3400', '2025-10-24 04:42:12'),
-(15, 'Ted Eve', 'SecDevOps', 'CIS4433', '2025-10-24 04:42:12'),
+(15, 'Ben Carmen', 'SecDevOps', 'CIS4433', '2025-10-24 04:42:12'),
 (16, 'Wayne Paulson', 'Agile Project Management', 'ISM4318', '2025-10-24 04:42:12'),
-(17, 'Rose Ryan', 'Emerging Technologies', 'ISM4302', '2025-10-24 04:42:12');
+(17, 'Ralph Ryan', 'Emerging Technologies', 'ISM4302', '2025-10-24 04:42:12');
 
 -- Create table structure for "students"
 
