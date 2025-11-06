@@ -16,7 +16,7 @@ CREATE TABLE `courses` (
 -- Insert generic data into "courses"
 
 INSERT INTO `courses` (`course_ID`, `course_professor`, `course_name`, `course_number`, `course_updated`) VALUES
-(1, 'Rose Wilson', 'Principles of Financial Accounting I', 'ACC2001', '2025-10-24 04:42:12'),
+(1, 'Debbie Wilson', 'Principles of Financial Accounting I', 'ACC2001', '2025-10-24 04:42:12'),
 (2, 'Mary Simpson', 'Principles of Financial Accounting I', 'ACC2001', '2025-10-24 04:42:12'),
 (3, 'Mary Simpson', 'Principles of Financial Accounting II', 'ACC2011', '2025-10-24 04:42:12'),
 (4, 'Ken Smith', 'Microcomputer Applications', 'CGS1570', '2025-10-24 04:42:12'),
