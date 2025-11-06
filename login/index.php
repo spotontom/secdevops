@@ -12,12 +12,11 @@
 <body>
 <?php include '../views/header.php';?>
 <main>
-<h2>Login/Logout</h2>
 <form id="indexForm" autocomplete="on" method="post" action="process.php">
+	<h2>Login/Logout</h2>
 	<h3>Student Email: Enter the first part before the @.</h3>
 	<fieldset>
 	<div class="username-row">
-		<p></p>
 		<input type="text"
 		id="usernameInput"
 		name="usernameInput"

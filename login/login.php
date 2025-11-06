@@ -16,8 +16,8 @@ session_start();
 <body>
 <?php include '../views/header.php';?>
 <main>
-<h2>Welcome</h2>
 <form id="loginForm" autocomplete="on" method="post" action="proceed.php">
+	<h2>Welcome</h2>
 	<fieldset>
 		<label title="Display only">Email:</label>
 			<input type="email"
@@ -27,19 +27,16 @@ session_start();
 			value="<?php echo isset($_SESSION['emailInput']) ? $_SESSION['emailInput'] : ''; ?>"
 			readonly>
 		<br>
-		<br>
 		<label title="First name is a required entry">First name:</label>
 			<input type="text" size="25" onkeyup="validateFirstname(this)"
 			title="First name is a required entry"
 			placeholder = "John-example" id="firstNameInput" name="firstNameInput" required>
 		<br><span id="firstNameError" class="error-msg"></span>
-		<br>
 		<label title="Last name is a required entry">Last name:</label>
 			<input type="text" size="25" onkeyup="validateLastname(this)"
 			title="Last name is a required entry"
 			placeholder = "Smith-example" id="lastNameInput" name="lastNameInput" required>
 		<br><span id="lastNameError" class="error-msg"></span>
-		<br>
 		<label title="Requires a selection">Course:</label>
 		<?php
 		$courses = get_courses();?>
