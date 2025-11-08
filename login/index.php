@@ -3,7 +3,7 @@
 	Class:		cop4433
 	Project:	ACE Tutoring Lab
 	Author:		Jay King
-	Updated:	10-3-2025
+	Updated:	11-7-2025
 	Filename:	index.php
 --> 
 <!--  Thomas cleared username label, added div for css -->
