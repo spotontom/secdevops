@@ -185,15 +185,14 @@ h6 {
     text-align:center;
     font-size:14px;
     font-size:1.5vw
-    padding:0em;
-    margin:0em;
+    padding:0;
+    margin:0;
     color: white;
 }
 .error-msg {
     display:block;
-    padding: 0em 0em 0em 0em;
-    /* top, right, bottom, left */
-    margin: 0em 0em 0em 2em;
+    padding: 0;
+    margin: 0 auto;
     color: maroon;
     font-weight: bold;
     text-align: left;
