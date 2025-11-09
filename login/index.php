@@ -55,7 +55,7 @@ inputElement.addEventListener('input', function(e) {
         this.value = this.value.slice(0, cursorPosition - 1) + this.value.slice(cursorPosition);
         // Reposition the cursor correctly after removal
         this.selectionStart = this.selectionEnd = cursorPosition - 1;
-		errorDisplay = 'Removed @. Enter the first part before the @';
+		errorDisplay = 'Removed @. Enter the part before the @';
     // Check if the last typed character and remove it if not allowed
     } else if (charList.indexOf(lastChar) < 0) {
         // Update the input value to exclude the not allowed character
