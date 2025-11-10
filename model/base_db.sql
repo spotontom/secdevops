@@ -48,24 +48,44 @@ CREATE TABLE `students` (
 
 -- Insert generic data into "students"
 
-INSERT INTO `students` (`student_ID`, `student_fname`, `student_lname`, `student_email`, `student_major`, `student_updated`) VALUES
-(1, 'Spike', 'Witwicky', 'switwicky@my.gulfcoast.edu', '', '2025-10-24 04:42:12'),
-(2, 'Johnathan', 'Smith', 'jsmith8@my.gulfcoast.edu', '', '2025-10-24 04:42:12'),
-(3, 'Kevin', 'Flynn', 'kflynn2@my.gulfcoast.edu', '', '2025-10-24 04:42:12'),
-(4, 'Claire', 'Redfield', 'credfield@my.gulfcoast.edu', '', '2025-10-24 04:42:12'),
-(5, 'David', 'Lightman', 'dlightman@my.gulfcoast.edu', '', '2025-10-24 04:42:12'),
-(6, 'Ellen', 'Ripley', 'eripley@my.gulfcoast.edu', '', '2025-10-24 04:42:12'),
-(7, 'Luz', 'Noceda', 'lnoceda@my.gulfcoast.edu', '', '2025-10-24 04:42:12'),
-(8, 'Barney', 'Calhoun', 'bcalhoun@my.gulfcoast.edu', '', '2025-10-24 04:42:12'),
-(9, 'Misa', 'Hayase', 'mhayase@my.gulfcoast.edu', '', '2025-10-24 04:42:12'),
-(10, 'Cliff', 'Steele', 'csteele2@my.gulfcoast.edu', '', '2025-10-24 04:42:12');
+INSERT INTO `students` (`student_fname`, `student_lname`, `student_email`, `student_major`) VALUES
+('Spike', 'Witwicky', 'switwicky@my.gulfcoast.edu', ''),
+('Johnathan', 'Smith', 'jsmith8@my.gulfcoast.edu', ''),
+('Kevin', 'Flynn', 'kflynn2@my.gulfcoast.edu', ''),
+('Claire', 'Redfield', 'credfield@my.gulfcoast.edu', ''),
+('David', 'Lightman', 'dlightman@my.gulfcoast.edu', ''),
+('Ellen', 'Ripley', 'eripley@my.gulfcoast.edu', ''),
+('Luz', 'Noceda', 'lnoceda@my.gulfcoast.edu', ''),
+('Barney', 'Calhoun', 'bcalhoun@my.gulfcoast.edu', ''),
+('Misa', 'Hayase', 'mhayase@my.gulfcoast.edu', ''),
+('Cliff', 'Steele', 'csteele2@my.gulfcoast.edu', ''),
+('Ken', 'DeLozier', 'kdelozier@my.gulfcoast.edu', ''),
+('Tara', 'Ochs', 'tochs@my.gulfcoast.edu', ''),
+('Justin', 'Scott', 'jscott5@my.gulfcoast.edu', ''),
+('Morgan', 'Burch', 'mburch4@my.gulfcoast.edu', ''),
+('Truman', 'Orr', 'torr2@my.gulfcoast.edu', ''),
+('Barbara', 'Bruce', 'bbruce@my.gulfcoast.edu', ''),
+('VC', 'Fuqua', 'vcfuqua@my.gulfcoast.edu', ''),
+('Nilsa', 'Castro', 'ncastro@my.gulfcoast.edu', ''),
+('Gregory', 'Rose', 'grose3@my.gulfcoast.edu', ''),
+('Karen', 'Cassaday', 'kcassaday@my.gulfcoast.edu', ''),
+('Marc', 'Farley', 'mfarley3@my.gulfcoast.edu', ''),
+('Victoria', 'Sun', 'vsun@my.gulfcoast.edu', ''),
+('Charles', 'Pittard', 'cpittard@my.gulfcoast.edu', ''),
+('Linda', 'Miller', 'lmiller4@my.gulfcoast.edu', ''),
+('Michael', 'Jenkins', 'mjenkins3@my.gulfcoast.edu', ''),
+('Tina', 'Bandoo', 'tbandoo@my.gulfcoast.edu', ''),
+('Clayton', 'Russell', 'crussell3@my.gulfcoast.edu', ''),
+('Ali', 'Froid', 'afroid@my.gulfcoast.edu', ''),
+('Ed', 'Kercado', 'ekercado@my.gulfcoast.edu', ''),
+('Sheila', 'McCoy', 'smccoy2@my.gulfcoast.edu', '');
 
 -- Create table structure for "logs"
 
 CREATE TABLE `log` (
   `log_ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `log_signin` datetime NOT NULL,
-  `log_signout` datetime NOT NULL,
+  `log_signin` datetime NOT NULL DEFAULT current_timestamp(),
+  `log_signout` datetime,
   `log_student_ID` int(10) UNSIGNED NOT NULL,
   `log_course_ID` int(10) UNSIGNED NOT NULL,
   `log_updated` DATETIME NOT NULL DEFAULT current_timestamp(),
@@ -73,6 +93,30 @@ CREATE TABLE `log` (
   FOREIGN KEY (`log_student_ID`) REFERENCES students(`student_ID`),
   FOREIGN KEY (`log_course_ID`) REFERENCES courses(`course_ID`)
 );
+
+-- Insert generic data into "logs"
+
+INSERT INTO `log` (`log_signout`, `log_student_ID`, `log_course_ID`) VALUES
+(NULL, 30, 7),
+(current_timestamp(), 4, 17),
+(current_timestamp(), 8, 17),
+(NULL, 21, 9),
+(current_timestamp(), 3, 9),
+(current_timestamp(), 18, 9),
+(current_timestamp(), 26, 3),
+(NULL, 4, 17),
+(NULL, 14, 14),
+(NULL, 21, 9),
+(current_timestamp(), 7, 8),
+(NULL, 2, 6),
+(current_timestamp(), 19, 12),
+(NULL, 8, 16),
+(current_timestamp(), 17, 8),
+(NULL, 9, 16),
+(current_timestamp(), 18, 9),
+(NULL, 13, 13),
+(NULL, 15, 7),
+(current_timestamp(), 6, 5);
 
 -- Create "log_user"
 
