@@ -189,13 +189,16 @@ h6 {
     margin:0;
     color: white;
 }
+p {
+  line-height: 1; /* Recommended line height for readability */
+  min-height: 2rem; /* Sets minimum height equivalent to 2 lines of text */
+}
 .error-msg {
-    display:block;
+	display:block;
     padding: 0;
-    margin: 0 auto;
     color: maroon;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
 }
 .submit-msg {
     /* top, right, bottom, left */
@@ -246,12 +249,6 @@ label + select {
     transform: translateY(-2px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
-p {
-    text-align:left;
-    margin:.5em 0em .5em 0em;
-    padding:.5em 1em .5em .1em;
-    font-size:17px;
-}
 /* Changes made by Thomas */
 .username-row {
     display: flex;
@@ -266,24 +263,12 @@ p {
 .username-row span {
     font-size: 18px;
 }
-p {
-    padding:.5em 4em .5em 4em;
-    font-size:20px;
-}
 main {
     padding:0em 2rem 2rem 2rem;
-}
-p {
-    padding:.5em 4em .5em 4em;
-    font-size:24px;
 }
 @media (min-width:800px) {
 fieldset {
     font-size:24px;
-}
-p {
-    padding:.5em 3em .5em 3em;
-    font-size:30px;
 }}
 @media (min-width:1024px) {
 fieldset {
@@ -291,24 +276,12 @@ fieldset {
 }
 main {
     padding:0em 4rem 2rem 4rem;
-}
-p {
-    padding:.5em 4em .5em 4em;
-    font-size:34px;
 }}
 @media (min-width: 1280px) {
 fieldset {
     font-size:34px;
-}
-p {
-    padding:.5em 4em .5em 4em;
-    font-size:24px;
 }}
 @media (min-width: 1600px) {
 fieldset {
-    font-size:24px;
-}
-p {
-    padding:.5em 4em .5em 4em;
     font-size:24px;
 }}

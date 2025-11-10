@@ -25,10 +25,9 @@
 		maxlength="20" 
 		required>
 		<span>@my.gulfcoast.edu</span>
-		<p><span id="usernameError" class="error-msg"></span></p>
 	</div>
-		</fieldset>
-	<br>
+	<p><span id="usernameError" class="error-msg"></span></p>
+	</fieldset>
 	<button type="submit" class ="btn1">Continue</button>
 </form>
 </main>
