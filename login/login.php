@@ -31,12 +31,12 @@ session_start();
 			<input type="text" size="25" onkeyup="validateFirstname(this)"
 			title="First name is a required entry"
 			placeholder = "John-example" id="firstNameInput" name="firstNameInput" required>
-		<br><span id="firstNameError" class="error-msg"></span>
+		<p><span id="firstNameError" class="error-msg"></span></P>
 		<label title="Last name is a required entry">Last name:</label>
 			<input type="text" size="25" onkeyup="validateLastname(this)"
 			title="Last name is a required entry"
 			placeholder = "Smith-example" id="lastNameInput" name="lastNameInput" required>
-		<br><span id="lastNameError" class="error-msg"></span>
+		<p><span id="lastNameError" class="error-msg"></span><p>
 		<label title="Requires a selection">Course:</label>
 		<?php
 		$courses = get_courses();?>
@@ -60,53 +60,51 @@ session_start();
 <?php include '../views/footer.php';?>
 <script>
 "use strict";
-var errorNumber = 0;
-function validateFirstname(inputElement) {
-	const firstNameErrorDisplay  = document.getElementById("firstNameError");
-	const firstNameElement = document.getElementById("firstNameInput");
-	errorNumber = 0;
+const charList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+// Get the input element and the display element
+const firstElement = document.getElementById('firstNameInput');
+const lastElement = document.getElementById('lastNameInput');
+const firstNameErrorDisplay  = document.getElementById("firstNameError");
+const lastNameErrorDisplay  = document.getElementById("lastNameError");
+// Add an 'input' event listener
+firstElement.addEventListener('input', function(e) {
+    const cursorPosition = this.selectionStart;
+    // Get the character that was just added/is at the position before the caret
+    // We get the character right before the current cursor position
+    const lastChar = this.value[cursorPosition - 1];
 	let errorDisplay = "";
-	inputElement.value = alphaOnly(inputElement.value);
-	errorDisplay = errorMsg();
+	if (lastChar ==" ") {
+	    this.value = this.value.trim();
+		errorDisplay = 'No spaces allowed';
+    // Check if the last typed character and remove it if not allowed
+    } else if (charList.indexOf(lastChar) < 0) {
+        // Update the input value to exclude the not allowed character
+        this.value = this.value.slice(0, cursorPosition - 1) + this.value.slice(cursorPosition);
+        // Reposition the cursor correctly after removal
+        this.selectionStart = this.selectionEnd = cursorPosition - 1;
+		errorDisplay = 'Removed '+lastChar+'. It is not allowed.';
+    }
 	firstNameErrorDisplay.textContent=errorDisplay; // display message
-}
-function validateLastname(inputElement) {
-	const lastNameErrorDisplay  = document.getElementById("lastNameError");
-	const lastNameElement = document.getElementById("lastNameInput");
-	errorNumber = 0;
+});
+// Add an 'input' event listener
+lastElement.addEventListener('input', function(e) {
+    const cursorPosition = this.selectionStart;
+    // Get the character that was just added/is at the position before the caret
+    // We get the character right before the current cursor position
+    const lastChar = this.value[cursorPosition - 1];
 	let errorDisplay = "";
-	inputElement.value = alphaOnly(inputElement.value);
-	errorDisplay = errorMsg();
+	if (lastChar ==" ") {
+	    this.value = this.value.trim();
+		errorDisplay = 'No spaces allowed';
+    // Check if the last typed character and remove it if not allowed
+    } else if (charList.indexOf(lastChar) < 0) {
+        // Update the input value to exclude the not allowed character
+        this.value = this.value.slice(0, cursorPosition - 1) + this.value.slice(cursorPosition);
+        // Reposition the cursor correctly after removal
+        this.selectionStart = this.selectionEnd = cursorPosition - 1;
+		errorDisplay = 'Removed '+lastChar+'. It is not allowed.';
+    }
 	lastNameErrorDisplay.textContent=errorDisplay; // display message
-}
-function alphaOnly(str) {
-	const charList = "abcdefghijklmnopqrstuvwxyz";
-	let strReturn;
-	let charn = "";
-	let len = 0;
-	str=str.toLowerCase();
-	len = str.length;
-	charn = str.substring(str.length-1, str.length);
-	if (charn == " ") {
-		errorNumber = 1;
-		str= str.trim();
-	} else if (charList.indexOf(charn) < 0) {
-		str = str.substring(0,len-1);
-		errorNumber = 2;
-	} else {
-		errorNumber = 0;
-	}
-	strReturn=str.charAt(0).toUpperCase()+str.slice(1);
-	return strReturn;
-}
-function errorMsg() {
-	let errorDisplay ="";
-	if (errorNumber == 1) {
-		errorDisplay = "No spaces allowed";
-	} else if (errorNumber == 2) {
-		errorDisplay = "Only allow letters";
-	}
-	return errorDisplay;
-}
+});
 </script>
 </html>
