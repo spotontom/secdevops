@@ -31,7 +31,7 @@ session_start();
 			<input type="text" size="25" onkeyup="validateFirstname(this)"
 			title="First name is a required entry"
 			placeholder = "John-example" id="firstNameInput" name="firstNameInput" required>
-		<p><span id="firstNameError" class="error-msg"></span></P>
+		<p><span id="firstNameError" class="error-msg"></span></p>
 		<label title="Last name is a required entry">Last name:</label>
 			<input type="text" size="25" onkeyup="validateLastname(this)"
 			title="Last name is a required entry"
