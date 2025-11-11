@@ -35,7 +35,6 @@
 <script>
 // Get the input element and the display element
 const inputElement = document.getElementById('usernameInput');
-const displayElement = document.getElementById('usernameError');
 const charList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-_.";
 const usernameErrorDisplay  = document.getElementById("usernameError");
 // Add an 'input' event listener
