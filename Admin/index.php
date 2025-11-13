@@ -1,13 +1,8 @@
 <?php include '../views/head.php'; ?>
 <?php include '../views/header.php'; ?>
 <?php include '../model/database.php'; ?>
-<?php 
-    $query = "SELECT * FROM logs ORDER BY log_updated DESC LIMIT 10";
-    $statement = $db->prepare($query);
-    $statement->execute();
-    $logs = $statement->fetchAll(PDO::FETCH_ASSOC);
-    $statement->closeCursor();
-?>
+<?php include '../model/logs_db.php'; ?>
+<?php $logs = get_logs(); ?>
 
 
 <main>
