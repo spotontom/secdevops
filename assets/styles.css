@@ -75,11 +75,30 @@ footer {
 fieldset {
     text-align: center;
     width: 100%;
-    font-size:17px;
+    gap: 1rem;    
     margin:0.0em 0em 0em 0em;
     padding:0em 0em 0em 0em;
     border: none;
 }
+/* Thomas */
+/* Styling for login form spacing */
+#loginForm fieldset {
+    padding-left: 1.5rem;      /* gentle left gap for labels */
+    margin: 0;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  /* Reduce space between each label/input pair */
+  #loginForm label + input,
+  #loginForm label + select {
+    margin-top: 0.5rem;        
+  }
+  /* Slightly tighten error message spacing */
+  #loginForm p {
+    line-height: 1;
+    margin: 0.25rem 0 0.5rem;  /* reduce top and bottom gap */
+    min-height: 1.25rem;       /* shorter line space for error rows */
+  }
 a {
     text-decoration:none;
     color: white;
@@ -88,99 +107,90 @@ body {
     /* Thomas changed */
     display: flex;
     flex-direction: column;  /* stack header, main, footer vertically */
-    min-height: 100vh;       /* ensures it fills the entire viewport height */
+    min-height: 100vh;       /* full viewport height */
     line-height: 1.2;
     font-family: Arial, Helvetica, FreeSans, sans-serif;
-    font-size: 17px;
+    font-size: 1.0625rem;    
     text-align: center;
     margin: 0;
     padding: 0;
     background-color: #000011;
     color: black;
-}
+  }
 form {
-    /*Changes made by Thomas */
+    /* Changes made by Thomas */
     background-color: #f3f3f3;
-    width: 600px;                 /* fixed clean width for desktop */
-    margin: 2rem auto;            /* centers the box horizontally */
-    padding: 2rem 2.5rem;         /* inner spacing */
-    border-radius: 10px;          /* smooth corners */
-    border: 1px solid #ccc;       /* subtle outline */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* soft shadow */
+    width: 37.5rem;                
+    margin: 2rem auto;             /* centers the box horizontally */
+    padding: 2rem 2.5rem;          
+    border-radius: 0.625rem;       
+    border: 0.0625rem solid #ccc;  
+    box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.15); 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
+  }
 /* Thomas Changed Input Styling */
-input[type="text"], 
-input[type="email"], 
+input[type="text"],
+input[type="email"],
 select {
-  width: 220px;                        /* consistent, readable width */
-  padding: 8px 10px;
-  border: 1.5px solid #bfc8d6;         /* light neutral border */
-  border-radius: 6px;
-  font-size: 16px;
+  width: 13.75rem;                
+  padding: 0.5rem 0.625rem;       
+  border: 0.09375rem solid #bfc8d6; 
+  border-radius: 0.375rem;         
+  font-size: 1rem;                 
   font-family: "Segoe UI", Arial, sans-serif;
   color: #0e2a47;
   background-color: #ffffff;
   transition: all 0.2s ease-in-out;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.05); /* 1px 2px */
 }
-input[type="text"]:focus, 
-input[type="email"]:focus, 
+input[type="text"]:focus,
+input[type="email"]:focus,
 select:focus {
   outline: none;
-  border-color: #2840a0;              /* Gulf Coast blue focus highlight */
-  box-shadow: 0 0 5px rgba(40, 64, 160, 0.3);
-  background-color: #f9fbff;          /* slight tint when active */
+  border-color: #2840a0;          /* Gulf Coast blue focus highlight */
+  box-shadow: 0 0 0.3125rem rgba(40, 64, 160, 0.3); /* 5px */
+  background-color: #f9fbff;      /* slight tint when active */
 }
-input[type="text"]:hover, 
-input[type="email"]:hover, 
+input[type="text"]:hover,
+input[type="email"]:hover,
 select:hover {
-  border-color: #8fa4d4;              /* soft hover cue */
+  border-color: #8fa4d4;          /* soft hover cue */
 }
 h2 {
-    /* Changed by Thomas */
     font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: #0e2a47;
-    background: #ffffff;
-    border: 3px solid #2840a0;
-    border-bottom: 5px solid #1f2e8a; /* stronger base line */
-    border-radius: 8px;
-    padding: 10px 26px;
-    display: inline-block;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
-    letter-spacing: 0.5px;
+    font-size: 1.875rem;           /* 30px */
+    font-weight: 800;              /* bold, but not heavy black */
+    color: #0e2a47;                /* Gulf Coast navy */
+    text-align: center;
     text-transform: uppercase;
-    display: block;          /* allows centering + full structure */
-    margin: 0 auto 18px auto; /* center and add space below */
-    text-align: center;       /* keep text centered */
-    width: fit-content;       /* keep a clean size */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
+    letter-spacing: 0.04rem;
+    background: transparent;       /* removes button background */
+    border: none;                  /* no border */
+    box-shadow: none;              /* no shadow */
+    padding: 0.25rem 0;            /* just enough breathing room */
+    margin: 0 auto 1.25rem auto;   /* clean spacing below */
+    width: fit-content;
+  }
 form h3 {
     /* Thomas */
     font-family: "Segoe UI", Arial, sans-serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1.125rem;      
     color: #0e2a47;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.01875rem; 
     text-align: left;
     /* Layout */
-    margin: 0 0 0.75rem 0;
-    padding-bottom: 6px;
-    /* Visual tone: simple underline instead of full border box */
-    border-bottom: 3px solid #2840a0;
+    margin: 0 0 0.75rem 0;     
+    padding-bottom: 0.375rem;  
+    border-bottom: 0.1875rem solid #2840a0; 
     border-radius: 0;
     background: none;
     display: block;
     box-shadow: none;
-}
+  }
 h6 {
     text-align:center;
     font-size:14px;
@@ -212,53 +222,53 @@ p {
 label {
     /* Thomas Changed label */
     display: inline-block;
-    width: 140px;                     /* consistent alignment */
-    text-align: right;                /* aligns text neatly with inputs */
-    margin-right: 10px;               /* small gap before inputs */
+    width: 8.75rem;               
+    text-align: right;             /* aligns text neatly with inputs */
+    margin-right: 0.625rem;        
     font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 17px;
-    font-weight: 600;                 /* semi-bold for clarity */
-    color: #0e2a47;                   /* same deep navy as headers */
-    letter-spacing: 0.3px;
-    padding: 6px 0;
+    font-size: 1.0625rem;          /* 17px */
+    font-weight: 600;              /* semi-bold for clarity */
+    color: #0e2a47;                /* same deep navy as headers */
+    letter-spacing: 0.01875rem;   
+    padding: 0.375rem 0;           
     vertical-align: middle;
-}
-/* Thomas */
-label + input,
-label + select {
-    margin-top: 20px;
-}
+  }
+  /* Thomas */
+  label + input,
+  label + select {
+    margin-top: 1.25rem;           
+  }
 /* Thomas Changed button styling */
 .btn1 {
     display: inline-block;
-    background-color: #2840a0;  /* rich blue tone */
+    background-color: #2840a0;     /* rich blue tone */
     color: #fff;
     border: none;
-    border-radius: 6px;
-    padding: 10px 28px;
-    font-size: 18px;
+    border-radius: 0.375rem;     
+    padding: 0.625rem 1.75rem;     
+    font-size: 1.125rem;          
     font-family: "Segoe UI", Arial, sans-serif;
     font-weight: 600;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.01875rem;   
     cursor: pointer;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.1875rem 0.375rem rgba(0, 0, 0, 0.2);
     transition: all 0.25s ease;
-}
-.btn1:hover {
+  }
+  .btn1:hover {
     background-color: #1f2e8a;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
-}
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.25);
+  }
 /* Changes made by Thomas */
 .username-row {
     display: flex;
     justify-content: center;   /* centers horizontally */
     align-items: center;       /* aligns input and text vertically */
-    gap: 0.4rem;               /* small space between input and text */
+    gap: 0.4rem;               /* already relative */
     margin-top: 1rem;          /* optional: space above */
     width: 100%;
-    text-align: center; 
-}
+    text-align: center;
+  }
 .username-row input,
 .username-row span {
     font-size: 18px;
