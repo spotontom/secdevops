@@ -1,6 +1,6 @@
-<?php include 'views/head.php'; ?>
-<?php include '../model/database.php';?>
-
+<?php include '../views/head.php'; ?>
+<?php include '../views/header.php'; ?>
+<?php include '../model/database.php'; ?>
 <?php 
     $query = "SELECT * FROM logs ORDER BY log_updated DESC LIMIT 10";
     $statement = $db->prepare($query);
@@ -40,4 +40,4 @@
     </table>
     
 </main>
-<?php include 'views/footer.php'; ?>
+<?php include '../views/footer.php'; ?>
