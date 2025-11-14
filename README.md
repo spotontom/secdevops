@@ -50,6 +50,7 @@ MVC
   ├── gcsc_logo.svg
   └── styles.css
 ```
+![ERD diagram](Documentation/ERD.png)
 
 ### Tables with fields
 
