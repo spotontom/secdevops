@@ -14,6 +14,6 @@ try {
 	padding: 2rem;
 	margin: 2rem auto 0 auto;
 	border: 0.1rem solid red;
-	width: 80%;">' . $_SERVER['HTTP_HOST'] . ' ' . $username . ' connection to database failed: ' . $e->getMessage() . '</div>');
+	width: 80%;">' . $_SERVER['HTTP_HOST'] . ' connection to database failed: ' . $e->getMessage() . '</div>');
 }
 ?>
