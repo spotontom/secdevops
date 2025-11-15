@@ -21,6 +21,10 @@ The following needs to be installed on the system:
 
 ## ➔ Data Organization
 
+### ERD Diagram
+
+![ERD diagram](Documentation/ERD.png)
+
 ### Project Structure
 
 ```
@@ -50,7 +54,6 @@ MVC
   ├── gcsc_logo.svg
   └── styles.css
 ```
-![ERD diagram](Documentation/ERD.png)
 
 ### Tables with fields
 
