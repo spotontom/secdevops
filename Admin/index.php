@@ -1,9 +1,18 @@
-<?php include '../views/head.php'; ?>
+<!DOCTYPE html>
+<!--
+	Class:		cop4433
+	Project:	ACE Tutoring Lab
+	Author:		Cameron
+	Created:	11-8-2025
+	Filename:	Admins/index.php
+--> 
+<html lang="en">
+<?php include '../views/head.php';?>
+<body>
 <?php include '../views/header.php'; ?>
 <?php include '../model/database.php'; ?>
 <?php include '../model/logs_db.php'; ?>
 <?php $logs = get_logs(); ?>
-
 
 <main>
     <h2>Sorry, the admin page is currently under construction.</h2>
@@ -36,3 +45,5 @@
     
 </main>
 <?php include '../views/footer.php'; ?>
+</body>
+</html>
