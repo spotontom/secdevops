@@ -1,3 +1,10 @@
+<?php
+session_start(); 
+if (!isset($_SESSION['statusFlag'])) {
+    // If 'statusFlag' does not exist in the session
+    $_SESSION['statusFlag'] = 0;
+}
+?>
 <!DOCTYPE html>
 <!--
 	Class:		cop4433
@@ -26,7 +33,13 @@
 		required>
 		<span>@my.gulfcoast.edu</span>
 	</div>
-	<p><span id="usernameError" class="error-msg"></span></p>
+	<p><span id="usernameError" class="error-msg">
+	<?php
+	if ($_SESSION['statusFlag'] == 1) {
+		echo 'Not registered! Contact Admins.';
+	}
+	?>
+	</span></p>
 	</fieldset>
 	<button type="submit" class ="btn1">Continue</button>
 </form>
