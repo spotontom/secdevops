@@ -4,6 +4,10 @@ if (!isset($_SESSION['statusFlag'])) {
     // If 'statusFlag' does not exist in the session
     $_SESSION['statusFlag'] = 0;
 }
+if (!isset($_SESSION['usernameInput'])) {
+    // If it does not exist in the session
+    	$_SESSION['usernameInput'] = "";
+}
 ?>
 <!DOCTYPE html>
 <!--
@@ -27,6 +31,11 @@ if (!isset($_SESSION['statusFlag'])) {
 		<input type="text"
 		id="usernameInput"
 		name="usernameInput"
+		<?php
+			if ($_SESSION['statusFlag'] == 1) {
+				echo 'value ='. $_SESSION['usernameInput'];
+			}
+		?>
 		size="10"
 		placeholder = "jsmith"
 		maxlength="20" 
