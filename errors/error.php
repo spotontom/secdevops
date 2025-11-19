@@ -1,6 +1,9 @@
-<?php include '../view/header.php'; ?>
+<?php include '../views/head.php'; ?>
+<body>
+    <?php include '../views/header.php'; ?>
+</body>
 <main>
     <h1>Error</h1>
-    <p><?php echo $error; ?></p>
+    <p><?php echo "There was an error connecting to the database. Please refresh and try again."; ?></p>
 </main>
-<?php include '../view/footer.php'; ?>
+<?php include '../views/footer.php'; ?>
