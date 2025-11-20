@@ -19,9 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$existLogRecord = get_log_by_student($studentID);
 			if ($existLogRecord) {
 				// incomplete record found, update it with signout datetime
-				// update studentID 30 smccoy2
-				$sql = "UPDATE log SET log_signout = NOW() WHERE log_ID = ?";
-				$updateStmt = $db->prepare($sql);
+// temporary debuging, to be removed
 die ('<div style="color:red;
 font-size: 4.0vw;
 font-weight: 600;
@@ -30,36 +28,21 @@ padding: 2rem;
 margin: 2rem auto 0 auto;
 border: 0.1rem solid red;
 width: 80%;">'
-. 'Found incomplete log record, will signout (update record) studentID '
+. 'Found incomplete log record, to signout (update record) studentID '
 . $studentID
 . ' '
 . $emailInput
-. '</div>');
+. '</div>');	
+				// example is studentID 30 smccoy2
+				$sql = "UPDATE log SET log_signout = NOW() WHERE log_ID = ?";
+				$updateStmt = $db->prepare($sql);
 				$updateStmt->execute([$existLogRecord['log_ID']]);
 				// Student signed out successfully
 				header('Location: logout.php');
 				exit;
 			} else {
-				// No incomplete record found, insert a new record with signin datetime
-				// insert studentID 1 switwicky
-				$sql ="INSERT INTO log (log_student_ID, log_signin) VALUES (?, NOW())";
-die ('<div style="color:red;
-font-size: 4.0vw;
-font-weight: 600;
-background-color: #eeeeee;
-padding: 2rem;
-margin: 2rem auto 0 auto;
-border: 0.1rem solid red;
-width: 80%;">'
-. 'New log record to be insterted with studentID '
-. $studentID
-. ' '
-. $emailInput
-. '</div>');
-				$insertStmt = $db->prepare($sql);
-				//$insertStmt->execute([$studentID]);
-				// Student signed in successfully
-				header('Location: confirm.php');
+				// No incomplete record found, insert new record at login.php
+				header('Location: login.php');
 				exit;
 			}
 		} catch (Exception $e) {
@@ -91,7 +74,7 @@ width: 80%;">'
 	border: 0.1rem solid red;
 	width: 80%;">'
 	. $_SERVER['HTTP_HOST']
-	. ' Database error, students table:: '
+	. ' Database error, students table: '
 	. $e->getMessage() . '</div>');
 }
 /**
@@ -115,7 +98,7 @@ function get_student_by_email($studentEmail) {
 	}
 }
 /**
- * Retrieves the log_ID based on the student_ID.
+ * Retrieves the log_ID based on the studentID.
  */
 function get_log_by_student($studentID) {
 	global $db;
