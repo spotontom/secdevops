@@ -1,5 +1,8 @@
 <?php
 session_start();
+$_SESSION['student_fname'] = "none";
+$_SESSION['student_lname'] = "none";
+$studentID = 0; // if no student is found with that email
 require '../model/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailInput = $_POST['usernameInput']."@my.gulfcoast.edu";
@@ -8,11 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$_SESSION['emailInput'] = $emailInput;
 } try {
     $studentData = get_student_by_email($emailInput);
-    // Check if a row was found and return the studentID
+    // Check if a record was found and return the student details
     if ($studentData) {
         $studentID = (int) $studentData['student_ID'];
-    } else {
-		$studentID = 0; // if no student is found with that email
+		$_SESSION['student_fname'] = $studentData['student_fname'];
+		$_SESSION['student_lname'] = $studentData['student_lname'];
     }
     if ($studentID > 0) {
 		try {
@@ -30,6 +33,10 @@ border: 0.1rem solid red;
 width: 80%;">'
 . 'Found incomplete log record, to signout (update record) studentID '
 . $studentID
+. ' name '
+. $_SESSION['student_fname']
+. ' '
+. $_SESSION['student_lname']
 . ' '
 . $emailInput
 . '</div>');	
@@ -83,7 +90,7 @@ width: 80%;">'
 function get_student_by_email($studentEmail) {
 	global $db;
     // SQL query using a placeholder (?)
-    $sql = "SELECT student_ID FROM students WHERE student_email = ?";
+    $sql = "SELECT student_ID, student_fname, student_lname FROM students WHERE student_email = ?";
     // Prepare the statement to prevent SQL injection
     $statement = $db->prepare($sql);
     // Bind the parameter and execute the query
@@ -98,7 +105,7 @@ function get_student_by_email($studentEmail) {
 	}
 }
 /**
- * Retrieves the log_ID based on the studentID.
+ * Retrieves the log_ID based on the student_ID.
  */
 function get_log_by_student($studentID) {
 	global $db;
