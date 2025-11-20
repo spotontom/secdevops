@@ -16,31 +16,32 @@
 
 <main>
     <h3>First 10 log entries</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Log ID</th>
-                <th>Sign in</th>
-                <th>Sign out</th>
-                <th>Student ID</th>
-                <th>Course ID</th>
-                <th>Log updated</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($logs as $log): ?>
+    <div class="table-container">
+        <table>
+            <thead>
                 <tr>
-                    <td><?php echo htmlspecialchars($log['log_ID']); ?></td>
-                    <td><?php echo htmlspecialchars($log['sign_in']); ?></td>
-                    <td><?php echo htmlspecialchars($log['sign_out']); ?></td>
-                    <td><?php echo htmlspecialchars($log['student_ID']); ?></td>
-                    <td><?php echo htmlspecialchars($log['course_ID']); ?></td>
-                    <td><?php echo htmlspecialchars($log['log_updated']); ?></td>
+                    <th>Log ID</th>
+                    <th>Sign in</th>
+                    <th>Sign out</th>
+                    <th>Student ID</th>
+                    <th>Course ID</th>
+                    <th>Log updated</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    
+            </thead>
+            <tbody>
+                <?php foreach ($logs as $log): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($log['log_ID']); ?></td>
+                        <td><?php echo htmlspecialchars($log['sign_in']); ?></td>
+                        <td><?php echo htmlspecialchars($log['sign_out']); ?></td>
+                        <td><?php echo htmlspecialchars($log['student_ID']); ?></td>
+                        <td><?php echo htmlspecialchars($log['course_ID']); ?></td>
+                        <td><?php echo htmlspecialchars($log['log_updated']); ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </main>
 <?php include '../views/footer.php'; ?>
 </body>
