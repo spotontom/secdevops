@@ -84,6 +84,7 @@ inputElement.addEventListener('input', function(e) {
         this.selectionStart = this.selectionEnd = cursorPosition - 1;
 		errorDisplay = 'Removed '+lastChar+'. It is not allowed.';
     }
+	this.value = this.value.toLowerCase();
 	usernameErrorDisplay.textContent=errorDisplay; // display message
 });
 </script>
