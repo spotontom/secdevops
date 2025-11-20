@@ -15,8 +15,6 @@
 <?php $logs = get_logs(); ?>
 
 <main>
-    <h2>Sorry, the admin page is currently under construction.</h2>
-    <p>We'll finish it as quickly as we can. Thanks!</p>
     <h3>First 10 log entries</h3>
     <table>
         <thead>
