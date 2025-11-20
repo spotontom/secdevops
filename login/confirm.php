@@ -17,12 +17,10 @@ session_start();
 <main>
 <h2>Confirmed</h2>
 <p>
-<?php echo isset($_SESSION['firstNameInput']) ? $_SESSION['firstNameInput'] : ''; ?>
-, your information has been logged with email:
+You are signed in with email:
 <?php echo isset($_SESSION['emailInput']) ? $_SESSION['emailInput'] : ''; ?>
 </p>
 </main>
 <?php include '../views/footer.php';?>
 </body>
 </html>
-
