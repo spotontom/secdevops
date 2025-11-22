@@ -33,6 +33,7 @@ session_destroy();		// Destroy the session
 <h2>Confirmed</h2>
 <p>
 <?php echo $studentFname." ".$studentLname." ".$emailInput; ?>
+<br>
 You are signed in.
 </p>
 </main>
