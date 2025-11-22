@@ -8,6 +8,13 @@ session_destroy();		// Destroy the session
 	Class:		cop4433
 	Project:	ACE Tutoring Lab
 	Author:		Jay King
+	Created:	10-15-2025
+	Updated:	11-20-2025 Jay King
+	Filename:	logout.php
+-->
+	Class:		cop4433
+	Project:	ACE Tutoring Lab
+	Author:		Jay King
 	Updated:	10-15-2025
 	Filename:	logout.php
 -->
