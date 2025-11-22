@@ -1,3 +1,11 @@
+/*
+	Class:		cop4433
+	Project:	ACE Tutoring Lab
+	Author:		Jay King
+	Created:	11-20-2025
+	Filename:	proceed.php
+	a form action from login.php
+*/
 <?php
 session_start();
 $selectCourseInput = 0;
@@ -30,9 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		. $e->getMessage() . '</div>');
 	}
 }
-/**
- * Retrieves the log_ID based on the student_ID.
- */
+/*
+ Add a new record with studentID, courseID, sign-in datetime, updated datetime without signout
+*/
 function set_log($studentID, $selectCourseInput) {
 	global $db;
 	// Insert a new record with datetime example: studentID 1, email switwicky
