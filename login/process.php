@@ -1,3 +1,11 @@
+/*
+	Class:		cop4433
+	Project:	ACE Tutoring Lab
+	Author:		Jay King
+	Created:	11-20-2025
+	Filename:	process.php
+	a form action from index.php
+*/
 <?php
 session_start();
 if ($_SESSION['statusFlag'] == 1 ) {
@@ -79,9 +87,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	. ' Database error, students table: '
 	. $e->getMessage() . '</div>');
 }
-/**
- * Retrieves the student data based on the studentEmail.
- */
+/*
+ Retrieves the student data based on the student email.
+*/
 function get_student_by_email($studentEmail) {
 	global $db;
     // SQL query using a placeholder (?)
@@ -99,9 +107,9 @@ function get_student_by_email($studentEmail) {
         return null; // No student found with that email
 	}
 }
-/**
- * Retrieves the log_ID based on the student_ID.
- */
+/*
+ Retrieves the log_ID based on the student_ID.
+*/
 function get_log_by_student($studentID) {
 	global $db;
     // SQL query using a placeholder (?)
