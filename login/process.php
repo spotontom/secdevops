@@ -11,9 +11,9 @@ session_start();
 if ($_SESSION['statusFlag'] == 1 ) {
 	$_SESSION['statusFlag'] = 2;
 }
-$_SESSION['student_ID'] = 0;
-$_SESSION['student_fname'] = "none";
-$_SESSION['student_lname'] = "none";
+$_SESSION['studentID'] = 0;
+$_SESSION['studentFname'] = "none";
+$_SESSION['studentLname'] = "none";
 $studentID = 0; // if no student is found with that email
 require '../model/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -26,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if a record was found and return the student details
     if ($studentData) {
         $studentID = (int) $studentData['student_ID'];
-		$_SESSION['student_ID'] = $studentID;		
-		$_SESSION['student_fname'] = $studentData['student_fname'];
-		$_SESSION['student_lname'] = $studentData['student_lname'];
+		$_SESSION['studentID'] = $studentID;		
+		$_SESSION['studentFname'] = $studentData['student_fname'];
+		$_SESSION['studentLname'] = $studentData['student_lname'];
     }
     if ($studentID > 0) {
 		try {
