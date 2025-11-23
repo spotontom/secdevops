@@ -1,3 +1,5 @@
+<?php
+session_start();
 /*
 	Class:		cop4433
 	Project:	ACE Tutoring Lab
@@ -6,14 +8,13 @@
 	Filename:	process.php
 	a form action from index.php
 */
-<?php
-session_start();
 if ($_SESSION['statusFlag'] == 1 ) {
 	$_SESSION['statusFlag'] = 2;
 }
 $_SESSION['studentID'] = 0;
-$_SESSION['studentFname'] = "none";
-$_SESSION['studentLname'] = "none";
+$_SESSION['studentFname'] = "";
+$_SESSION['studentLname'] = "";
+$_SESSION['selectMajor'] = "";
 $studentID = 0; // if no student is found with that email
 require '../model/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
