@@ -30,12 +30,12 @@ session_start();
 		<br><br>
 		<label>First name:</label>
 			<input type="text"size="25"
-			value="<?php echo isset($_SESSION['student_fname']) ? $_SESSION['student_fname'] : ''; ?>"
+			value="<?php echo isset($_SESSION['studentFname']) ? $_SESSION['studentFname'] : ''; ?>"
 			readonly>
 		<br><br>
 		<label>Last name:</label>
 			<input type="text"size="25"
-			value="<?php echo isset($_SESSION['student_lname']) ? $_SESSION['student_lname'] : ''; ?>"
+			value="<?php echo isset($_SESSION['studentLname']) ? $_SESSION['studentLname'] : ''; ?>"
 			readonly>
 		<br><br>
 		<label title="Requires a selection">Course:</label>
