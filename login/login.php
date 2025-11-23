@@ -17,7 +17,7 @@ session_start();
 <body>
 <?php include '../views/header.php';?>
 <main>
-<h2>Welcome</h2>
+<h2>Welcome to SignIn</h2>
 <form id="loginForm"autocomplete="on"method="post"action="proceed.php">
 	<fieldset>
 		<label title="Display only">Email:</label>
