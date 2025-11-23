@@ -1,19 +1,24 @@
 <?php
 session_start();
-$emailInput = "";
+$studentEmail = "";
 $studentFname = "";
 $studentLname = "";
-if (isset($_SESSION['emailInput'])) {
-	$emailInput = $_SESSION['emailInput'];
+$selectMajor = "";
+if (isset($_SESSION['studentEmail'])) {
+	$studentEmail = $_SESSION['studentEmail'];
 }
 if (isset($_SESSION['studentFname'])) {
 	$studentFname = $_SESSION['studentFname'];
 }
-if (isset($_SESSION['$studentLname'])) {
-	$$studentLname = $_SESSION['$studentLname'];
+if (isset($_SESSION['studentLname'])) {
+	$studentLname = $_SESSION['studentLname'];
 }
-$_SESSION = array();	// Unset all session variables
-session_destroy();		// Destroy the session	
+if (isset($_SESSION['$studentLname'])) {
+	$studentLname = $_SESSION['$studentLname'];
+}
+if (isset($_SESSION['selectMajor'])) {
+	$selectMajor = $_SESSION['selectMajor'];
+}
 ?>
 <!DOCTYPE html>
 <!--
@@ -23,6 +28,10 @@ session_destroy();		// Destroy the session
 	Created:	10-15-2025
 	Updated:	11-20-2025
 	Filename:	confirm.php
+	
+	Confirms in two actions
+	1. update a log entry to signout - from login.php via proceed.php
+	2. add a new student - from register.php via placing.php
 -->
 <html lang="en">
 <?php include '../views/head.php';?>
@@ -32,11 +41,19 @@ session_destroy();		// Destroy the session
 <main>
 <h2>Confirmed</h2>
 <p>
-<?php echo $studentFname." ".$studentLname." ".$emailInput; ?>
+<?php echo $studentFname." ".$studentLname." ".$studentEmail; ?>
 <br>
-You are signed in.
+<?php
+if ($_SESSION['statusFlag'] == 4) {
+	echo $selectMajor .'<br>';
+	echo 'New student added.';
+} else {
+	echo 'You are signed in.';
+}	
+?>
 </p>
 </main>
 <?php include '../views/footer.php';?>
 </body>
 </html>
+
