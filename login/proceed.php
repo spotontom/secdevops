@@ -1,3 +1,5 @@
+<?php
+session_start();
 /*
 	Class:		cop4433
 	Project:	ACE Tutoring Lab
@@ -6,10 +8,10 @@
 	Filename:	proceed.php
 	a form action from login.php
 */
-<?php
-session_start();
 $selectCourseInput = 0;
 $studentID = 0;
+// flag to inform confirm.php that this is new signin, an add log entry
+$_SESSION['statusFlag'] = 3;
 if (isset($_SESSION['studentID'])) {
     // If it exist in the session
 	$studentID = $_SESSION['studentID'];
@@ -20,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$selectCourseInput = (int) $_POST['selectCourseInput'];
 	$_SESSION['logCourseID'] = $selectCourseInput;
 	try {
-		set_log($studentID, $selectCourseInput);
+		add_log_entry($studentID, $selectCourseInput);
 		// confirmed inserted
 		header('Location: confirm.php');
 		exit;
@@ -41,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 /*
  Add a new record with studentID, courseID, sign-in datetime, updated datetime without signout
 */
-function set_log($studentID, $selectCourseInput) {
+function add_log_entry($studentID, $selectCourseInput) {
 	global $db;
 	// Insert a new record with datetime example: studentID 1, email switwicky
 	$sql ="INSERT INTO log (log_student_ID, log_course_ID, log_signin, log_updated) VALUES (?, ?, NOW(), NOW())";
