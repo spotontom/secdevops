@@ -9,6 +9,7 @@ $emailInput = $_SESSION['emailInput'];
 	Author:		Jay King
 	Updated:	11-10-2025
 	Filename:	register.php
+	
 	registers new student for tutoring
 -->
 <html lang="en">
@@ -17,7 +18,7 @@ $emailInput = $_SESSION['emailInput'];
 <?php include '../views/header.php';?>
 <main>
 <h2>Register Student for Tutoring</h2>
-<form id="loginForm"autocomplete="on"method="post"action="placing.php">
+<form id="loginForm" autocomplete="on" method="post" action="placing.php">
 
 	<fieldset>
 		<label title="Display only">Email:</label>
