@@ -27,22 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$_SESSION['studentEmail'] = $studentEmail;
 	$_SESSION['selectMajor'] = $selectMajor;
 	
-	try {
-		add_new_student($studentFname, $studentLname, $studentEmail, $selectMajor);
-		header('Location: confirm.php');
-		exit;
-	} catch (Exception $e) {
-		die('<div style="color:red;
-		font-size: 4.0vw;
-		font-weight: 600;
-		background-color: #eeeeee;
-		padding: 2rem;
-		margin: 2rem auto 0 auto;
-		border: 0.1rem solid red;
-		width: 80%;">'
-		. $_SERVER['HTTP_HOST']
-		. ' Database error, log table:: '
-		. $e->getMessage() . '</div>');
-	}
+	add_new_student($studentFname, $studentLname, $studentEmail, $selectMajor);
+	header('Location: confirm.php');
+	exit;
 }
 ?>
