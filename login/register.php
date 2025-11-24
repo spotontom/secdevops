@@ -185,6 +185,7 @@ firstElement.addEventListener('input', function(e) {
 	if (lastChar ==" ") {
 	    this.value = this.value.trim();
 		errorDisplay = 'No spaces allowed';
+	} else if (lastChar == null) {
     // Check if the last typed character and remove it if not allowed
     } else if (charList.indexOf(lastChar) < 0) {
         // Update the input value to exclude the not allowed character
@@ -205,7 +206,8 @@ lastElement.addEventListener('input', function(e) {
 	if (lastChar ==" ") {
 	    this.value = this.value.trim();
 		errorDisplay = 'No spaces allowed';
-    // Check if the last typed character and remove it if not allowed
+    } else if (lastChar == null) {
+	// Check if the last typed character and remove it if not allowed
     } else if (charList.indexOf(lastChar) < 0) {
         // Update the input value to exclude the not allowed character
         this.value = this.value.slice(0, cursorPosition - 1) + this.value.slice(cursorPosition);

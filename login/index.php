@@ -69,6 +69,7 @@ inputElement.addEventListener('input', function(e) {
 	if (lastChar ==" ") {
 	    this.value = this.value.trim();
 		errorDisplay = 'No spaces allowed';
+	} else if (lastChar == null) {
     // Check if the last typed character and remove it if not allowed
     } else if (lastChar == "@") {
         // Update the input value to exclude the not allowed character
