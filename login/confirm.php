@@ -10,9 +10,6 @@ if (isset($_SESSION['studentEmail'])) {
 if (isset($_SESSION['studentFname'])) {
 	$studentFname = $_SESSION['studentFname'];
 }
-if (isset($_SESSION['studentLname'])) {
-	$studentLname = $_SESSION['studentLname'];
-}
 if (isset($_SESSION['$studentLname'])) {
 	$studentLname = $_SESSION['$studentLname'];
 }
