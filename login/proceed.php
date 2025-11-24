@@ -6,8 +6,10 @@ session_start();
 	Author:		Jay King
 	Created:	11-20-2025
 	Filename:	proceed.php
+	
 	a form action from login.php
 */
+include '../model/proceed_db.php';
 $selectCourseInput = 0;
 $studentID = 0;
 // flag to inform confirm.php that this is new signin, an add log entry
@@ -39,23 +41,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		. ' Database error, log table:: '
 		. $e->getMessage() . '</div>');
 	}
-}
-/*
- Add a new record with studentID, courseID, sign-in datetime, updated datetime without signout
-*/
-function add_log_entry($studentID, $selectCourseInput) {
-	global $db;
-	// Insert a new record with datetime example: studentID 1, email switwicky
-	$sql ="INSERT INTO log (log_student_ID, log_course_ID, log_signin, log_updated) VALUES (?, ?, NOW(), NOW())";
-    // Prepare the statement to prevent SQL injection
-    $statement = $db->prepare($sql);
-
-	// Bind each parameter by its indexed position
-	$statement->bindParam(1, $studentID, PDO::PARAM_INT);
-	$statement->bindParam(2, $selectCourseInput, PDO::PARAM_INT);
-
-	// Execute the statement
-	$statement->execute();
-	// $statement->execute([$studentID, $selectCourseInput]);
 }
 ?>

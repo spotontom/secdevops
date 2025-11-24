@@ -1,7 +1,5 @@
 <?php
 session_start();
-// flag to inform confirm.php that new student added
-$_SESSION['statusFlag'] = 4;
 /*
 	Class:		cop4433
 	Project:	ACE Tutoring Lab
@@ -13,7 +11,10 @@ $_SESSION['statusFlag'] = 4;
 	form action from register.php
 	goes to confirm.php
 */
+// flag to inform confirm.php that new student added
+$_SESSION['statusFlag'] = 4;
 require '../model/database.php';
+include '../model/placing_db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 	$studentFname = $_POST['firstNameInput'];
@@ -43,25 +44,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		. ' Database error, log table:: '
 		. $e->getMessage() . '</div>');
 	}
-}
-/*
- Add a new atudent record with first name, last name, email, and college major
-*/
-function add_new_student($studentFname, $studentLname, $studentEmail, $selectMajor) {
-	global $db;
-	// Insert a new student record 
-	$sql ="INSERT INTO students (student_fname, student_lname, student_email, student_major, student_updated) VALUES (?, ?, ?, ?, NOW())";
-	
-	// Prepare the statement to prevent SQL injection
-    $statement = $db->prepare($sql);
-
-	// Bind each parameter by its indexed position
-	$statement->bindParam(1, $studentFname, PDO::PARAM_STR);
-	$statement->bindParam(2, $studentLname, PDO::PARAM_STR);
-	$statement->bindParam(3, $studentEmail, PDO::PARAM_STR);
-	$statement->bindParam(4, $selectMajor, PDO::PARAM_STR);
-	
-	// Execute the statement
-	$statement->execute();
 }
 ?>
