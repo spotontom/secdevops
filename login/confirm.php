@@ -27,7 +27,7 @@ if (isset($_SESSION['selectMajor'])) {
 	Filename:	confirm.php
 	
 	Confirms in two actions
-	1. update a log entry to signout - from login.php via proceed.php
+	1. add a log entry with signout as null - from login.php via proceed.php
 	2. add a new student - from register.php via placing.php
 -->
 <html lang="en">
