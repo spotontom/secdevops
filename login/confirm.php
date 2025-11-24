@@ -39,7 +39,7 @@ if (isset($_SESSION['selectMajor'])) {
 <body>
 <?php include '../views/header.php';?>
 <main>
-<h2>Confirmed</h2>
+<h2>CONFIRMED</h2>
 <p>
 <?php echo $studentFname." ".$studentLname." ".$studentEmail; ?>
 <br>

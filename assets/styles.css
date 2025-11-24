@@ -165,7 +165,6 @@ h2 {
     font-weight: 800;              /* bold, but not heavy black */
     color: #0e2a47;                /* Gulf Coast navy */
     text-align: center;
-    text-transform: uppercase;
     letter-spacing: 0.04rem;
     background: transparent;       /* removes button background */
     border: none;                  /* no border */

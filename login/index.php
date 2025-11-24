@@ -24,7 +24,7 @@ if (!isset($_SESSION['usernameInput'])) {
 <?php include '../views/header.php';?>
 <main>
 <form id="indexForm" autocomplete="on" method="post" action="process.php">
-	<h2>Login/Logout</h2>
+	<h2>LOGIN/LOGOUT</h2>
 	<h3>Student Email:</h3>
 	<fieldset>
 	<div class="username-row">
@@ -45,7 +45,7 @@ if (!isset($_SESSION['usernameInput'])) {
 	<p><span id="usernameError" class="error-msg">
 	<?php
 	if ($_SESSION['statusFlag'] == 1) {
-		echo 'Not registered! Contact Admins.';
+		echo 'Not registered! Continue to register.';
 	}
 	?>
 	</span></p>

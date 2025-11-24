@@ -17,7 +17,7 @@ $emailInput = $_SESSION['emailInput'];
 <body>
 <?php include '../views/header.php';?>
 <main>
-<h2>Register Student for Tutoring</h2>
+<h2>REGISTER STUDENT FOR TUTORING</h2>
 <form id="loginForm" autocomplete="on" method="post" action="placing.php">
 
 	<fieldset>
