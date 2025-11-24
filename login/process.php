@@ -8,6 +8,7 @@ session_start();
 	Filename:	process.php
 	a form action from index.php
 */
+include '../model/process_db.php';
 if ($_SESSION['statusFlag'] == 1 ) {
 	$_SESSION['statusFlag'] = 2;
 }
@@ -35,11 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		try {
 			$existLogRecord = get_log_by_student($studentID);
 			if ($existLogRecord) {
-				// incomplete record found, update it with signout datetime
-				// example is studentID 30 Sheila McCoy smccoy2
-				$sql = "UPDATE log SET log_signout = NOW() WHERE log_ID = ?";
-				$updateStmt = $db->prepare($sql);
-				$updateStmt->execute([$existLogRecord['log_ID']]);
+				// incomplete record found, update it with signout datetime;	
+				update_log($existLogRecord);
 				// Student signed out successfully
 				header('Location: logout.php');
 				exit;
@@ -87,44 +85,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	. $_SERVER['HTTP_HOST']
 	. ' Database error, students table: '
 	. $e->getMessage() . '</div>');
-}
-/*
- Retrieves the student data based on the student email.
-*/
-function get_student_by_email($studentEmail) {
-	global $db;
-    // SQL query using a placeholder (?)
-    $sql = "SELECT student_ID, student_fname, student_lname FROM students WHERE student_email = ?";
-    // Prepare the statement to prevent SQL injection
-    $statement = $db->prepare($sql);
-    // Bind the parameter and execute the query
-    $statement->execute([$studentEmail]);
-	// Fetch the row as an associative array
-    $studentData = $statement->fetch(PDO::FETCH_ASSOC);
-    // Check if a student was found
-    if ($studentData) {
-        return $studentData;
-    } else {
-        return null; // No student found with that email
-	}
-}
-/*
- Retrieves the log_ID based on the student_ID.
-*/
-function get_log_by_student($studentID) {
-	global $db;
-    // SQL query using a placeholder (?)
-    $sql = "SELECT log_ID FROM log WHERE log_student_ID = ? AND log_signout IS NULL";
-    // Prepare the statement to prevent SQL injection
-    $statement = $db->prepare($sql);
-    // Bind the parameter and execute the query
-    $statement->execute([$studentID]);
-	// Fetch the row as an associative array
-    $existLogRecord = $statement->fetch(PDO::FETCH_ASSOC);
-    if ($existLogRecord) {
-        return $existLogRecord;
-    } else {
-        return null; // No student found with that email
-	}
 }
 ?>
