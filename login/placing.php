@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 }
 /*
- Add a new record with studentID, courseID, sign-in datetime, updated datetime without signout
+ Add a new atudent record with first name, last name, email, and college major
 */
 function add_new_student($studentFname, $studentLname, $studentEmail, $selectMajor) {
 	global $db;
