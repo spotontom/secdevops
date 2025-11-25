@@ -9,6 +9,7 @@ session_start();
 	
 	a form action from login.php
 */
+require '../model/database.php';
 include '../model/proceed_db.php';
 $selectCourseInput = 0;
 $studentID = 0;
@@ -18,7 +19,6 @@ if (isset($_SESSION['studentID'])) {
     // If it exist in the session
 	$studentID = $_SESSION['studentID'];
 }
-require '../model/database.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// string into an integer using type casting
 	$selectCourseInput = (int) $_POST['selectCourseInput'];

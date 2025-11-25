@@ -1,7 +1,14 @@
 <?php
 /*
- Add a new atudent record with first name, last name, email, and college major
+	Class:		cop4433
+	Project:	ACE Tutoring Lab
+	Author:		Jay King
+	Created:	11-20-2025
+	Filename:	placing_db.php
+	
+	Add a new student record with first name, last name, email, and college major
 */
+include '../errors/db_error.php';
 function add_new_student($studentFname, $studentLname, $studentEmail, $selectMajor) {
 	try {
 		global $db;
@@ -19,18 +26,8 @@ function add_new_student($studentFname, $studentLname, $studentEmail, $selectMaj
 		
 		// Execute the statement
 		$statement->execute();
-	} catch (Exception $e) {
-		die('<div style="color:red;
-		font-size: 4.0vw;
-		font-weight: 600;
-		background-color: #eeeeee;
-		padding: 2rem;
-		margin: 2rem auto 0 auto;
-		border: 0.1rem solid red;
-		width: 80%;">'
-		. $_SERVER['HTTP_HOST']
-		. ' Database error, log table:: '
-		. $e->getMessage() . '</div>');
+	} catch (PDOException $e) {
+		db_error($e,'insert students');
 	}
 }
 ?>

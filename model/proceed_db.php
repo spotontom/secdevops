@@ -1,7 +1,14 @@
 <?php
 /*
- Add a new record with studentID, courseID, sign-in datetime, updated datetime without signout
+	Class:		cop4433
+	Project:	ACE Tutoring Lab
+	Author:		Jay King
+	Created:	11-20-2025
+	Filename:	proceed_db.php
+	
+	Add a new log record with studentID, courseID, sign-in datetime, updated datetime without signout
 */
+include '../errors/db_error.php';
 function add_log_entry($studentID, $selectCourseInput) {
 	try {
 		global $db;
@@ -18,18 +25,8 @@ function add_log_entry($studentID, $selectCourseInput) {
 		// Execute the statement
 		$statement->execute();
 	// $statement->execute([$studentID, $selectCourseInput]);
-	} catch (Exception $e) {
-		die('<div style="color:red;
-		font-size: 4.0vw;
-		font-weight: 600;
-		background-color: #eeeeee;
-		padding: 2rem;
-		margin: 2rem auto 0 auto;
-		border: 0.1rem solid red;
-		width: 80%;">'
-		. $_SERVER['HTTP_HOST']
-		. ' Database error, log table:: '
-		. $e->getMessage() . '</div>');
+	} catch (PDOException $e) {
+		db_error($e,'insert log');
 	}
 }
 ?>
