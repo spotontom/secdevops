@@ -12,18 +12,18 @@ session_start();
 require '../model/database.php';
 include '../model/proceed_db.php';
 $selectCourseInput = 0;
-$studentID = 0;
+$student_ID = 0;
 // flag to inform confirm.php that this is new signin, an add log entry
 $_SESSION['statusFlag'] = 3;
-if (isset($_SESSION['studentID'])) {
+if (isset($_SESSION['student_ID'])) {
     // If it exist in the session
-	$studentID = $_SESSION['studentID'];
+	$student_ID = $_SESSION['student_ID'];
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// string into an integer using type casting
 	$selectCourseInput = (int) $_POST['selectCourseInput'];
 	$_SESSION['logCourseID'] = $selectCourseInput;
-	add_log_entry($studentID, $selectCourseInput);
+	add_log_entry($student_ID, $selectCourseInput);
 	// confirmed inserted
 	header('Location: confirm.php');
 	exit;

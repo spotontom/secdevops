@@ -1,6 +1,6 @@
 <?php
 session_start();
-$emailInput = $_SESSION['emailInput'];
+$student_email = $_SESSION['student_email'];
 ?>
 <!DOCTYPE html>
 <!--
@@ -17,30 +17,36 @@ $emailInput = $_SESSION['emailInput'];
 <body>
 <?php include '../views/header.php';?>
 <main>
-<h2>REGISTER STUDENT FOR TUTORING</h2>
+<h2>Register Student for Tutoring</h2>
 <form id="loginForm" autocomplete="on" method="post" action="placing.php">
 
 	<fieldset>
 		<label title="Display only">Email:</label>
 			<input type="email"
-			id="emailInput"
-			name="emailInput"
+			id="student_email"
+			name="student_email"
 			size="25"
-			value="<?php echo isset($_SESSION['emailInput']) ? $_SESSION['emailInput'] : ''; ?>"
+			value="<?php echo isset($_SESSION['student_email']) ? $_SESSION['student_email'] : ''; ?>"
 			readonly>
 		<br>
 		<label title="First name is a required entry">First name:</label>
-			<input type="text"size="25"
+			<input type="text" size="25"
 			title="First name is a required entry"
-			placeholder ="John-example"id="firstNameInput"name="firstNameInput"required>
-		<p><span id="firstNameError"class="error-msg"></span></p>
+			placeholder ="John-example"
+			id="student_fname"
+			name="student_fname"
+			required>
+		<p><span id="firstNameError" class="error-msg"></span></p>
 		<label title="Last name is a required entry">Last name:</label>
 			<input type="text"size="25"
 			title="Last name is a required entry"
-			placeholder ="Smith-example"id="lastNameInput"name="lastNameInput"required>
+			placeholder ="Smith-example"
+			id="student_lname"
+			name="student_lname"
+			required>
 		<p><span id="lastNameError"class="error-msg"></span></p>
 		<label title="College Major is a required entry">Major:</label>
-		<select id="selectMajor" name="selectMajor" required>
+		<select id="student_major" name="student_major" required>
 			<option value="">Select college major</option>
 			<option value="Other">Other</option>
 			<option value="Accounting Applications Certificate">Accounting Applications Certificate</option>
@@ -171,8 +177,8 @@ $emailInput = $_SESSION['emailInput'];
 "use strict";
 const charList ="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 // Get the input element and the display element
-const firstElement = document.getElementById('firstNameInput');
-const lastElement = document.getElementById('lastNameInput');
+const firstElement = document.getElementById('student_fname');
+const lastElement = document.getElementById('student_lname');
 const firstNameErrorDisplay  = document.getElementById("firstNameError");
 const lastNameErrorDisplay  = document.getElementById("lastNameError");
 // Add an 'input' event listener
@@ -185,7 +191,6 @@ firstElement.addEventListener('input', function(e) {
 	if (lastChar ==" ") {
 	    this.value = this.value.trim();
 		errorDisplay = 'No spaces allowed';
-	} else if (lastChar == null) {
     // Check if the last typed character and remove it if not allowed
     } else if (charList.indexOf(lastChar) < 0) {
         // Update the input value to exclude the not allowed character
@@ -206,8 +211,7 @@ lastElement.addEventListener('input', function(e) {
 	if (lastChar ==" ") {
 	    this.value = this.value.trim();
 		errorDisplay = 'No spaces allowed';
-    } else if (lastChar == null) {
-	// Check if the last typed character and remove it if not allowed
+    // Check if the last typed character and remove it if not allowed
     } else if (charList.indexOf(lastChar) < 0) {
         // Update the input value to exclude the not allowed character
         this.value = this.value.slice(0, cursorPosition - 1) + this.value.slice(cursorPosition);

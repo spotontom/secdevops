@@ -1,20 +1,20 @@
 <?php
 session_start();
-$studentEmail = "";
-$studentFname = "";
-$studentLname = "";
-$selectMajor = "";
-if (isset($_SESSION['studentEmail'])) {
-	$studentEmail = $_SESSION['studentEmail'];
+$student_email = "";
+$student_fname = "";
+$student_lname = "";
+$student_major = "";
+if (isset($_SESSION['student_email'])) {
+	$student_email = $_SESSION['student_email'];
 }
-if (isset($_SESSION['studentFname'])) {
-	$studentFname = $_SESSION['studentFname'];
+if (isset($_SESSION['student_fname'])) {
+	$student_fname = $_SESSION['student_fname'];
 }
-if (isset($_SESSION['studentLname'])) {
-	$studentLname = $_SESSION['studentLname'];
+if (isset($_SESSION['student_lname'])) {
+	$student_lname = $_SESSION['student_lname'];
 }
-if (isset($_SESSION['selectMajor'])) {
-	$selectMajor = $_SESSION['selectMajor'];
+if (isset($_SESSION['student_major'])) {
+	$student_major = $_SESSION['student_major'];
 }
 ?>
 <!DOCTYPE html>
@@ -36,13 +36,13 @@ if (isset($_SESSION['selectMajor'])) {
 <body>
 <?php include '../views/header.php';?>
 <main>
-<h2>CONFIRMED</h2>
+<h2>Confirmed</h2>
 <p>
-<?php echo $studentFname." ".$studentLname." ".$studentEmail; ?>
+<?php echo $student_fname." ".$student_lname." ".$student_email; ?>
 <br>
 <?php
 if ($_SESSION['statusFlag'] == 4) {
-	echo $selectMajor .'<br>';
+	echo $student_major .'<br>';
 	echo 'New student added.';
 } else {
 	echo 'You are signed in.';

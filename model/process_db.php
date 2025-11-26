@@ -12,7 +12,7 @@ require_once '../errors/db_error.php';
 function update_log($existLogRecord) {
 	try {
 		global $db;
-		// example is studentID 30 Sheila McCoy smccoy2
+		// example is student_ID 30 Sheila McCoy smccoy2
 		$query= "UPDATE log SET log_signout = NOW() WHERE log_ID = ?";
 		$statement = $db->prepare($query);
 		$statement->execute([$existLogRecord['log_ID']]);
@@ -23,7 +23,7 @@ function update_log($existLogRecord) {
 /*
  Retrieves the student data based on the student email.
 */
-function get_student_by_email($studentEmail) {
+function get_student_by_email($student_email) {
 	try {
 		global $db;
 		// SQL query using a placeholder (?)
@@ -31,7 +31,7 @@ function get_student_by_email($studentEmail) {
 		// Prepare the statement to prevent SQL injection
 		$statement = $db->prepare($query);
 		// Bind the parameter and execute the query
-		$statement->execute([$studentEmail]);
+		$statement->execute([$student_email]);
 		// Fetch the row as an associative array
 		$studentData = $statement->fetch(PDO::FETCH_ASSOC);
 		// Check if a student was found
@@ -47,7 +47,7 @@ function get_student_by_email($studentEmail) {
 /*
  Retrieves the log_ID based on the student_ID.
 */
-function get_log_by_student($studentID) {
+function get_log_by_student($student_ID) {
 	try {
 		global $db;
 		// SQL query using a placeholder (?)
@@ -55,7 +55,7 @@ function get_log_by_student($studentID) {
 		// Prepare the statement to prevent SQL injection
 		$statement = $db->prepare($query);
 		// Bind the parameter and execute the query
-		$statement->execute([$studentID]);
+		$statement->execute([$student_ID]);
 		// Fetch the row as an associative array
 		$existLogRecord = $statement->fetch(PDO::FETCH_ASSOC);
 		if ($existLogRecord) {

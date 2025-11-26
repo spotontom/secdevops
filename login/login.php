@@ -9,7 +9,7 @@ session_start();
 	Created:	10-15-2025
 	Filename:	login.php
 	Updated:	11-20-2025 by Jay King
-	-->
+-->
 <html lang="en">
 <?php include '../views/head.php';?>
 <?php include '../model/database.php';?>
@@ -18,24 +18,24 @@ session_start();
 <?php include '../views/header.php';?>
 <main>
 <h2>Welcome to SignIn</h2>
-<form id="loginForm"autocomplete="on"method="post"action="proceed.php">
+<form id="loginForm" autocomplete="on" method="post" action="proceed.php">
 	<fieldset>
 		<label title="Display only">Email:</label>
 			<input type="email"
-			id="emailInput"
-			name="emailInput"
+			id="student_email"
+			name="student_email"
 			size="25"
-			value="<?php echo isset($_SESSION['emailInput']) ? $_SESSION['emailInput'] : ''; ?>"
+			value="<?php echo isset($_SESSION['student_email']) ? $_SESSION['student_email'] : ''; ?>"
 			readonly>
 		<br><br>
 		<label>First name:</label>
 			<input type="text"size="25"
-			value="<?php echo isset($_SESSION['studentFname']) ? $_SESSION['studentFname'] : ''; ?>"
+			value="<?php echo isset($_SESSION['student_fname']) ? $_SESSION['student_fname'] : ''; ?>"
 			readonly>
 		<br><br>
 		<label>Last name:</label>
 			<input type="text"size="25"
-			value="<?php echo isset($_SESSION['studentLname']) ? $_SESSION['studentLname'] : ''; ?>"
+			value="<?php echo isset($_SESSION['student_lname']) ? $_SESSION['student_lname'] : ''; ?>"
 			readonly>
 		<br><br>
 		<label title="Requires a selection">Course:</label>

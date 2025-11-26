@@ -13,29 +13,29 @@ session_start();
 if ($_SESSION['statusFlag'] == 1 ) {
 	$_SESSION['statusFlag'] = 2;
 }
-$_SESSION['studentID'] = 0;
-$_SESSION['studentFname'] = "";
-$_SESSION['studentLname'] = "";
-$_SESSION['selectMajor'] = "";
-$studentID = 0; // if no student is found with that email
+$_SESSION['student_ID'] = 0;
+$_SESSION['student_fname'] = "";
+$_SESSION['student_lname'] = "";
+$_SESSION['student_major'] = "";
+$student_ID = 0; // if no student is found with that email
 require '../model/database.php';
 include '../model/process_db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $emailInput = $_POST['usernameInput']."@my.gulfcoast.edu";
+    $student_email = $_POST['usernameInput']."@my.gulfcoast.edu";
 	$_SESSION['usernameInput'] = $_POST['usernameInput'];
-	$emailInput = filter_var($emailInput , FILTER_SANITIZE_EMAIL);
-	$_SESSION['emailInput'] = $emailInput;
+	$student_email = filter_var($student_email , FILTER_SANITIZE_EMAIL);
+	$_SESSION['student_email'] = $student_email;
 
-    $studentData = get_student_by_email($emailInput);
+    $studentData = get_student_by_email($student_email);
     // Check if a record was found and return the student details
     if ($studentData) {
-        $studentID = (int) $studentData['student_ID'];
-		$_SESSION['studentID'] = $studentID;		
-		$_SESSION['studentFname'] = $studentData['student_fname'];
-		$_SESSION['studentLname'] = $studentData['student_lname'];
+        $student_ID = (int) $studentData['student_ID'];
+		$_SESSION['student_ID'] = $student_ID;		
+		$_SESSION['student_fname'] = $studentData['student_fname'];
+		$_SESSION['student_lname'] = $studentData['student_lname'];
     }
-    if ($studentID > 0) {
-		$existLogRecord = get_log_by_student($studentID);
+    if ($student_ID > 0) {
+		$existLogRecord = get_log_by_student($student_ID);
 		if ($existLogRecord) {
 			// incomplete record found, update it with signout datetime;	
 			update_log($existLogRecord);
