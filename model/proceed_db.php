@@ -8,7 +8,7 @@
 	
 	Add a new log record with studentID, courseID, sign-in datetime, updated datetime without signout
 */
-include '../errors/db_error.php';
+require_once '../errors/db_error.php';
 function add_log_entry($studentID, $selectCourseInput) {
 	try {
 		global $db;

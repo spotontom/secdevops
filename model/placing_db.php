@@ -8,7 +8,7 @@
 	
 	Add a new student record with first name, last name, email, and college major
 */
-include '../errors/db_error.php';
+require_once '../errors/db_error.php';
 function add_new_student($studentFname, $studentLname, $studentEmail, $selectMajor) {
 	try {
 		global $db;

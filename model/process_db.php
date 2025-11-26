@@ -8,7 +8,7 @@
 	
 	Incomplete record found, update it with signout datetime
 */
-include '../errors/db_error.php';
+require_once '../errors/db_error.php';
 function update_log($existLogRecord) {
 	try {
 		global $db;
