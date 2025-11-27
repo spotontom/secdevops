@@ -1,5 +1,18 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<!--
+	Class:		cop4433
+	Project:	ACE Tutoring Lab
+	Author:		Jay King
+	Created:	11-10-2025
+	Filename:	register.php
+	Updated:	11-20-2025
+	
+	Has two functions:
+	1. Registers new student for tutoring
+	2. Edits student, selected from studentList.php
+-->
 <?php
-session_start();
 $majors = array(
 "Accounting Applications Certificate",
 "Accounting Option, AA",
@@ -152,17 +165,6 @@ if ($_SESSION['statusFlag'] == 5) {
 	$student_email = $_SESSION['student_email'];
 }
 ?>
-<!DOCTYPE html>
-<!--
-	Class:		cop4433
-	Project:	ACE Tutoring Lab
-	Author:		Jay King
-	Created:	11-10-2025
-	Filename:	register.php
-	Updated:	11-20-2025
-	
-	registers new student for tutoring
--->
 <html lang="en">
 <?php include '../views/head.php';?>
 <body>
