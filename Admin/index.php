@@ -32,10 +32,10 @@
                 <?php foreach ($logs as $log): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($log['log_ID']); ?></td>
-                        <td><?php echo htmlspecialchars($log['sign_in']); ?></td>
-                        <td><?php echo htmlspecialchars($log['sign_out']); ?></td>
-                        <td><?php echo htmlspecialchars($log['student_ID']); ?></td>
-                        <td><?php echo htmlspecialchars($log['course_ID']); ?></td>
+                        <td><?php echo htmlspecialchars($log['log_signin']); ?></td>
+                        <td><?php echo htmlspecialchars($log['log_signout']); ?></td>
+                        <td><?php echo htmlspecialchars($log['log_student_ID']); ?></td>
+                        <td><?php echo htmlspecialchars($log['log_course_ID']); ?></td>
                         <td><?php echo htmlspecialchars($log['log_updated']); ?></td>
                     </tr>
                 <?php endforeach; ?>
