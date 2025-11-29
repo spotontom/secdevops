@@ -4,44 +4,17 @@
 	Project:	ACE Tutoring Lab
 	Author:		Cameron
 	Created:	11-8-2025
-	Filename:	Admins/index.php
+	Updated:	11-25-2025
+	Filename:	Admin/index.php
 --> 
 <html lang="en">
 <?php include '../views/head.php';?>
 <body>
 <?php include '../views/header.php'; ?>
-<?php include '../model/database.php'; ?>
-<?php include '../model/logs_db.php'; ?>
-<?php $logs = get_logs(); ?>
-
 <main>
-    <h3>First 10 log entries</h3>
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Log ID</th>
-                    <th>Sign in</th>
-                    <th>Sign out</th>
-                    <th>Student ID</th>
-                    <th>Course ID</th>
-                    <th>Log updated</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($logs as $log): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($log['log_ID']); ?></td>
-                        <td><?php echo htmlspecialchars($log['log_signin']); ?></td>
-                        <td><?php echo htmlspecialchars($log['log_signout']); ?></td>
-                        <td><?php echo htmlspecialchars($log['log_student_ID']); ?></td>
-                        <td><?php echo htmlspecialchars($log['log_course_ID']); ?></td>
-                        <td><?php echo htmlspecialchars($log['log_updated']); ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+<h2>Administrator Menu</h2>
+<a class="btn2" href="logList.php">Log Entries</a></li>
+<a class="btn2" href="studentsList.php">Student Entries</a></li>
 </main>
 <?php include '../views/footer.php'; ?>
 </body>

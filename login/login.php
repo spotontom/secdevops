@@ -8,7 +8,7 @@ session_start();
 	Author:		Jay King
 	Created:	10-15-2025
 	Filename:	login.php
-	Updated:	11-20-2025 by Jay King
+	Updated:	11-20-2025
 -->
 <html lang="en">
 <?php include '../views/head.php';?>

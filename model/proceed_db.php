@@ -14,7 +14,6 @@ function add_log_entry($student_ID, $selectCourseInput) {
 		global $db;
 		// Insert a new record with datetime example: student_ID 1, email switwicky
 		$query ="INSERT INTO log (log_student_ID, log_course_ID, log_signin, log_updated) VALUES (?, ?, NOW(), NOW())";
-		
 		// Prepare the statement to prevent SQL injection
 		$statement = $db->prepare($query);
 		

@@ -1,5 +1,18 @@
+<?php session_start();?>
+<!DOCTYPE html>
+<!--
+	Class:		cop4433
+	Project:	ACE Tutoring Lab
+	Author:		Jay King
+	Created:	10-15-2025
+	Updated:	11-20-2025
+	Filename:	confirm.php
+	
+	Confirms in two actions
+	1. add a log entry with signout as null - from login.php via proceed.php
+	2. add a new student - from register.php via placing.php
+-->
 <?php
-session_start();
 $student_email = "";
 $student_fname = "";
 $student_lname = "";
@@ -17,19 +30,6 @@ if (isset($_SESSION['student_major'])) {
 	$student_major = $_SESSION['student_major'];
 }
 ?>
-<!DOCTYPE html>
-<!--
-	Class:		cop4433
-	Project:	ACE Tutoring Lab
-	Author:		Jay King
-	Created:	10-15-2025
-	Updated:	11-20-2025
-	Filename:	confirm.php
-	
-	Confirms in two actions
-	1. add a log entry with signout as null - from login.php via proceed.php
-	2. add a new student - from register.php via placing.php
--->
 <html lang="en">
 <?php include '../views/head.php';?>
 <?php include '../views/delay.php';?>
@@ -53,4 +53,3 @@ if ($_SESSION['statusFlag'] == 4) {
 <?php include '../views/footer.php';?>
 </body>
 </html>
-

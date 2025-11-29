@@ -12,12 +12,6 @@ session_destroy();		// Destroy the session
 	Updated:	11-20-2025 Jay King
 	Filename:	logout.php
 -->
-	Class:		cop4433
-	Project:	ACE Tutoring Lab
-	Author:		Jay King
-	Updated:	10-15-2025
-	Filename:	logout.php
--->
 <html lang="en">
 <?php include '../views/head.php';?>
 <?php include '../views/delay.php';?>

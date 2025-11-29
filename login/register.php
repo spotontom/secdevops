@@ -249,7 +249,7 @@ if ($_SESSION['statusFlag'] == 5) {
 </select>
 	</fieldset>
 	<br>
-	<button type="submit" class ="btn1">
+	<button type="submit" class ="btn2">
 	<?php
 	if ($_SESSION['statusFlag'] == 5) {
 		echo 'Update Record';
@@ -258,8 +258,11 @@ if ($_SESSION['statusFlag'] == 5) {
 	}
 	?>
 	</button>
-	<a CLASS="btn1" href="studentsList.php">Cancel</a
-
+	<?php
+	if ($_SESSION['statusFlag'] == 5) {
+		echo '<a class="btn2" href="../Admin/studentsList.php">Cancel</a>';
+	}
+	?>
 </form>
 </main>
 <?php include '../views/footer.php';?>

@@ -1,5 +1,13 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+<!--
+	Class:		cop4433
+	Project:	ACE Tutoring Lab
+	Author:		Jay King
+	Updated:	11-7-2025
+	Filename:	index.php
+--> 
 <?php
-session_start(); 
 if (!isset($_SESSION['statusFlag'])) {
     // If 'statusFlag' does not exist in the session
     $_SESSION['statusFlag'] = 0;
@@ -9,14 +17,6 @@ if (!isset($_SESSION['usernameInput'])) {
     	$_SESSION['usernameInput'] = "";
 }
 ?>
-<!DOCTYPE html>
-<!--
-	Class:		cop4433
-	Project:	ACE Tutoring Lab
-	Author:		Jay King
-	Updated:	11-7-2025
-	Filename:	index.php
---> 
 <!--  Thomas cleared username label, added div for css -->
 <html lang="en">
 <?php include '../views/head.php';?>
