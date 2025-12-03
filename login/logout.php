@@ -19,9 +19,9 @@ session_destroy();		// Destroy the session
 <?php include '../views/header.php';?>
 <main>
 <h2>Logging Out</h2>
-<p>
-Thank you for using the tutoring lab. Have a nice day.
-</p>
+<div class="confirm">
+	Thank you for using the tutoring lab.<br>Have a nice day.
+</div>
 </main>
 <?php include '../views/footer.php';?>
 </body>

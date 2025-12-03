@@ -44,16 +44,6 @@ fieldset {
 #loginForm label + select {
     margin-top: 0.5rem;
 }
-/* Slightly tighten error message spacing */
-#loginForm p {
-    line-height: 1;
-    margin: 0.25rem 0 0.5rem;  /* reduce top and bottom gap */
-    min-height: 1.25rem;       /* shorter line space for error rows */
-}
-a {
-    text-decoration:none;
-    color: white;
-}
 body {
     /* Thomas changed */
     display: flex;
@@ -209,4 +199,3 @@ label + select {
 .username-row span {
     font-size: 18px;
 }
-

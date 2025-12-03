@@ -11,7 +11,7 @@ session_start();
 	Updated:	11-20-2025
 -->
 <html lang="en">
-<?php include '../views/head0.php';?>
+<?php include '../views/head1.php';?>
 <?php include '../model/database.php';?>
 <?php include '../model/courses_db.php';?>
 <body>

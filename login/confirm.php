@@ -37,18 +37,20 @@ if (isset($_SESSION['student_major'])) {
 <?php include '../views/header.php';?>
 <main>
 <h2>Confirmed</h2>
-<p>
-<?php echo $student_fname." ".$student_lname." ".$student_email; ?>
-<br>
-<?php
-if ($_SESSION['statusFlag'] == 4) {
-	echo $student_major .'<br>';
-	echo 'New student added.';
-} else {
-	echo 'You are signed in.';
-}	
-?>
-</p>
+<div class="confirm">
+	<?php echo $student_fname." ".$student_lname; ?>
+	<br>
+	<?php echo $student_email; ?>
+	<br>
+	<?php
+		if ($_SESSION['statusFlag'] == 4) {
+			echo $student_major .'<br>';
+			echo 'New student added.';
+		} else {
+			echo 'You are signed in.';
+		}	
+	?>
+</div>
 </main>
 <?php include '../views/footer.php';?>
 </body>

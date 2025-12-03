@@ -19,7 +19,7 @@ if (!isset($_SESSION['usernameInput'])) {
 ?>
 <!--  Thomas cleared username label, added div for css -->
 <html lang="en">
-<?php include '../views/head0.php';?>
+<?php include '../views/head1.php';?>
 <body>
 <?php include '../views/header.php';?>
 <main>
@@ -27,28 +27,30 @@ if (!isset($_SESSION['usernameInput'])) {
 	<h2>LOGIN/LOGOUT</h2>
 	<h3>Student Email:</h3>
 	<fieldset>
-	<div class="username-row">
-		<input type="text"
-		id="usernameInput"
-		name="usernameInput"
-		<?php
-			if ($_SESSION['statusFlag'] == 1) {
-				echo 'value ='. $_SESSION['usernameInput'];
-			}
-		?>
-		size="10"
-		placeholder = "jsmith"
-		maxlength="20" 
-		required>
-		<span>@my.gulfcoast.edu</span>
-	</div>
-	<p><span id="usernameError" class="error-msg">
-	<?php
-	if ($_SESSION['statusFlag'] == 1) {
-		echo 'Not registered! Continue to register.';
-	}
-	?>
-	</span></p>
+		<div class="username-row">
+			<input type="text"
+			id="usernameInput"
+			name="usernameInput"
+			<?php
+				if ($_SESSION['statusFlag'] == 1) {
+					echo 'value ='. $_SESSION['usernameInput'];
+				}
+			?>
+			size="10"
+			placeholder = "jsmith"
+			maxlength="20" 
+			required>
+			<span>@my.gulfcoast.edu</span>
+		</div>
+		<p>
+			<span id="usernameError" class="error-msg">
+				<?php
+				if ($_SESSION['statusFlag'] == 1) {
+					echo 'Not registered!<br>Continue to register.';
+				}
+				?>
+			</span>
+		</p>
 	</fieldset>
 	<button type="submit" class ="btn1">Continue</button>
 </form>
@@ -76,7 +78,7 @@ inputElement.addEventListener('input', function(e) {
         this.value = this.value.slice(0, cursorPosition - 1) + this.value.slice(cursorPosition);
         // Reposition the cursor correctly after removal
         this.selectionStart = this.selectionEnd = cursorPosition - 1;
-		errorDisplay = 'Removed @. Enter the part before @';
+		errorDisplay = 'Enter the part before @';
     // Check if the last typed character and remove it if not allowed
     } else if (charList.indexOf(lastChar) < 0) {
         // Update the input value to exclude the not allowed character
