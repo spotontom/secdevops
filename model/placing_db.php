@@ -26,6 +26,10 @@ function add_new_student($student_fname, $student_lname, $student_email, $studen
 		
 		// Execute the statement
 		$statement->execute();
+		
+		// Close statement, release the resources and memory associated
+		$statement->closeCursor();		
+		
 	} catch (PDOException $e) {
 		db_error($e,'insert students');
 	}

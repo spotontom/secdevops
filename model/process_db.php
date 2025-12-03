@@ -13,9 +13,13 @@ function update_log($existLogRecord) {
 	try {
 		global $db;
 		// example is student_ID 30 Sheila McCoy smccoy2
-		$query= "UPDATE log SET log_signout = NOW() WHERE log_ID = ?";
+		$query= "UPDATE log SET log_signout = NOW(), log_updated = NOW() WHERE log_ID = ?";
 		$statement = $db->prepare($query);
 		$statement->execute([$existLogRecord['log_ID']]);
+
+		// Close statement, release the resources and memory associated
+		$statement->closeCursor();
+						
 	} catch (PDOException $e) {
 		db_error($e,'update log');
 	}
@@ -35,6 +39,10 @@ function get_student_by_email($student_email) {
 		// Fetch the row as an associative array
 		$studentData = $statement->fetch(PDO::FETCH_ASSOC);
 		// Check if a student was found
+		
+		// Close statement, release the resources and memory associated
+		$statement->closeCursor();
+		
 		if ($studentData) {
 			return $studentData;
 		} else {
@@ -58,6 +66,9 @@ function get_log_by_student($student_ID) {
 		$statement->execute([$student_ID]);
 		// Fetch the row as an associative array
 		$existLogRecord = $statement->fetch(PDO::FETCH_ASSOC);
+		// Close statement, release the resources and memory associated
+		$statement->closeCursor();
+		
 		if ($existLogRecord) {
 			return $existLogRecord;
 		} else {

@@ -12,9 +12,12 @@
 <body>
 <?php include '../views/header.php'; ?>
 <main>
-<h2>Administrator Menu</h2>
-<a class="btn2" href="logList.php">Log Entries</a></li>
-<a class="btn2" href="studentsList.php">Student Entries</a></li>
+	<h2>Administrator Menu</h2>
+	<a class="btn2" href="logList.php">Log Entries</a>
+	<a class="btn2" href="studentsList.php">Student Entries</a>
+	<br>
+	<h5>The entries provide selection lists.
+	<br>A double Click on a selection retrieves its detail.</h5>
 </main>
 <?php include '../views/footer.php'; ?>
 </body>

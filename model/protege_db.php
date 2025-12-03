@@ -19,7 +19,8 @@ function updateStudent($student_fname,$student_lname,$student_email,$student_maj
 		student_fname = :student_fname,
 		student_lname = :student_lname,
 		student_email = :student_email,
-		student_major = :student_major
+		student_major = :student_major,
+		student_updated = NOW()
 		WHERE student_ID = :student_ID";
 		
 		// Prepare the statement to prevent SQL injection
@@ -34,6 +35,10 @@ function updateStudent($student_fname,$student_lname,$student_email,$student_maj
 
         // Execute the statement
         $statement->execute();
+		
+		// Close statement, release the resources and memory associated
+		$statement->closeCursor();
+		
     } catch (PDOException $e) {
         die("Update failed: " . $e->getMessage());
     }

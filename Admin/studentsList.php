@@ -15,38 +15,53 @@
 <?php include '../views/head.php';?>
 <body>
 <?php include '../views/header.php';?>
+
+<?php
+function datetimeFormat($mysql_datetime) {
+    // Convert MySQL datetime string to a Unix timestamp
+    $timestamp = strtotime($mysql_datetime);
+    
+    // Format the timestamp to the desired 'yy-mm-dd hour:minutes' format
+    // 'y' for two-digit year, 'm' for month, 'd' for day
+    // 'H' for 24-hour format, 'i' for minutes
+    $formatted_datetime = date('y-m-d H:i', $timestamp);
+    
+    return $formatted_datetime;
+}
+?>
 <main>
     <h2>STUDENT ENTRIES LIST</h2>
-	    <h3>Double Click on the Selected</h3>
-    <div class="table-contain">
-	<table>
-		<thead>
-			<tr>
-			<th>Name</th>
-			<th>Email</th>
-			<th>Updated</th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php foreach ($students as $student): ?>
-				<tr onclick="makeRowClickable(this, <?php echo htmlspecialchars($student['student_ID']); ?>)">
-	
-					<td><?php echo htmlspecialchars($student['student_lname']).', '.
-					htmlspecialchars($student['student_fname']); ?>
-						<a href="../login/register.php?id=<?php echo htmlspecialchars($student['student_ID']); ?>" class="edit-link"></a>
-					</td>
-						<td><?php echo $student['student_email']; ?>
-						<a href="../login/register.php?id=<?php echo htmlspecialchars($student['student_ID']); ?>" class="edit-link"></a>
-					</td>
-						</td>
-						<td><?php echo $student['student_updated']; ?>
-						<a href="../login/register.php?id=<?php echo htmlspecialchars($student['student_ID']); ?>" class="edit-link"></a>
-					</td>
+    <div class="table-container">
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>				
+					<th>Name</th>
+					<th>Email</th>
+					<th>Updated</th>
 				</tr>
-			<?php endforeach; ?>
-		</tbody>
-	</table>
-</div>
+			</thead>
+			<tbody>
+				<?php foreach ($students as $student): ?>
+					<tr onclick="makeRowClickable(this, <?php echo htmlspecialchars($student['student_ID']); ?>)">
+						</td>
+							<td class="right-align"><?php echo $student['student_ID']; ?>
+						</td>
+						
+						<td><?php echo htmlspecialchars($student['student_lname']).', '.
+						htmlspecialchars($student['student_fname']); ?>
+							<a href="../login/register.php?id=<?php echo htmlspecialchars($student['student_ID']); ?>"></a>
+						</td>
+							<td><?php echo $student['student_email']; ?>
+						</td>
+							</td>
+							<td><?php echo datetimeFormat($student['student_updated']); ?>
+						</td>
+					</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+	</div>
 </main>
 <?php include '../views/footer.php';?>
 <script>

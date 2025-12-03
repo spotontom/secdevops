@@ -1,4 +1,13 @@
 <?php
+/*
+	Class:		cop4433
+	Project:	ACE Tutoring Lab
+	Author:		Jay King
+	Created:	11-20-2025
+	Filename:	protege.php
+	
+	updates student record and returns to student list
+*/
 include '../model/database.php';
 include '../model/protege_db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

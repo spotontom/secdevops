@@ -19,7 +19,7 @@ if (!isset($_SESSION['usernameInput'])) {
 ?>
 <!--  Thomas cleared username label, added div for css -->
 <html lang="en">
-<?php include '../views/head.php';?>
+<?php include '../views/head0.php';?>
 <body>
 <?php include '../views/header.php';?>
 <main>

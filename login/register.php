@@ -13,255 +13,242 @@
 	2. Edits student, selected from studentList.php
 -->
 <?php
-$majors = array(
-"Accounting Applications Certificate",
-"Accounting Option, AA",
-"Accounting Technology, AS",
-"Advertising/Public Relations Option, AA",
-"Alternative Energy Systems Specialist, Certificate",
-"Anthropology/Archeology Option, AA",
-"Architectural Design Construction Technology, AS",
-"Architecture Option, AA",
-"Art Option, AA",
-"Biology Education Option, AA",
-"Biology Option, AA",
-"Business Administration & Management, AS",
-"Business Administration Option, AA",
-"Business Specialist, Certificate",
-"CNC Machinist, Certificate",
-"Central Sterile Processing Technologist, Certificate",
-"Certified Nursing Assistant Certificate",
-"Chef's Apprentice, Certificate",
-"Chemistry Education Option, AA",
-"Chemistry Option, AA",
-"Chiropractic Medicine Option, AA",
-"Clinical Laboratory Sciences Option, AA",
-"Composite Fabrication and Testing, CCC",
-"Computer Engineering Option, AA",
-"Computer Science Option, AA",
-"Correctional Officer, V.C.",
-"Criminal Justice Technology, AS",
-"Criminology/Criminal Justice Option, AA",
-"Crossover Correctional Officer to Law Enforcement Officer, V.C.",
-"Culinary Arts, CCC",
-"Culinary Management, AS",
-"Cybersecurity, AS",
-"Dental Assisting, V.C.",
-"Dental Hygiene, AS",
-"Dental Medicine Option, AA",
-"Digital Media Technology, AS",
-"Digital Media, BAS",
-"Digital Media/Multimedia, Certificate",
-"Early Childhood Education Liberal Arts Option, AA",
-"Early Childhood Education Option, AS",
-"Earth/Space Education Option, AA",
-"Economics Option, AA",
-"Economics for Business Option, AA",
-"Elementary Teacher Education Option, AA",
-"Emergency Medical Services, AS",
-"Emergency Medical Technician, A.T.D.",
-"Engineering Option, AA",
-"Engineering Technology Support Specialist, CCC",
-"Engineering Technology, AS",
-"Engineering Technology/Building Construction Option, AA",
-"English Option, AA",
-"English Teacher Education Option, AA",
-"Entomology Option, AA",
-"Environmental Science, AA",
-"Fire Science Technology, AS",
-"Firefighting, Certificate",
-"Florida Child Care Professional Credential, Certificate",
-"Forestry Option, AA",
-"Geology Option, AA",
-"Health Education Option, AA",
-"Health Services Administration Option, AA",
-"History Option, AA",
-"Journalism Option, AA",
-"Legal Studies Option, AA",
-"Leisure Services Management Option, AA",
-"Marine Biology Option, AA",
-"Mathematics Education Option, AA",
-"Mathematics Option, AA",
-"Medical Option, AA",
-"Middle School Science Education Option, AA",
-"Music Option, AA",
-"Network Server Administration, CCC",
-"Network Systems Technology, AS",
-"Nursing Option, AA",
-"Nursing, AS",
-"Nutrition, Food, and Exercise Science Option, AA",
-"Occupational Therapy Option, AA",
-"Optometry Option, AA",
-"Organizational Management, BAS",
-"Paramedic, Certificate",
-"Pharmacy Option, AA",
-"Philosophy Option, AA",
-"Physical Education Option, AA",
-"Physical Therapist Assistant, AS",
-"Physical Therapy Option, AA",
-"Physics Education Option, AA",
-"Physics Option, AA",
-"Political Science Option, AA",
-"Practical Nurse Certificate",
-"Psychology Option, AA",
-"RN to BSN",
-"Radio/Television Broadcasting Option, AA",
-"Radiography, AS",
-"Rapid Prototyping Specialist",
-"Registered Nurse First Assistant, A.T.C.",
-"Religion Option, AA",
-"Respiratory Care (Therapy), AS",
-"Respiratory Care Therapy, AA",
-"Select college major",
-"Social Studies Education Option, AA",
-"Social Work Option, AA",
-"Sociology Option, AA",
-"Software and Database Developer, AS",
-"Sonography, Diagnostic Medical, AS",
-"Spanish Language Option, AA",
-"Spanish Language Teacher Education Option, AA",
-"Special Education Option, AA",
-"Speech Option, AA",
-"Sports Medicine/Athletics Trainer Option, AA",
-"Stage Technology, CCC",
-"Surgical First Assisting, AS or CCC",
-"Surgical Services - Surgical Technologist Option",
-"Technology Management, BAS",
-"The Hilton Hospitality Management and Tourism Program, AS",
-"Theatre Option, AA",
-"Theatre and Entertainment Technology, AS",
-"Unmanned Vehicles Systems, AS or CCC",
-"Veterinary Medicine Option, AA",
-"Other, not listed");
-$count = count($majors); // Get array size
-include '../model/database.php';
-if (!isset($_SESSION['statusFlag'])) {
-    // If it does not exist in the session
-    $_SESSION['statusFlag'] = 0;
-}
-if ($_SESSION['statusFlag'] == 5) {
-	$student = null;
-	$student_ID = filter_input(INPUT_GET, 'student_ID', FILTER_VALIDATE_INT);
+	$majors = array(
+	"Accounting Applications Cert.",
+	"Accounting, AA",
+	"Accounting Technology, AS",
+	"Advertising/Public Relations, AA",
+	"Alternative Energy Systems Specialist, Cert.",
+	"Anthropology/Archeology, AA",
+	"Architectural Design Construction Tech., AS",
+	"Architecture, AA",
+	"Art, AA",
+	"Biology Education, AA",
+	"Biology, AA",
+	"Business Administration & Management, AS",
+	"Business Administration, AA",
+	"Business Specialist, Cert.",
+	"CNC Machinist, Cert.",
+	"Central Sterile Processing Technologist, Cert.",
+	"Certified Nursing Assistant Cert.",
+	"Chef's Apprentice, Cert.",
+	"Chemistry Education, AA",
+	"Chemistry, AA",
+	"Chiropractic Medicine, AA",
+	"Clinical Laboratory Sciences, AA",
+	"Composite Fabrication and Testing, CCC",
+	"Computer Engineering, AA",
+	"Computer Science, AA",
+	"Correctional Officer, VC",
+	"Criminal Justice Technology, AS",
+	"Criminology/Criminal Justice, AA",
+	"Crossover Correctional to LEO, VC",
+	"Culinary Arts, CCC",
+	"Culinary Management, AS",
+	"Cybersecurity, AS",
+	"Dental Assisting, VC",
+	"Dental Hygiene, AS",
+	"Dental Medicine, AA",
+	"Digital Media Technology, AS",
+	"Digital Media, BAS",
+	"Digital Media/Multimedia, Cert.",
+	"Early Childhood Education Liberal Arts, AA",
+	"Early Childhood Education, AS",
+	"Earth/Space Education, AA",
+	"Economics, AA",
+	"Economics for Business, AA",
+	"Elementary Teacher Education, AA",
+	"Emergency Medical Services, AS",
+	"Emergency Medical Technician, ATD",
+	"Engineering, AA",
+	"Engineering Tech. Support Specialist, CCC",
+	"Engineering Technology, AS",
+	"Engineering Tech./Building Construction, AA",
+	"English, AA",
+	"English Teacher Education, AA",
+	"Entomology, AA",
+	"Environmental Science, AA",
+	"Fire Science Technology, AS",
+	"Firefighting, Cert.",
+	"Florida Child Care Professional, Cert.",
+	"Forestry, AA",
+	"Geology, AA",
+	"Health Education, AA",
+	"Health Services Administration, AA",
+	"Hilton Hospitality Mgmt and Tourism, AS",
+	"History, AA",
+	"Journalism, AA",
+	"Legal Studies, AA",
+	"Leisure Services Management, AA",
+	"Marine Biology, AA",
+	"Mathematics Education, AA",
+	"Mathematics, AA",
+	"Medical, AA",
+	"Middle School Science Education, AA",
+	"Music, AA",
+	"Network Server Administration, CCC",
+	"Network Systems Technology, AS",
+	"Nursing, AA or AS",
+	"Nutrition, Food, and Exercise Science, AA",
+	"Occupational Therapy, AA",
+	"Optometry, AA",
+	"Organizational Management, BAS",
+	"Paramedic, Cert.",
+	"Pharmacy, AA",
+	"Philosophy, AA",
+	"Physical Education, AA",
+	"Physical Therapist Assistant, AS",
+	"Physical Therapy, AA",
+	"Physics Education, AA",
+	"Physics, AA",
+	"Political Science, AA",
+	"Practical Nurse Cert.",
+	"Psychology, AA",
+	"RN to BSN",
+	"Radio/Television Broadcasting, AA",
+	"Radiography, AS",
+	"Rapid Prototyping Specialist",
+	"Registered Nurse First Assistant, ATC",
+	"Religion, AA",
+	"Respiratory Care (Therapy), AS",
+	"Respiratory Care Therapy, AA",
+	"Social Studies Education, AA",
+	"Social Work, AA",
+	"Sociology, AA",
+	"Software and Database Developer, AS",
+	"Sonography, Diagnostic Medical, AS",
+	"Spanish Language, AA",
+	"Spanish Language Teacher Education, AA",
+	"Special Education, AA",
+	"Speech, AA",
+	"Sports Medicine/Athletics Trainer, AA",
+	"Stage Technology, CCC",
+	"Surgical First Assisting, AS or CCC",
+	"Surgical Services - Surgical Technologist",
+	"Technology Management, BAS",
+	"Theatre, AA",
+	"Theatre and Entertainment Technology, AS",
+	"Unmanned Vehicles Systems, AS or CCC",
+	"Veterinary Medicine, AA",
+	"Other, Not Listed");
+	$count = count($majors); // Get array size
 	
-	if (!$student_ID) {
-		die("Invalid student ID.");
+	if (!isset($_SESSION['statusFlag'])) {
+		// If it does not exist in the session
+		$_SESSION['statusFlag'] = 0;
 	}
-	try {
-		global $db;
-		// configures to throw a PDOException whenever a database error occurs. 
-		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	
-		// Use a prepared statement to prevent SQL injection
-		$query = "SELECT * FROM students WHERE student_ID = :student_ID";
-		$statement = $db->prepare($query);
-		$statement->bindParam(':student_ID', $student_ID, PDO::PARAM_INT);
-		$statement->execute();
-		$student = $statement->fetch(PDO::FETCH_ASSOC);
-	
-	} catch (PDOException $e) {
-		die("Database connection failed: " . $e->getMessage());
+	if ($_SESSION['statusFlag'] == 5) {
+		include '../model/database.php';
+		include '../model/student_ID_db.php';
+		
+		$studentRecord = null;
+		$student_ID = filter_input(INPUT_GET, 'student_ID', FILTER_VALIDATE_INT);
+		if (!$student_ID) {
+			die("Invalid student ID.");
+		}
+		$studentRecord = get_student_by_ID($student_ID);
+		$student_email = $studentRecord['student_email'];
+		$student_fname = htmlspecialchars($studentRecord['student_fname']);
+		$student_lname = htmlspecialchars($studentRecord['student_lname']);
+		$student_major = $studentRecord['student_major'];
+	} else {
+		$student_email = $_SESSION['student_email'];
+		$student_fname = "";
+		$student_lname = "";
+		$student_major = "";
 	}
-} else {
-	$student_email = $_SESSION['student_email'];
-}
 ?>
-<html lang="en">
 <?php include '../views/head.php';?>
+<html lang="en">
 <body>
 <?php include '../views/header.php';?>
 <main>
 <h2>
 <?php
-if ($_SESSION['statusFlag'] == 5) {
-	echo 'Edit Student';
-} else {
-	echo 'Register Student for Tutoring';
-}
+	if ($_SESSION['statusFlag'] == 5) {
+		echo 'Edit Student';
+	} else {
+		echo 'Register Student for Tutoring';
+	}
 ?>
 </h2>
-<form id="loginForm"
 <?php
-if ($_SESSION['statusFlag'] == 5) {
-	echo 'action="protege.php"';
-} else {
-	echo 'action="placing.php"';
-}
+	if ($_SESSION['statusFlag'] == 5) {
+		echo '<form id="registerForm" action="protege.php" autocomplete="on" method="post">';
+	} else {
+		echo '<form id="editForm" action="placing.php" autocomplete="on" method="post">';
+	}
 ?>
-autocomplete="on" method="post">
-
-	<fieldset>
+<fieldset>
 	<?php
-if ($_SESSION['statusFlag'] == 5) {
-	echo '<input type="hidden" name="student_ID" value="';
-	echo $student['student_ID'];
-	echo '">';
-}
-?>
-		<label title="Display only">Email:</label>
-			<input type="email"
-			id="student_email"
-			name="student_email"
-			size="25"
-			value="
-			<?php 
-			if ($_SESSION['statusFlag'] == 5) {
-				echo $student['student_email'];
-			} else {
-				echo isset($_SESSION['student_email']) ? $_SESSION['student_email'] : '';
-			}
-			?>" readonly>
-		<br>
-		<label title="First name is a required entry">First name:</label>
-			<input type="text" size="25"
-			title="First name is a required entry"
-			placeholder ="John-example"
-			id="student_fname"
-			name="student_fname"
-			value="<?php if ($_SESSION['statusFlag'] == 5) { echo htmlspecialchars($student['student_fname']);} ?>"
-			required>
-		<p><span id="firstNameError" class="error-msg"></span></p>
-		<label title="Last name is a required entry">Last name:</label>
-			<input type="text"size="25"
-			title="Last name is a required entry"
-			placeholder ="Smith-example"
-			id="student_lname"
-			name="student_lname"
-			value="<?php if ($_SESSION['statusFlag'] == 5) { echo htmlspecialchars($student['student_lname']);} ?>"
-			required>
-
-		<p><span id="lastNameError" class="error-msg"></span></p>
-		
-		<label title="College Major is a required entry">Major:</label>
-<select id="student_major" name="student_major" required>
-		<option value="">Select college major</option>
-    <?php foreach ($majors as $major): ?>
-        <option value=
-		<?php 
-		if (($_SESSION['statusFlag'] == 5) && ($student['student_major'] == $major) ) { 
-			echo '"'.$major.'" selected>'; 
-		} else {
-			echo '"'.$major.'">'; 
+		if ($_SESSION['statusFlag'] == 5) {
+			echo '<input type="hidden" name="student_ID" value="';
+			echo $student_ID;
+			echo '">';
 		}
-		?>
-        <?php echo $major; ?>
-        </option>
-    <?php endforeach; ?>
-</select>
-	</fieldset>
+	?>
+	<label title="Display only">Email:</label>
+	<input type="email"
+		id="student_email"
+		name="student_email"
+		size="20"
+		value="<?php echo $student_email; ?>"
+		readonly>
 	<br>
-	<button type="submit" class ="btn2">
+	<label title="First name is a required entry">First name:</label>
+	<input type="text" size="20"
+		title="First name is a required entry"
+		placeholder ="John-example"
+		id="student_fname"
+		name="student_fname"
+		value="<?php echo $student_fname; ?>"
+		required>
+		<p><span id="firstNameError" class="error-msg"></span></p>
+	<label title="Last name is a required entry">Last name:</label>
+	<input type="text" size="20"
+		title="Last name is a required entry"
+		placeholder ="Smith-example"
+		id="student_lname"
+		name="student_lname"
+		value="<?php echo $student_lname; ?>"
+		required>
+	<p><span id="lastNameError" class="error-msg"></span></p>
+	
 	<?php
 	if ($_SESSION['statusFlag'] == 5) {
-		echo 'Update Record';
-	} else {
-		echo 'Register';
+		echo '<label class="label-major" title="College Major is a required entry">College major:</label>';
 	}
 	?>
-	</button>
+	<select id="student_major" name="student_major" class="select-major" required>
+		<option value="">Select college major</option>
+			<?php foreach ($majors as $major): ?>
+		<option value=
+			<?php 
+				if ($student_major == $major) { 
+					echo '"'.$major.'" selected>'; 
+				} else {
+					echo '"'.$major.'">'; 
+				}
+			?>
+			<?php echo $major; ?>
+		</option>
+		<?php endforeach; ?>
+	</select>
+</fieldset>
+<br>
+<button type="submit" class ="btn2">
 	<?php
-	if ($_SESSION['statusFlag'] == 5) {
-		echo '<a class="btn2" href="../Admin/studentsList.php">Cancel</a>';
-	}
+		if ($_SESSION['statusFlag'] == 5) {
+			echo 'Update Record';
+		} else {
+			echo 'Register';
+		}
+	?>
+</button>
+	<?php
+		if ($_SESSION['statusFlag'] == 5) {
+			echo '<a class="btn2" href="../Admin/studentsList.php">Cancel</a>';
+		}
 	?>
 </form>
 </main>

@@ -23,6 +23,10 @@ function add_log_entry($student_ID, $selectCourseInput) {
 		
 		// Execute the statement
 		$statement->execute();
+		
+		// Close statement, release the resources and memory associated
+		$statement->closeCursor();
+		
 	// $statement->execute([$student_ID, $selectCourseInput]);
 	} catch (PDOException $e) {
 		db_error($e,'insert log');
