@@ -191,7 +191,7 @@
 	<input type="email"
 		id="student_email"
 		name="student_email"
-		size="20"
+		size="25"
 		value="<?php echo $student_email; ?>"
 		readonly>
 	<br>
