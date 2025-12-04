@@ -44,19 +44,13 @@ function datetimeFormat($mysql_datetime) {
 			<tbody>
 				<?php foreach ($students as $student): ?>
 					<tr onclick="makeRowClickable(this, <?php echo htmlspecialchars($student['student_ID']); ?>)">
-						</td>
-							<td class="right-align"><?php echo $student['student_ID']; ?>
-						</td>
+						<a href="../login/register.php?id=<?php echo htmlspecialchars($student['student_ID']); ?>"></a>
 						
+						<td class="right-align"><?php echo $student['student_ID']; ?></td>		
 						<td><?php echo htmlspecialchars($student['student_lname']).', '.
-						htmlspecialchars($student['student_fname']); ?>
-							<a href="../login/register.php?id=<?php echo htmlspecialchars($student['student_ID']); ?>"></a>
-						</td>
-							<td><?php echo $student['student_email']; ?>
-						</td>
-							</td>
-							<td><?php echo datetimeFormat($student['student_updated']); ?>
-						</td>
+						htmlspecialchars($student['student_fname']); ?></td>
+						<td><?php echo $student['student_email']; ?></td>
+						<td><?php echo datetimeFormat($student['student_updated']); ?></td>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>

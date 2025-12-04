@@ -43,7 +43,6 @@ header {
 	/* top, right, bottom, left */
     margin: 0em 0em 0em 0em;
 }
-
 table {
     width: 100%;
     border-collapse: collapse; /* Optional: for cleaner borders */

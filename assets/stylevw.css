@@ -1,4 +1,3 @@
-
 /*
     Class:		cis4433
     Author:		Jay King
@@ -58,8 +57,7 @@ fieldset {
 	/* top, right, bottom, left */
     margin:0 0.2vw 0 1vw;
 }
-/* Thomas */
-/* Styling for login form spacing */
+/* Thomas styling for login form spacing */
 #loginForm fieldset {
     padding-left: 1.5rem;      /* gentle left gap for labels */
     margin: 0;
@@ -73,7 +71,7 @@ label {
 	padding-right: 1vw;
     display:inline-block;
 
-    /* Thomas Changed label */
+    /* Thomas below changed label */
     font-family: "Segoe UI", Arial, sans-serif;
     font-weight: 600;                 /* semi-bold for clarity */
     color: #0e2a47;                   /* same deep navy as headers */
