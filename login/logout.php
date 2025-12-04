@@ -19,7 +19,7 @@ session_destroy();		// Destroy the session
 <?php include '../views/header.php';?>
 <main>
 <h2>Logging Out</h2>
-<div class="confirm">
+<div class="frame">
 	Thank you for using the tutoring lab.<br>Have a nice day.
 </div>
 </main>

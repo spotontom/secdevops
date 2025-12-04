@@ -25,7 +25,7 @@
 */
 .btn2 {
 	display:block;
-	font-size: 4vw;
+	font-size: clamp(1rem,4vw,3.8rem); 
 	padding-top: 1.5vh;
 	padding-bottom: 1.5vh;
 	width:28vw;
@@ -43,14 +43,6 @@
 label, input, fieldset {
 	font-size: clamp(1.5rem,3.8vw,2.8rem); 
 	font-family: "Segoe UI", Arial, sans-serif;
-}
-fieldset {
-    text-align: left;
-    width: 100%;
-    padding:0;
-    border: none;
-	/* top, right, bottom, left */
-    margin:0 0.2vw 0 1vw;
 }
 .select-major {
 	font-size: clamp(1.5rem,3.8vw,2.8rem); 
@@ -96,6 +88,14 @@ main {
 	margin:0;
     /* top, right, bottom, left */
 	padding:0 0 1vw 0;
+}
+.frame {
+    text-align: center;
+    background-color: #f3f3f3;
+    width: 70%;
+    /* top, right, bottom, left */
+    padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+    margin:5vh auto 10vh auto;
 }
 form {
 	width: clamp(30rem,85vw,80rem);

@@ -37,7 +37,7 @@ if (isset($_SESSION['student_major'])) {
 <?php include '../views/header.php';?>
 <main>
 <h2>Confirmed</h2>
-<div class="confirm">
+<div class="frame">
 	<?php echo $student_fname." ".$student_lname; ?>
 	<br>
 	<?php echo $student_email; ?>
