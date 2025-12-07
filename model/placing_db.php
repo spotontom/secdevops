@@ -27,6 +27,9 @@ function add_new_student($student_fname, $student_lname, $student_email, $studen
 		// Execute the statement
 		$statement->execute();
 		
+		// last inserted autocremented ID
+		$_SESSION['student_ID']= $db->lastInsertId();
+		
 		// Close statement, release the resources and memory associated
 		$statement->closeCursor();		
 		

@@ -144,7 +144,10 @@
 		$studentRecord = null;
 		$student_ID = filter_input(INPUT_GET, 'student_ID', FILTER_VALIDATE_INT);
 		if (!$student_ID) {
-			die("Invalid student ID.");
+			$_SESSION['errorLog'] = "register.php, Invalid student ID.";
+			// error log captures error
+			header("Location: ../errors/error.php");
+			exit();
 		}
 		$studentRecord = get_student_by_ID($student_ID);
 		$student_email = $studentRecord['student_email'];
@@ -203,7 +206,9 @@
 		name="student_fname"
 		value="<?php echo $student_fname; ?>"
 		required>
+	<div class="msg-container">
 		<p><span id="firstNameError" class="error-msg"></span></p>
+	</div>
 	<label title="Last name is a required entry">Last name:</label>
 	<input type="text" size="20"
 		title="Last name is a required entry"
@@ -212,8 +217,9 @@
 		name="student_lname"
 		value="<?php echo $student_lname; ?>"
 		required>
-	<p><span id="lastNameError" class="error-msg"></span></p>
-	
+	<div class="msg-container">
+		<p><span id="lastNameError" class="error-msg"></span></p>
+	</div>
 	<?php
 	if ($_SESSION['statusFlag'] == 5) {
 		echo '<label class="label-major" title="College Major is a required entry">College major:</label>';
@@ -239,7 +245,7 @@
 <button type="submit" class ="btn2">
 	<?php
 		if ($_SESSION['statusFlag'] == 5) {
-			echo 'Update Record';
+			echo 'Update';
 		} else {
 			echo 'Register';
 		}

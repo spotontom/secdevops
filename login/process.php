@@ -20,6 +20,7 @@ $_SESSION['student_major'] = "";
 $student_ID = 0; // if no student is found with that email
 require '../model/database.php';
 include '../model/process_db.php';
+require_once '../errors/debugLog.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $student_email = $_POST['usernameInput']."@my.gulfcoast.edu";
 	$_SESSION['usernameInput'] = $_POST['usernameInput'];
@@ -34,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$_SESSION['student_fname'] = $studentData['student_fname'];
 		$_SESSION['student_lname'] = $studentData['student_lname'];
     }
+	
     if ($student_ID > 0) {
 		$existLogRecord = get_log_by_student($student_ID);
 		if ($existLogRecord) {
@@ -43,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			header('Location: logout.php');
 			exit;
 		} else {
+			// debugLog("1-process.php");	
 			// No incomplete record found, insert new record at login.php
 			header('Location: login.php');
 			exit;

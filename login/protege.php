@@ -17,7 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $student_email = filter_input(INPUT_POST, 'student_email', FILTER_SANITIZE_EMAIL);
     $student_major = filter_input(INPUT_POST, 'student_major', FILTER_SANITIZE_STRING);
     if (!$student_ID || !$student_fname || !$student_lname || !$student_email || !$student_major) {
-        die("Invalid input data.");
+		if (!$student_ID) {
+			$_SESSION['errorLog'] = "protege.php, Invalid input data.";
+			// error log captures error
+			header("Location: ../errors/error.php");
+			exit();
+		}
     }
 	updateStudent($student_fname,$student_lname,$student_email,$student_major,$student_ID);
 	// Redirect back to the list page after update

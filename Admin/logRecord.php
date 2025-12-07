@@ -49,7 +49,7 @@ if ($logRecord==null) {
 	$log_signin  = "";
 	$log_signout  = "";
 } else {
-	$log_student_ID  = $logRecord['log_ID'];
+	$log_student_ID  = $logRecord['log_student_ID'];
 	$log_course_ID = $logRecord['log_course_ID'];
 	$log_signin  = $logRecord['log_signin'];
 	$log_signout  = $logRecord['log_signout'];
@@ -80,31 +80,38 @@ if ($courseRecord==null) {
 <body>
 <?php include '../views/header.php';?>
 
-<?php
-
-?>
 <main>
 <h2>LOG RECORD DISPLAY</h2>
 <form>
-<fieldset>
+	<fieldset>
 		<label title="Display only">Log ID:</label>
-			<input type="text"
+		<input type="text"
 			id=="log_ID"
 			name="log_ID"
 			size="2"
-			class = "right-align";
+			class = "right-align"
 			value="<?php echo $log_ID; ?>"
 			readonly>
 		<br>
-			<label title="Display only">Student:</label>
-			<input type="text" size="25"
+		<label title="Display only">Student ID:</label>
+		<input type="text"
+			id=="student_ID"
+			name="student_ID"
+			size="2"
+			class = "right-align"
+			value="<?php echo $log_student_ID; ?>"
+			readonly>
+		<br>
+		<label title="Display only">Student:</label>
+		<input type="text"
+			size="25"
 			id="student_name"
 			name="student_name"
 			value="<?php echo $student_fname.' '.$student_lname; ?>"
 			readonly>
 		<br>
 		<label title="Display only">Sign In:</label>
-			<input type="text"
+		<input type="text"
 			id=="log_signin"
 			name="log_signin"
 			size="20"
@@ -112,22 +119,22 @@ if ($courseRecord==null) {
 			readonly>
 		<br>
 		<label title="Display only">Sign Out:</label>
-			<input type="text"
+		<input type="text"
 			id=="log_signout"
 			name="log_signout"
 			size="20"
 			value="<?php echo $log_signout; ?>"
 			readonly>
 		<br>
-			<label title="Display only">Course:</label>
-			<input type="text"
+		<label title="Display only">Course:</label>
+		<input type="text"
 			id=="course_number"
 			name="course_number"
 			size="5"
 			value="<?php echo $course_number; ?>"
 			readonly>
 		<br>
-			<input type="text"
+		<input type="text"
 			id=="course_number"
 			name="course_number"
 			size="30"

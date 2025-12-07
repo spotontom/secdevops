@@ -9,8 +9,10 @@
 	Add a new log record with student_ID, courseID, sign-in datetime, updated datetime without signout
 */
 require_once '../errors/db_error.php';
-function add_log_entry($student_ID, $selectCourseInput) {
+require_once '../errors/debugLog.php';
+function add_log_entry($student_ID, $log_course_ID) {
 	try {
+	// debugLog("param:".$student_ID);
 		global $db;
 		// Insert a new record with datetime example: student_ID 1, email switwicky
 		$query ="INSERT INTO log (log_student_ID, log_course_ID, log_signin, log_updated) VALUES (?, ?, NOW(), NOW())";
@@ -19,7 +21,7 @@ function add_log_entry($student_ID, $selectCourseInput) {
 		
 		// Bind each parameter by its indexed position
 		$statement->bindParam(1, $student_ID, PDO::PARAM_INT);
-		$statement->bindParam(2, $selectCourseInput, PDO::PARAM_INT);
+		$statement->bindParam(2, $log_course_ID, PDO::PARAM_INT);
 		
 		// Execute the statement
 		$statement->execute();
@@ -29,7 +31,7 @@ function add_log_entry($student_ID, $selectCourseInput) {
 		
 	// $statement->execute([$student_ID, $selectCourseInput]);
 	} catch (PDOException $e) {
-		db_error($e,'insert log');
+		db_error($e,'protege_db.php select students');
 	}
 }
 ?>

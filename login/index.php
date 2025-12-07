@@ -8,23 +8,25 @@
 	Filename:	index.php
 --> 
 <?php
-if (!isset($_SESSION['statusFlag'])) {
-    // If 'statusFlag' does not exist in the session
-    $_SESSION['statusFlag'] = 0;
-}
-if (!isset($_SESSION['usernameInput'])) {
-    // If it does not exist in the session
-    	$_SESSION['usernameInput'] = "";
-}
+$_SESSION['errorLog'] = "";
+// If it does not exist in the session
+if (!isset($_SESSION['statusFlag'])) {$_SESSION['statusFlag'] = 0;}
+if (!isset($_SESSION['student_ID'])) {$_SESSION['student_ID'] = 0;}
+if (!isset($_SESSION['student_fname'])) {$_SESSION['student_fname'] = "";}
+if (!isset($_SESSION['student_lname'])) {$_SESSION['student_lname'] = "";}
+if (!isset($_SESSION['student_major'])) {$_SESSION['student_major'] = "";}
+if (!isset($_SESSION['course_ID'])) {$_SESSION['course_ID'] = 0;}
+if (!isset($_SESSION['student_email'])) {$_SESSION['student_email'] = "";}
+if (!isset($_SESSION['usernameInput'])) {$_SESSION['usernameInput'] = "";}
 ?>
 <!--  Thomas cleared username label, added div for css -->
 <html lang="en">
-<?php include '../views/head1.php';?>
+<?php include '../views/head.php';?>
 <body>
 <?php include '../views/header.php';?>
 <main>
-<form id="indexForm" autocomplete="on" method="post" action="process.php">
 	<h2>LOGIN/LOGOUT</h2>
+<form id="indexForm" autocomplete="on" method="post" action="process.php">
 	<h3>Student Email:</h3>
 	<fieldset>
 		<div class="username-row">
@@ -34,8 +36,7 @@ if (!isset($_SESSION['usernameInput'])) {
 			<?php
 				if ($_SESSION['statusFlag'] == 1) {
 					echo 'value ='. $_SESSION['usernameInput'];
-				}
-			?>
+				}?>
 			size="10"
 			placeholder = "jsmith"
 			maxlength="20" 
@@ -46,13 +47,13 @@ if (!isset($_SESSION['usernameInput'])) {
 			<span id="usernameError" class="error-msg">
 				<?php
 				if ($_SESSION['statusFlag'] == 1) {
-					echo 'Not registered!<br>Continue to register.';
+					echo 'Not registered! Continue to.';
 				}
 				?>
 			</span>
 		</p>
 	</fieldset>
-	<button type="submit" class ="btn1">Continue</button>
+	<button type="submit" class ="btn2">Continue</button>
 </form>
 </main>
 <?php include '../views/footer.php';?>

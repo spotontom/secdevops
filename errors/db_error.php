@@ -10,18 +10,17 @@
 	Will be replaced by error.php or database_error.php with its logging and error display
 */
 function db_error($e,$message) {
-	die('<div style="color:red;
-	font-size: 4.0vw;
-	font-weight: 600;
-	background-color: #eeeeee;
-	padding: 2rem;
-	margin: 2rem auto 0 auto;
-	border: 0.1rem solid red;
-	width: 80%;">'
-	. $_SERVER['HTTP_HOST']
-	. ' Database error '
-	. $message
-	. ' '
-	. $e->getMessage() . '</div>');
+	$_SESSION['errorLog'] = $message;
+
+    // The message to log, including a timestamp for better context
+    $log_message = "[" . date("Y-m-d H:i:s") . "] " . $e->getMessage() . PHP_EOL;
+
+    // second argument '3' tells PHP to send the message to a file destination
+    // third argument specifies error.log file
+    error_log($log_message, 3, "../errors/error.log");
+    // log the full trace for debugging
+    error_log($e->getTraceAsString() . PHP_EOL, 3, "../errors/error.log");
+	header("Location: ../errors/error.php");
+	exit();
 }
 ?>

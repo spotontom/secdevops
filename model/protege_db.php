@@ -7,7 +7,6 @@
 	Filename:	protege_db.php
 
 */
-require_once '../errors/db_error.php';
 function updateStudent($student_fname,$student_lname,$student_email,$student_major,$student_ID) {
 	try {
 		global $db;
@@ -40,7 +39,10 @@ function updateStudent($student_fname,$student_lname,$student_email,$student_maj
 		$statement->closeCursor();
 		
     } catch (PDOException $e) {
-        die("Update failed: " . $e->getMessage());
+		$_SESSION['errorLog'] = "protege_db.php, update failed" . $e->getMessage();
+		// error log captures error
+		header("Location: ../errors/error.php");
+		exit();
     }
 }
 ?>
