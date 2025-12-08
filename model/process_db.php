@@ -8,7 +8,7 @@
 	
 	Incomplete record found, update it with signout datetime
 */
-require_once '../errors/db_error.php';
+require_once '../errors/errorLog.php';
 function update_log($existLogRecord) {
 	try {
 		global $db;
@@ -21,7 +21,7 @@ function update_log($existLogRecord) {
 		$statement->closeCursor();
 						
 	} catch (PDOException $e) {
-		db_error($e,'update log');
+		errorLog('update log',$e);
 	}
 }
 /*
@@ -49,7 +49,7 @@ function get_student_by_email($student_email) {
 			return null; // No student found with that email
 		}
 	} catch (PDOException $e) {
-		db_error($e,'select students');
+		errorLog('select students',$e);
 	}		
 }
 /*
@@ -75,7 +75,7 @@ function get_log_by_student($student_ID) {
 			return null; // No student found with that email
 		}
 	} catch (PDOException $e) {
-		db_error($e,'select log');
+		errorLog('select log',$e);
 	}
 }
 ?>

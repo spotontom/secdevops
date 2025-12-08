@@ -8,7 +8,7 @@
 
  Retrieves the course data based on the course ID.
 */
-require_once '../errors/db_error.php';
+require_once '../errors/errorLog.php';
 function get_course_by_ID($course_ID) {
 	try {
 		global $db;
@@ -41,7 +41,7 @@ function get_course_by_ID($course_ID) {
 			return null; // No course found with that ID
 		}
 	} catch (PDOException $e) {
-		db_error($e,'select course');
+		errorLog('select course',$e);
 	}
 }
 ?>

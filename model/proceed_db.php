@@ -8,7 +8,7 @@
 	
 	Add a new log record with student_ID, courseID, sign-in datetime, updated datetime without signout
 */
-require_once '../errors/db_error.php';
+require_once '../errors/errorLog.php';
 require_once '../errors/debugLog.php';
 function add_log_entry($student_ID, $log_course_ID) {
 	try {
@@ -31,7 +31,7 @@ function add_log_entry($student_ID, $log_course_ID) {
 		
 	// $statement->execute([$student_ID, $selectCourseInput]);
 	} catch (PDOException $e) {
-		db_error($e,'protege_db.php select students');
+		errorLog('protege_db.php select students',$e);
 	}
 }
 ?>

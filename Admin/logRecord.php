@@ -134,12 +134,15 @@ if ($courseRecord==null) {
 			value="<?php echo $course_number; ?>"
 			readonly>
 		<br>
+		
+		<div class="flex-container">
 		<input type="text"
 			id=="course_number"
 			name="course_number"
 			size="30"
 			value="<?php echo $course_name; ?>"
 			readonly>
+		</div>
 		<br>
 		<label title="Display only">Professor:</label>
 			<input type="text"

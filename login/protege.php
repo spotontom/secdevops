@@ -1,5 +1,6 @@
-<?php
-/*
+<?php session_start(); ?>
+<!DOCTYPE html>
+<!--
 	Class:		cop4433
 	Project:	ACE Tutoring Lab
 	Author:		Jay King
@@ -7,8 +8,10 @@
 	Filename:	protege.php
 	
 	updates student record and returns to student list
-*/
+-->
+<?php
 include '../model/database.php';
+require_once '../errors/errorLog.php';
 include '../model/protege_db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $student_ID = filter_input(INPUT_POST, 'student_ID', FILTER_VALIDATE_INT);
@@ -17,12 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $student_email = filter_input(INPUT_POST, 'student_email', FILTER_SANITIZE_EMAIL);
     $student_major = filter_input(INPUT_POST, 'student_major', FILTER_SANITIZE_STRING);
     if (!$student_ID || !$student_fname || !$student_lname || !$student_email || !$student_major) {
-		if (!$student_ID) {
-			$_SESSION['errorLog'] = "protege.php, Invalid input data.";
-			// error log captures error
-			header("Location: ../errors/error.php");
-			exit();
-		}
+		// error log exit
+		errorLog('protege.php, Invalid input data');
     }
 	updateStudent($student_fname,$student_lname,$student_email,$student_major,$student_ID);
 	// Redirect back to the list page after update

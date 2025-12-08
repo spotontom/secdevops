@@ -138,16 +138,15 @@
 		$_SESSION['statusFlag'] = 0;
 	}
 	if ($_SESSION['statusFlag'] == 5) {
+		require_once '../errors/errorLog.php';
 		include '../model/database.php';
 		include '../model/student_ID_db.php';
 		
 		$studentRecord = null;
 		$student_ID = filter_input(INPUT_GET, 'student_ID', FILTER_VALIDATE_INT);
 		if (!$student_ID) {
-			$_SESSION['errorLog'] = "register.php, Invalid student ID.";
-			// error log captures error
-			header("Location: ../errors/error.php");
-			exit();
+			// error log exit
+			errorLog('register.php, Invalid student ID');
 		}
 		$studentRecord = get_student_by_ID($student_ID);
 		$student_email = $studentRecord['student_email'];
@@ -169,9 +168,9 @@
 <h2>
 <?php
 	if ($_SESSION['statusFlag'] == 5) {
-		echo 'Edit Student';
+		echo 'EDIT STUDENT';
 	} else {
-		echo 'Register Student for Tutoring';
+		echo 'REGISTER STUDENT FOR TUTORING';
 	}
 ?>
 </h2>
@@ -206,7 +205,7 @@
 		name="student_fname"
 		value="<?php echo $student_fname; ?>"
 		required>
-	<div class="msg-container">
+	<div class="flex-container">
 		<p><span id="firstNameError" class="error-msg"></span></p>
 	</div>
 	<label title="Last name is a required entry">Last name:</label>
@@ -217,7 +216,7 @@
 		name="student_lname"
 		value="<?php echo $student_lname; ?>"
 		required>
-	<div class="msg-container">
+	<div class="flex-container">
 		<p><span id="lastNameError" class="error-msg"></span></p>
 	</div>
 	<?php
@@ -314,3 +313,4 @@ lastElement.addEventListener('input', function(e) {
 </script>
 </body>
 </html>
+

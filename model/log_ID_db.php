@@ -8,7 +8,7 @@
 
 	Retrieves the log data based on the log ID.
 */
-require_once '../errors/db_error.php';
+require_once '../errors/errorLog.php';
 function get_log_by_ID($log_ID) {
 	try {
 		global $db;
@@ -41,6 +41,6 @@ function get_log_by_ID($log_ID) {
 			return null; // No log found with that ID
 		}
 	} catch (PDOException $e) {
-		db_error($e,'select log');
+		errorLog('select log',$e);
 	}
 }

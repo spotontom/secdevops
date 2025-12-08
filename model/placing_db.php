@@ -8,7 +8,7 @@
 	
 	Add a new student record with first name, last name, email, and college major
 */
-require_once '../errors/db_error.php';
+require_once '../errors/errorLog.php';
 function add_new_student($student_fname, $student_lname, $student_email, $student_major) {
 	try {
 		global $db;
@@ -34,7 +34,7 @@ function add_new_student($student_fname, $student_lname, $student_email, $studen
 		$statement->closeCursor();		
 		
 	} catch (PDOException $e) {
-		db_error($e,'insert students');
+		errorLog('insert students',$e);
 	}
 }
 ?>

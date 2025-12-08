@@ -12,7 +12,7 @@
 <body>
 <?php include '../views/header.php'; ?>
 <main>
-	<h2>Administrator Menu</h2>
+	<h2>ADMINISTRATOR MENU</h2>
 	<div class="frame">
 	<a class="btn2" href="logList.php">Log Entries</a>
 	<a class="btn2" href="studentsList.php">Students</a>

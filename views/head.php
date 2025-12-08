@@ -162,7 +162,7 @@ input[readonly]:hover {
 	border: none;
 	box-shadow: none;
 }
-.msg-container {
+.flex-container {
 	display: flex;
 	justify-content: center; /* Centers horizontally */
 	align-items: center;    /* Centers vertically */
@@ -304,7 +304,7 @@ h5 {
     margin:0.3vw 0 0.5vw 0;
     padding:0;
 	font-weight: normal;
-    font-size:2.5vw;
+    font-size:2.8vw;
 }
 h6 {
     text-align:center;

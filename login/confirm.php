@@ -36,7 +36,7 @@ if ($_SESSION['statusFlag'] == 4) {
 <body>
 <?php include '../views/header.php';?>
 <main>
-<h2>Confirmed</h2>
+<h2>CONFIRMED</h2>
 <div class="frame">
 	<?php echo $student_fname." ".$student_lname; ?>
 	<br>

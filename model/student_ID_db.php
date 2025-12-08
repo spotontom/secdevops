@@ -8,7 +8,7 @@
 	
 	Retrieves the student data based on the student ID.
 */
-require_once '../errors/db_error.php';
+require_once '../errors/errorLog.php';
 function get_student_by_ID($student_ID) {
 	try {
 		global $db;
@@ -41,7 +41,7 @@ function get_student_by_ID($student_ID) {
 			return null; // No student found with that ID
 		}
 	} catch (PDOException $e) {
-		db_error($e,'select student');
+		errorLog('select student',$e);
 	}
 }
 ?>

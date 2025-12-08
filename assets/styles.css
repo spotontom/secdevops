@@ -70,7 +70,7 @@ form {
     text-align: center;
 }
 fieldset {
-	font-size: clamp(1rem,4vw,3.8rem);
+	font-size: clamp(1rem,4vw,3.8rem); 
     text-align: left;
     width: 100%;
     padding:0;
@@ -91,7 +91,7 @@ label {
     vertical-align: middle;
 }
 label, input, fieldset {
-	font-size: clamp(1.5rem,3.8vw,2.8rem);
+	font-size: clamp(1.5rem,3.8vw,2.8rem); 
 	font-family: "Segoe UI", Arial, sans-serif;
 }
 .label-major {
@@ -101,7 +101,7 @@ label, input, fieldset {
     display:inline-block;
 }
 .select-major {
-	font-size: clamp(1.5rem,3.8vw,2.8rem);
+	font-size: clamp(1.5rem,3.8vw,2.8rem); 
 	width: clamp(30rem,80vw,60rem);
 	margin-left: 1vw;
 }
@@ -128,14 +128,14 @@ select:focus {
     background: white;
 }
 /* Thomas Changed Input Styling */
-input[type="text"]:focus,
+input[type="text"]:focus, 
 select:focus {
 	outline: none;
 	border-color: #2840a0;              /* Gulf Coast blue focus highlight */
 	box-shadow: 0 0 5px rgba(40, 64, 160, 0.3);
-	background-color: #f9fbff;          /* slight tint when active */
+	background-color: #f9fbff;          /* slight tint when active */ 
 }
-input[type="text"]:hover,
+input[type="text"]:hover,  
 select:hover {
 	border-color: #8fa4d4;              /* soft hover cue */
 }
@@ -146,7 +146,7 @@ input[readonly]:hover {
 	border: none;
 	box-shadow: none;
 }
-.msg-container {
+.flex-container {
 	display: flex;
 	justify-content: center; /* Centers horizontally */
 	align-items: center;    /* Centers vertically */
@@ -288,12 +288,12 @@ h5 {
     margin:0.3vw 0 0.5vw 0;
     padding:0;
 	font-weight: normal;
-    font-size:2.5vw;
+    font-size:2.8vw;
 }
 h6 {
     text-align:center;
 	/* (minimum size, preferred size using vw, maximum size)*/
-	font-size: clamp(0.9rem, 1.5vw, 2rem);
+	font-size: clamp(0.9rem, 1.5vw, 2rem); 
     padding:0;
     margin:0;
     color: white;
@@ -314,7 +314,7 @@ a {
 }
 .btn2 {
 	display:block;
-	font-size: clamp(1rem,4vw,3.8rem);
+	font-size: clamp(1rem,4vw,3.8rem); 
 	padding-top: 1.5vh;
 	padding-bottom: 1.5vh;
 	width:28vw;
@@ -331,7 +331,7 @@ a {
 }
 .btn2:hover,
 .btn2:focus {
-	color: black; /* black text for contrast */
+	color: black; /* black text for contrast */	
 	background-color: #007BFF; /* Primary Blue */
 	background-color:LightSkyBlue;
 	background-color: #8EEBEC; /* Blue Lagoon */

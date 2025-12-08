@@ -9,7 +9,7 @@
 
  Retrieves logs data ORDER BY log_updated
 */
-require_once '../errors/db_error.php';
+require_once '../errors/errorLog.php';
 function get_logs() {
     try {
         global $db;
@@ -23,7 +23,7 @@ function get_logs() {
 		$statement->closeCursor();
         return $logs;
     } catch (PDOException $e)  {
-		db_error($e,'select logs');
+		errorLog('select logs',$e);
 	}
 }
 ?>

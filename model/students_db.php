@@ -8,7 +8,7 @@
 	
 	Retrieves the student data based on the student last name
 */
-require_once '../errors/db_error.php';
+require_once '../errors/errorLog.php';
 function get_students() {
 	try {
 		global $db; 
@@ -22,7 +22,7 @@ function get_students() {
 		$statement->closeCursor();
 		return $students;
 	} catch (PDOException $e) {
-		db_error($e,'select students');
+		errorLog('select students',$e);
 	}
 }
 ?>

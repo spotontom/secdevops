@@ -13,6 +13,9 @@ function debugLog($bugLocation) {
 	. " flag: "
 	. $_SESSION['statusFlag']
 	. "\r\n"
+	. " error log: "
+	. $_SESSION['errorLog']
+	. "\r\n"	
 	. " student_ID: "
 	. $_SESSION['student_ID']
 	. "\r\n"

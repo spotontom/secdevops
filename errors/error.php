@@ -13,8 +13,12 @@
 <body>
 <?php include '../views/header.php';?>
 <main>
-    <h2>Error<h2>
-	<?php if (isset($_SESSION['errorLog'])) {echo "<h5>".$_SESSION['errorLog']."<h5>";}?>
+    <h2>ERROR<h2>
+	<?php 
+		echo '<h5>';
+		echo $_SESSION['errorLog'];
+		echo '<h5>'
+	;?>
 	<div class="frame">
 		There was an error connecting to the database.
 		<br>
