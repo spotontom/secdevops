@@ -43,12 +43,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			update_log($existLogRecord);
 			// Student signed out successfully
 			header('Location: logout.php');
-			exit;
+			exit();
 		} else {
 			// debugLog("1-process.php");	
 			// No incomplete record found, insert new record at login.php
 			header('Location: login.php');
-			exit;
+			exit();
 		}
     } else {
 		// To register new student for tutoring
@@ -56,12 +56,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$_SESSION['statusFlag'] = 0;
 			// To register new student for tutoring
 			header('Location: register.php');
-			exit;
+			exit();
 		}
 		// No student found with that email
 		$_SESSION['statusFlag'] = 1;
 		header('Location: index.php');
-		exit;
+		exit();
     }
 }
 ?>

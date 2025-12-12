@@ -31,6 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	add_new_student($student_fname, $student_lname, $student_email, $student_major);
 	// debugLog("2 placing after add new student");
 	header('Location: confirm.php');
-	exit;
+	exit();
 }
 ?>

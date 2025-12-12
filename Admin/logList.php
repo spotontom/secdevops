@@ -11,38 +11,46 @@
 Spaces used in table heading
 &nbsp;
 &ensp; "en space" (typically two spaces wide).
-&emsp; "em space" (typically four spaces wide, about the width of a capital M).	
+&emsp; "em space" (typically four spaces wide, about the width of a capital M).
 -->
 <html lang="en">
 <?php include '../views/head.php';?>
 <body>
-<?php include '../views/header.php'; ?>
+<?php require_once '../views/header.php';?>
 <?php include '../model/database.php'; ?>
 <?php include '../model/logs_db.php'; ?>
 <?php $logs = get_logs(); ?>
 <main>
-    <h2>LATEST LOG ENTRIES</h2>
+    <h2>Latest Log Entries in <?php echo $_SESSION['orderBy']; ?> Order</h2>
+	<form action="preorder.php" method="post" class="button-form">
+		<button class = "btn3" type="submit" name="action_course" value="Course">Course Order</button>
+		<button class = "btn3" type="submit" name="action_student" value="Student">Student Order</button>
+		<button class = "btn3" type="submit" name="action_datetime" value="Student">DateTime Order</button>
+	</form>
     <div class="table-container">
         <table>
             <thead>
                 <tr>
-					<th>Log<br>&ensp;ID</th>
+					<th></th>
                     <th>Sign in</th>
                     <th>Sign out</th>
-                    <th>Student<br>&emsp;&emsp;&ensp;ID</th>
-                    <th>Course<br>&emsp;&emsp;ID</th>
+					<th colspan="2">Student</th>
+					<th colspan="2">Course</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($logs as $log): ?>
 					<tr onclick="makeRowClickable(this, <?php echo htmlspecialchars($log['log_ID']); ?>)">
 						<a href="logRecord.php?id=<?php echo htmlspecialchars($log['log_ID']); ?>"</a>
-						
+
 						<td class="right-align"><?php echo htmlspecialchars($log['log_ID']); ?></td>
 						<td><?php echo $log['log_signin']; ?></td>
-						<td><?php echo $log['log_signout']; ?></td>						
+						<td><?php echo $log['log_signout']; ?></td>
                         <td class="right-align"><?php echo htmlspecialchars($log['log_student_ID']); ?></td>
+						<td><?php echo strstr($log['student_email'], '@', true); ?></td>
                         <td class="right-align"><?php echo htmlspecialchars($log['log_course_ID']); ?></td>
+						<td><?php echo htmlspecialchars($log['course_number']); ?></td>
+
                     </tr>
                 <?php endforeach; ?>
             </tbody>

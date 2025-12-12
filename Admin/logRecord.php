@@ -110,6 +110,14 @@ if ($courseRecord==null) {
 			value="<?php echo $student_fname.' '.$student_lname; ?>"
 			readonly>
 		<br>
+		<label title="Display only">Email:</label>
+		<input type="text"
+			id=="student_email"
+			name="student_email"
+			size="25"
+			value="<?php echo $student_email; ?>"
+			readonly>
+		<br>
 		<label title="Display only">Sign In:</label>
 		<input type="text"
 			id=="log_signin"
@@ -126,6 +134,15 @@ if ($courseRecord==null) {
 			value="<?php echo $log_signout; ?>"
 			readonly>
 		<br>
+		<label title="Display only">Course ID:</label>
+		<input type="text"
+			id=="course_ID"
+			name="course_ID"
+			size="2"
+			class = "right-align"
+			value="<?php echo $log_course_ID; ?>"
+			readonly>
+		<br>
 		<label title="Display only">Course:</label>
 		<input type="text"
 			id=="course_number"
@@ -134,7 +151,7 @@ if ($courseRecord==null) {
 			value="<?php echo $course_number; ?>"
 			readonly>
 		<br>
-		
+
 		<div class="flex-container">
 		<input type="text"
 			id=="course_number"
@@ -143,7 +160,6 @@ if ($courseRecord==null) {
 			value="<?php echo $course_name; ?>"
 			readonly>
 		</div>
-		<br>
 		<label title="Display only">Professor:</label>
 			<input type="text"
 			id=="course_professor"

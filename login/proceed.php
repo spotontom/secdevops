@@ -26,6 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// confirmed inserted
 	$_SESSION['statusFlag'] = 0;
 	header('Location: confirm.php');
-	exit;
+	exit();
 }
 ?>

@@ -15,6 +15,9 @@ function debugLog($bugLocation) {
 	. "\r\n"
 	. " error log: "
 	. $_SESSION['errorLog']
+	. "\r\n"
+	. " order by: "
+	. $_SESSION['orderBy']	
 	. "\r\n"	
 	. " student_ID: "
 	. $_SESSION['student_ID']

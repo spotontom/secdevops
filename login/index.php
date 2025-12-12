@@ -9,6 +9,7 @@
 --> 
 <?php
 $_SESSION['errorLog'] = "";
+$_SESSION['orderBy'] = "";
 // If it does not exist in the session
 if (!isset($_SESSION['statusFlag'])) {$_SESSION['statusFlag'] = 0;}
 if (!isset($_SESSION['student_ID'])) {$_SESSION['student_ID'] = 0;}
