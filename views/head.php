@@ -18,7 +18,7 @@
     Class:		cis4433
     Author:		Jay King
     Updated:	10-15-2025
-    Filename	stylevw.css
+    Filename	styles.css
     Updated:	10-29-2025 Thomas Scott
 	Updated:	11-25-2025 Jay King
 	Updated:	12-05-2025 Jay King
