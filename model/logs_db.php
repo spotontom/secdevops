@@ -111,7 +111,7 @@ function get_logs() {
 		$statement->closeCursor();
         return $logs;
     } catch (PDOException $e)  {
-		errorLog('select logs',$e);
+		errorLog('select log getLogs',$e);
 	}
 }
 ?>

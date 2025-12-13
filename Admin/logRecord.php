@@ -82,7 +82,7 @@ if ($courseRecord==null) {
 
 <main>
 <h2>LOG RECORD DISPLAY</h2>
-<form>
+<form id="logForm" autocomplete="on" method="post" action = "perish.php">
 	<fieldset>
 		<label title="Display only">Log ID:</label>
 		<input type="text"
@@ -171,9 +171,15 @@ if ($courseRecord==null) {
 	</fieldset>
 	<br>
 	<a class="btn2" href="logList.php">Return</a>
-	<br>
+	<button type="submit" class ="btn2">Delete</button>
 </form>
 </main>
 <?php include '../views/footer.php';?>
 </body>
 </html>
+
+
+
+
+
+

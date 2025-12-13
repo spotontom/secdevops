@@ -6,12 +6,8 @@
 	Author:		Cameron
 	Created:	11-8-2025
 	Updated:	11-30-2025 Jay King
+	Updated:	12-07-2025 Jay King
 	Filename:	Admin/logList.php
-
-Spaces used in table heading
-&nbsp;
-&ensp; "en space" (typically two spaces wide).
-&emsp; "em space" (typically four spaces wide, about the width of a capital M).
 -->
 <html lang="en">
 <?php include '../views/head.php';?>

@@ -51,6 +51,6 @@ function get_log_by_ID($log_ID) {
 			return null; // No log found with that ID
 		}
 	} catch (PDOException $e) {
-		errorLog('select log',$e);
+		errorLog('select get_log_by_ID',$e);
 	}
 }

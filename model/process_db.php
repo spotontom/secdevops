@@ -75,7 +75,7 @@ function get_log_by_student($student_ID) {
 			return null; // No student found with that email
 		}
 	} catch (PDOException $e) {
-		errorLog('select log',$e);
+		errorLog('select get log by student',$e);
 	}
 }
 ?>
