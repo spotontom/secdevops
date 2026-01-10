@@ -15,7 +15,7 @@ ACE Tutoring Lab is a free tutoring service available to all our students in acc
 
 The following needs to be installed on the system:
 - XAMPP for PHP and SQL from https://www.apachefriends.org/
-- Create Github account https://github.com/jaykingjr
+- Create Github account https://github.com
 - Establish Git tool for team collaboration
 - Establish Discord for team communications
 
@@ -29,25 +29,43 @@ The following needs to be installed on the system:
 
 ```
 MVC
+├── admin/
+│ ├── index.php
+│ ├── logBrowse.php
+│ ├── logRecord.php
+│ ├── preOrder.php
+│ ├── progress.php
+│ └── studentBrowse.php
 ├── documentation/
 │ ├── README.md
 │ ├── projectCharter.md
 │ └── dataOrganization.md
+├── errors/
+│ ├── debugLog.php
+│ └── errorLog.php
 ├── views/
-│ ├── commodore.php
 │ ├── delay.php
+│ ├── delayLogin.php
+│ ├── footer.php
 │ ├── head.php
-│ ├── header.php
-│ └── footer.php
+│ └── header.php
 ├── login/
 │ ├── index.php (sign-in)
-│ ├── process.php
-│ ├── login.php
-│ ├── proceed.php
 │ ├── confirm.php
-│ └── logout.php
+│ ├── login.php
+│ ├── logout.php
+│ ├── placing.php
+│ ├── proceed.php
+│ ├── process.php
+│ └── register.php
 ├── model/
-│ └── database
+│ ├── base_db.php
+│ ├── course_db.php
+│ ├── database.php
+│ ├── logs_db.php
+│ ├── proceed_db.php
+│ ├── processdb.php
+│ └── students_db.php
 └── assets/
   ├── favicon.ico
   ├── commodore.png  
@@ -129,6 +147,27 @@ Sign-in applicaation forms, especially digital create a verifiable audit trail o
 ### Model-View-Controller (MVC) Framework
 
 We should use the MVC architectural pattern on the server. The MVC framework will contribute to application security by promoting separation. Data protection in the Model layer is isolated from the public presentation layer (View). The Model layer prevents direct interaction between the user interface and the database, making it more difficult for attackers to manipulate or access the data directly. If we are using the internet, the encryption provided by HTTPS ensures that the data sent between the client and the server is not tampered with during transit. If we are using the intranet, the data is accessible only to authorized users within an organization. 
+
+In this PHP MVC architecture, the Model is the gatekeeper for the ACE application data. Securing it requires a defense-in-depth strategy focused on preventing injection and ensuring data integrity before it reaches your storage layer.
+
+1. Eliminate SQL Injection with Prepared Statements
+
+The most critical security measure is separating SQL commands from user data.
+
+* Use PDO or MySQLi: Always use PHP Data Objects (PDO) with prepared statements. This ensures that user input is treated strictly as data, never as executable code.
+* Bind Parameters: Replace dynamic variables in your queries with placeholders (e.g.,:id or ?) and use $stmt->execute([‘id’ => $userId]) to safely inject values.
+* Disable Emulated Prepares: Ensure your PDO configuration has PDO::ATTR_EMULATE_PREPARES => false to rely on the database’s native security features.
+
+2. Implement Strict Input Validation & Sanitization
+
+The data must be verified before processing.
+
+* Validation: Define exactly what is acceptable. Use filter_var() with flags like FILTER_VALIDATE_EMAIL or FILTER_VALIDATE_INT.
+* Sanitization: If validation fails, either reject the request or clean the data using functions like filter_var() with FILTER_SANITIZE_STRING to remove malicious tags.
+
+3. Architectural Safeguards
+
+* Centralized Error Handling: Disable public error reporting (display_errors = 0) in your production php.ini. Log Model errors to a secure, private file to prevent leaking database structures to attackers.
 
 The STRIDE threat modeling framework applies to both client-side and server-side components of an application. STRIDE mostly originates from the client-side lack of protection.
 
@@ -251,4 +290,3 @@ Author: Jay King
 
 ### ⚖️ License
 This application is the property of Gulf Coast State College and class © Copyright cis4433 September 18, 2025
-
